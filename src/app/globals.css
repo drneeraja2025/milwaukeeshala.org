@@ -1002,3 +1002,11 @@ html[lang="mr"] body,
   font-family: var(--font-mr), var(--font-body), sans-serif;
 }
 
+
+.biliteracy-highlight {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.5;
+  margin: 0 0 0.75rem;
+}
