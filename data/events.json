@@ -166,5 +166,113 @@
     "locationMr": "शाळा सांस्कृतिक अभ्यासक्रम",
     "description": "Gudi Padwa / Marathi New Year (Kalnirnay 2027). Cultural curriculum celebration.",
     "descriptionMr": "गुढी पाडवा / मराठी नववर्ष (कालनिर्णय २०२७). सांस्कृतिक अभ्यासक्रम उत्सव."
+  },
+  {
+    "id": "no-school-diwali-2026-11-07",
+    "title": "No School — Diwali",
+    "titleMr": "शाळा बंद — दिवाळी",
+    "date": "2026-11-07",
+    "startTime": "13:00",
+    "endTime": "15:00",
+    "location": "Hindu Temple of Wisconsin (HTW)",
+    "locationMr": "हिंदू टेम्पल ऑफ विस्कॉन्सिन (HTW)",
+    "description": "No Shala class for Diwali weekend (school calendar, aligned with MMM Shala schedule pattern).",
+    "descriptionMr": "दिवाळी सप्ताहासाठी शाळा बंद (एमएमएम शाळा वेळापत्रक पद्धतीनुसार)."
+  },
+  {
+    "id": "no-school-thanksgiving-2026-11-28",
+    "title": "No School — Thanksgiving",
+    "titleMr": "शाळा बंद — थँक्सगिव्हिंग",
+    "date": "2026-11-28",
+    "startTime": "13:00",
+    "endTime": "15:00",
+    "location": "Hindu Temple of Wisconsin (HTW)",
+    "locationMr": "हिंदू टेम्पल ऑफ विस्कॉन्सिन (HTW)",
+    "description": "No Shala class for Thanksgiving weekend (Nov 26–28).",
+    "descriptionMr": "थँक्सगिव्हिंग सप्ताहासाठी शाळा बंद (२६–२८ नोव्हेंबर)."
+  },
+  {
+    "id": "no-school-winter-2026-12-26",
+    "title": "No School — Winter Break",
+    "titleMr": "शाळा बंद — हिवाळी सुट्टी",
+    "date": "2026-12-26",
+    "startTime": "13:00",
+    "endTime": "15:00",
+    "location": "Hindu Temple of Wisconsin (HTW)",
+    "locationMr": "हिंदू टेम्पल ऑफ विस्कॉन्सिन (HTW)",
+    "description": "No Shala class — winter break (approx. Dec 22–Jan 2).",
+    "descriptionMr": "शाळा बंद — हिवाळी सुट्टी (सुमारे २२ डिसेंबर–२ जानेवारी)."
+  },
+  {
+    "id": "no-school-winter-2027-01-02",
+    "title": "No School — Winter Break",
+    "titleMr": "शाळा बंद — हिवाळी सुट्टी",
+    "date": "2027-01-02",
+    "startTime": "13:00",
+    "endTime": "15:00",
+    "location": "Hindu Temple of Wisconsin (HTW)",
+    "locationMr": "हिंदू टेम्पल ऑफ विस्कॉन्सिन (HTW)",
+    "description": "No Shala class — winter break continues; classes resume the following Saturday.",
+    "descriptionMr": "शाळा बंद — हिवाळी सुट्टी सुरू; पुढच्या शनिवारी वर्ग पुन्हा सुरू."
+  },
+  {
+    "id": "no-school-teacher-records-2027-03-27",
+    "title": "No School — Teacher Records",
+    "titleMr": "शाळा बंद — शिक्षक नोंदी",
+    "date": "2027-03-27",
+    "startTime": "13:00",
+    "endTime": "15:00",
+    "location": "Hindu Temple of Wisconsin (HTW)",
+    "locationMr": "हिंदू टेम्पल ऑफ विस्कॉन्सिन (HTW)",
+    "description": "No Shala class — teacher records day (MMM Shala schedule pattern).",
+    "descriptionMr": "शाळा बंद — शिक्षक नोंदी दिवस (एमएमएम शाळा वेळापत्रक पद्धती)."
+  },
+  {
+    "id": "no-school-spring-2027-04-03",
+    "title": "No School — Spring Break",
+    "titleMr": "शाळा बंद — वसंत सुट्टी",
+    "date": "2027-04-03",
+    "startTime": "13:00",
+    "endTime": "15:00",
+    "location": "Hindu Temple of Wisconsin (HTW)",
+    "locationMr": "हिंदू टेम्पल ऑफ विस्कॉन्सिन (HTW)",
+    "description": "No Shala class — spring break week.",
+    "descriptionMr": "शाळा बंद — वसंत सुट्टी आठवडा."
+  },
+  {
+    "id": "bmm-exam-2027-05-15",
+    "title": "BMM Exam",
+    "titleMr": "BMM परीक्षा",
+    "date": "2027-05-15",
+    "startTime": "13:00",
+    "endTime": "15:00",
+    "location": "Hindu Temple of Wisconsin (HTW)",
+    "locationMr": "हिंदू टेम्पल ऑफ विस्कॉन्सिन (HTW)",
+    "description": "BMM exam day for Milwaukee Marathi Shala (2026–27 school year).",
+    "descriptionMr": "मिल्वॉकी मराठी शाळेसाठी BMM परीक्षा दिवस (२०२६–२७ शैक्षणिक वर्ष)."
+  },
+  {
+    "id": "graduation-2027-05-22",
+    "title": "Marathi Shala Graduation",
+    "titleMr": "मराठी शाळा पदवीदान",
+    "date": "2027-05-22",
+    "startTime": "13:00",
+    "endTime": "15:00",
+    "location": "Hindu Temple of Wisconsin (HTW)",
+    "locationMr": "हिंदू टेम्पल ऑफ विस्कॉन्सिन (HTW)",
+    "description": "Marathi Shala graduation ceremony for the 2026–27 year.",
+    "descriptionMr": "२०२६–२७ वर्षासाठी मराठी शाळा पदवीदान समारंभ."
+  },
+  {
+    "id": "last-day-2027-05-29",
+    "title": "Last Day of School",
+    "titleMr": "शाळेचा शेवटचा दिवस",
+    "date": "2027-05-29",
+    "startTime": "13:00",
+    "endTime": "15:00",
+    "location": "Hindu Temple of Wisconsin (HTW)",
+    "locationMr": "हिंदू टेम्पल ऑफ विस्कॉन्सिन (HTW)",
+    "description": "Last day of Milwaukee Marathi Shala classes for 2026–27.",
+    "descriptionMr": "२०२६–२७ साठी मिल्वॉकी मराठी शाळेच्या वर्गांचा शेवटचा दिवस."
   }
 ]
