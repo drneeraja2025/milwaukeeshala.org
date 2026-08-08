@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { LanguageProvider } from "@/lib/i18n/LanguageProvider";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -35,11 +36,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="site-shell">
-          <SiteHeader />
-          <main className="site-main">{children}</main>
-          <SiteFooter />
-        </div>
+        <LanguageProvider>
+          <div className="site-shell">
+            <SiteHeader />
+            <main className="site-main">{children}</main>
+            <SiteFooter />
+          </div>
+        </LanguageProvider>
       </body>
     </html>
   );

@@ -1,19 +1,18 @@
-import type { Metadata } from "next";
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
+import { useI18n } from "@/lib/i18n/LanguageProvider";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Admissions",
-  description:
-    "Milwaukee Marathi Shala 2026–27 admissions — Balvarg for new students, $150 fee, BMM books, Saturdays 1–3 PM from September 5.",
-};
-
 export default function AdmissionsPage() {
+  const { t } = useI18n();
+
   return (
     <div className="page-shell">
       <PageHero
-        eyebrow={`Admissions ${site.yearLabel}`}
+        eyebrow={`${t("nav.admissions")} ${site.yearLabel}`}
         title="Join us for year two"
         lead="New and returning students are welcome. Classes meet Saturdays from 1:00–3:00 PM starting September 5, 2026 at the Hindu Temple of Wisconsin."
       />
@@ -54,10 +53,13 @@ export default function AdmissionsPage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Open admissions form
+              {t("cta.openForm")}
             </a>
+            <Link className="btn btn-secondary" href={site.payPath}>
+              {t("cta.pay")}
+            </Link>
             <a className="btn btn-ghost" href="/media/MMS2026-27flyer.jpg" download>
-              Download flyer
+              {t("cta.downloadFlyer")}
             </a>
           </div>
 
@@ -73,6 +75,22 @@ export default function AdmissionsPage() {
               <p className="muted">
                 Point your phone camera at this QR code to open the admissions
                 form, or use the button above.
+              </p>
+            </div>
+          </div>
+
+          <div className="admissions-qr" style={{ marginTop: "1rem" }}>
+            <Image
+              src={site.zelleQrSrc}
+              alt="Zelle QR code for school fees"
+              width={180}
+              height={180}
+            />
+            <div>
+              <h3>{t("pay.scan")}</h3>
+              <p className="muted">
+                {t("pay.fee", { fee: site.fee, year: site.yearLabel })}.{" "}
+                <Link href={site.payPath}>{t("cta.pay")} →</Link>
               </p>
             </div>
           </div>

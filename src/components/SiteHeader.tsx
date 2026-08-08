@@ -4,11 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { useI18n } from "@/lib/i18n/LanguageProvider";
 import { navLinks, site } from "@/lib/site";
 
 export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const { t, lang, setLang } = useI18n();
 
   return (
     <header className="site-header">
@@ -37,7 +39,7 @@ export function SiteHeader() {
           aria-controls="primary-nav"
           onClick={() => setOpen((value) => !value)}
         >
-          <span className="sr-only">Menu</span>
+          <span className="sr-only">{t("cta.menu")}</span>
           <span aria-hidden="true">{open ? "✕" : "☰"}</span>
         </button>
 
@@ -58,17 +60,41 @@ export function SiteHeader() {
                 className={active ? "nav-link is-active" : "nav-link"}
                 onClick={() => setOpen(false)}
               >
-                {link.label}
+                {t(link.labelKey)}
               </Link>
             );
           })}
+          <div className="lang-toggle" role="group" aria-label="Language">
+            <button
+              type="button"
+              className={lang === "en" ? "is-active" : ""}
+              onClick={() => setLang("en")}
+            >
+              EN
+            </button>
+            <button
+              type="button"
+              className={lang === "mr" ? "is-active" : ""}
+              onClick={() => setLang("mr")}
+              lang="mr"
+            >
+              मराठी
+            </button>
+          </div>
+          <Link
+            href={site.payPath}
+            className="nav-cta nav-cta-pay"
+            onClick={() => setOpen(false)}
+          >
+            {t("cta.pay")}
+          </Link>
           <a
             href={site.portalUrl}
             className="nav-cta"
             target="_blank"
             rel="noopener noreferrer"
           >
-            {site.portalLabel}
+            {t("cta.sislms")}
           </a>
         </nav>
       </div>

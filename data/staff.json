@@ -3,25 +3,51 @@
     {
       "name": "Dr. Neeraj Agrawal",
       "role": "School contact",
+      "roleMr": "शाळा संपर्क",
       "phone": "262-352-1845",
       "email": null
     },
     {
       "name": "Sachin Kende",
       "role": "School contact",
+      "roleMr": "शाळा संपर्क",
       "phone": "262-225-2817",
       "email": null
     },
     {
       "name": "Ashish Ingole",
       "role": "School contact",
+      "roleMr": "शाळा संपर्क",
       "phone": "603-814-0335",
       "email": null
     }
   ],
-  "staff": [],
+  "people": [
+    {
+      "id": "placeholder-1",
+      "name": "Teaching team",
+      "nameMr": "शिक्षक संघ",
+      "role": "Teachers & volunteers",
+      "roleMr": "शिक्षक आणि स्वयंसेवक",
+      "bio": "Profiles with individual names and photos will be published here soon. Milwaukee Marathi Shala is staffed by community teachers and volunteers.",
+      "bioMr": "वैयक्तिक नावे आणि छायाचित्रे लवकरच येथे प्रकाशित केली जातील. मिलवॉकी मराठी शाळेत समुदायातील शिक्षक आणि स्वयंसेवक कार्यरत आहेत.",
+      "photo": "/media/IMG-20260412-WA0066(1).jpg",
+      "order": 1
+    },
+    {
+      "id": "placeholder-2",
+      "name": "MMM committee partners",
+      "nameMr": "एमएमएम समिती भागीदार",
+      "role": "Community leadership",
+      "roleMr": "समुदाय नेतृत्व",
+      "bio": "Maharashtra Mandal Milwaukee partners with the school. Individual committee bios coming soon.",
+      "bioMr": "महाराष्ट्र मंडळ मिलवॉकी शाळेशी भागीदारी करते. समितीची वैयक्तिक माहिती लवकरच.",
+      "photo": "/media/IMG-20260531-WA0004.jpg",
+      "order": 2
+    }
+  ],
   "notes": [
-    "Full staff profiles coming soon.",
+    "Full named staff profiles coming soon — send photos and short bios to update this page.",
     "Certified Avant Assessment proctors are on staff."
   ]
 }

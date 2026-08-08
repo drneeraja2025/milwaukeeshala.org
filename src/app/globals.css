@@ -494,15 +494,109 @@ img {
   box-shadow: var(--shadow);
 }
 
-.admissions-qr {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 1.5rem;
-  padding: 1rem 1.1rem;
+.lang-toggle {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.lang-toggle button {
+  border: 0;
+  background: transparent;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--navy);
+}
+
+.lang-toggle button.is-active {
+  background: var(--navy);
+  color: #fff;
+}
+
+.nav-cta-pay {
+  background: var(--sun, #f5c518) !important;
+  color: var(--navy) !important;
+}
+
+.pay-qr-panel {
+  display: grid;
+  place-items: center;
+  gap: 0.75rem;
+  padding: 1.25rem;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: linear-gradient(135deg, #fffef8 0%, #fff7d6 100%);
+  background: #fff;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.pay-qr-panel img {
+  width: min(280px, 100%);
+  height: auto;
+  border-radius: 0.75rem;
+}
+
+.pay-fee {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.staff-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.staff-photo {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: #e8eef8;
+}
+
+.staff-photo img {
+  object-fit: cover;
+}
+
+.staff-body {
+  padding: 1rem 1.1rem 1.2rem;
+}
+
+.staff-body h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.2rem;
+  color: var(--navy);
+}
+
+.staff-role {
+  margin: 0 0 0.65rem;
+  font-weight: 700;
+  color: #6b5a1e;
+}
+
+.prose-legal h2 {
+  margin-top: 1.5rem;
+}
+
+.prose-legal ul {
+  padding-left: 1.2rem;
+}
+
+html[lang="mr"] body,
+[lang="mr"] {
+  font-family: var(--font-mr), var(--font-body), sans-serif;
 }
 
 .admissions-qr img {
@@ -802,3 +896,109 @@ img {
     transition: none !important;
   }
 }
+
+.lang-toggle {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.lang-toggle button {
+  border: 0;
+  background: transparent;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--navy);
+}
+
+.lang-toggle button.is-active {
+  background: var(--navy);
+  color: #fff;
+}
+
+.nav-cta-pay {
+  background: var(--sun, #f5c518) !important;
+  color: var(--navy) !important;
+}
+
+.pay-qr-panel {
+  display: grid;
+  place-items: center;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.pay-qr-panel img {
+  width: min(280px, 100%);
+  height: auto;
+  border-radius: 0.75rem;
+}
+
+.pay-fee {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.staff-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.staff-photo {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: #e8eef8;
+}
+
+.staff-photo img {
+  object-fit: cover;
+}
+
+.staff-body {
+  padding: 1rem 1.1rem 1.2rem;
+}
+
+.staff-body h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.2rem;
+  color: var(--navy);
+}
+
+.staff-role {
+  margin: 0 0 0.65rem;
+  font-weight: 700;
+  color: #6b5a1e;
+}
+
+.prose-legal h2 {
+  margin-top: 1.5rem;
+}
+
+.prose-legal ul {
+  padding-left: 1.2rem;
+}
+
+html[lang="mr"] body,
+[lang="mr"] {
+  font-family: var(--font-mr), var(--font-body), sans-serif;
+}
+

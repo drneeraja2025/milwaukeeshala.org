@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -6,11 +8,13 @@ import {
   getUpcomingEvents,
   getUpdates,
 } from "@/lib/data";
+import { useI18n } from "@/lib/i18n/LanguageProvider";
 import { site } from "@/lib/site";
 
 export default function HomePage() {
   const upcoming = getUpcomingEvents(3);
   const updates = getUpdates().slice(0, 3);
+  const { t } = useI18n();
 
   return (
     <>
@@ -34,8 +38,7 @@ export default function HomePage() {
             {site.motto}
           </p>
           <p className="hero-lead">
-            Second-year admissions are open for {site.yearLabel}. Join our
-            Saturday Marathi community at {site.location}.
+            {t("home.lead", { year: site.yearLabel, location: site.location })}
           </p>
           <div className="cta-row">
             <a
@@ -44,15 +47,18 @@ export default function HomePage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Apply for Admissions
+              {t("cta.apply")}
             </a>
+            <Link className="btn btn-secondary" href={site.payPath}>
+              {t("cta.pay")}
+            </Link>
             <a
-              className="btn btn-secondary"
+              className="btn btn-ghost"
               href={site.portalUrl}
               target="_blank"
               rel="noopener noreferrer"
             >
-              {site.portalLabel}
+              {t("cta.sislms")}
             </a>
           </div>
         </div>
@@ -62,10 +68,10 @@ export default function HomePage() {
         <div className="section-inner">
           <div className="section-head">
             <div>
-              <p className="eyebrow">Coming up</p>
-              <h2>Upcoming dates</h2>
+              <p className="eyebrow">{t("home.comingUp")}</p>
+              <h2>{t("home.upcoming")}</h2>
             </div>
-            <Link href="/calendar">Full calendar →</Link>
+            <Link href="/calendar">{t("home.fullCalendar")}</Link>
           </div>
           <ul className="teaser-list reveal">
             {upcoming.map((event) => (
@@ -88,9 +94,9 @@ export default function HomePage() {
           <div className="section-head">
             <div>
               <p className="eyebrow">From the school</p>
-              <h2>News & Updates</h2>
+              <h2>{t("home.news")}</h2>
             </div>
-            <Link href="/news">All updates →</Link>
+            <Link href="/news">{t("home.viewNews")}</Link>
           </div>
           <ul className="teaser-list">
             {updates.map((item) => (
@@ -109,9 +115,9 @@ export default function HomePage() {
           <div className="section-head">
             <div>
               <p className="eyebrow">Community</p>
-              <h2>From our year together</h2>
+              <h2>{t("home.gallery")}</h2>
             </div>
-            <Link href="/photos">Photo albums →</Link>
+            <Link href="/photos">{t("home.viewPhotos")}</Link>
           </div>
           <div className="photo-strip reveal">
             <figure>

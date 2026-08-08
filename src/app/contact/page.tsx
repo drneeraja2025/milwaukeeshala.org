@@ -55,7 +55,15 @@ export default function ContactPage() {
 
         <div className="contact-panel">
           <h2>Staff directory</h2>
-          <p>Full staff profiles coming soon.</p>
+          <p>
+            Meet teachers and contacts on the{" "}
+            <a href="/staff">Staff</a> page. Profiles will grow as bios arrive.
+          </p>
+          <p style={{ marginTop: "1rem" }}>
+            <a className="btn btn-secondary" href={site.payPath}>
+              Pay / Donate
+            </a>
+          </p>
           <ul className="program-points">
             {staff.notes.map((note) => (
               <li key={note}>{note}</li>
