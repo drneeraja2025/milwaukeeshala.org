@@ -1,6 +1,6 @@
 export const site = {
   name: "Milwaukee Marathi Shala",
-  nameMr: "मिलवॉकी मराठी शाळा",
+  nameMr: "मिल्वॉकी मराठी शाळा",
   motto: "आपली माणसं, आपली भाषा",
   email: "mmm.marathishala@gmail.com",
   domain: "milwaukeeshala.org",
