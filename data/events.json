@@ -2,28 +2,37 @@
   {
     "id": "teacher-staff-meeting-2026-08-22",
     "title": "Teacher & Staff Meeting",
+    "titleMr": "शिक्षक आणि कर्मचारी बैठक",
     "date": "2026-08-22",
     "startTime": "14:00",
     "endTime": "15:30",
     "location": "Hindu Temple of Wisconsin (HTW)",
-    "description": "Planning meeting for teachers and staff ahead of the 2026–27 school year."
+    "locationMr": "हिंदू टेम्पल ऑफ विस्कॉन्सिन (HTW)",
+    "description": "Planning meeting for teachers and staff ahead of the 2026–27 school year.",
+    "descriptionMr": "२०२६–२७ शैक्षणिक वर्षापूर्वी शिक्षक आणि कर्मचाऱ्यांची नियोजन बैठक."
   },
   {
     "id": "all-school-meeting-2026-08-29",
     "title": "All-School Meeting",
+    "titleMr": "संपूर्ण शाळा बैठक",
     "date": "2026-08-29",
     "startTime": "16:00",
     "endTime": "17:30",
     "location": "Hindu Temple of Wisconsin (HTW)",
-    "description": "Welcome meeting for families, students, and volunteers before classes begin."
+    "locationMr": "हिंदू टेम्पल ऑफ विस्कॉन्सिन (HTW)",
+    "description": "Welcome meeting for families, students, and volunteers before classes begin.",
+    "descriptionMr": "वर्ग सुरू होण्यापूर्वी कुटुंबे, विद्यार्थी आणि स्वयंसेवकांसाठी स्वागत बैठक."
   },
   {
     "id": "classes-begin-2026-09-05",
     "title": "Classes Begin",
+    "titleMr": "वर्ग सुरू",
     "date": "2026-09-05",
     "startTime": "13:00",
     "endTime": "15:00",
     "location": "Hindu Temple of Wisconsin (HTW)",
-    "description": "First day of Milwaukee Marathi Shala classes for the 2026–27 school year. Saturdays 1:00–3:00 PM."
+    "locationMr": "हिंदू टेम्पल ऑफ विस्कॉन्सिन (HTW)",
+    "description": "First day of Milwaukee Marathi Shala classes for the 2026–27 school year. Saturdays 1:00–3:00 PM.",
+    "descriptionMr": "२०२६–२७ शैक्षणिक वर्षातील मिल्वॉकी मराठी शाळेच्या वर्गांचा पहिला दिवस. शनिवार दुपारी १:००–३:००."
   }
 ]

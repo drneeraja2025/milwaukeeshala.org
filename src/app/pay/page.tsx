@@ -28,7 +28,7 @@ export default function PayPage() {
               {site.zellePayee}
             </li>
             <li>
-              <strong>Zelle email</strong>
+              <strong>{t("pay.zelleEmail")}</strong>
               {site.zelleEmail}
             </li>
           </ul>

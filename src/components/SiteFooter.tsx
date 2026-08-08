@@ -6,7 +6,7 @@ import { useI18n } from "@/lib/i18n/LanguageProvider";
 import { navLinks, site } from "@/lib/site";
 
 export function SiteFooter() {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
   const year = new Date().getFullYear();
 
   return (
@@ -20,12 +20,14 @@ export function SiteFooter() {
             height={64}
           />
           <div>
-            <p className="footer-name">{site.name}</p>
+            <p className="footer-name">
+              {lang === "mr" ? site.nameMr : site.name}
+            </p>
             <p className="footer-motto" lang="mr">
               {site.motto}
             </p>
             <p className="footer-meta">
-              {site.schedule} · {site.location}
+              {t("site.schedule")} · {t("site.location")}
             </p>
           </div>
         </div>
@@ -68,10 +70,10 @@ export function SiteFooter() {
                   {t("cta.sislms")}
                 </a>
               </li>
-              {site.parents.map((parent) => (
+              {site.parents.map((parent, index) => (
                 <li key={parent.href}>
                   <a href={parent.href} target="_blank" rel="noopener noreferrer">
-                    {parent.label}
+                    {index === 0 ? t("parent.mmm") : t("parent.bmm")}
                   </a>
                 </li>
               ))}

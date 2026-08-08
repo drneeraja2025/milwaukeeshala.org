@@ -7,6 +7,7 @@ import {
   formatTime,
   getUpcomingEvents,
   getUpdates,
+  pickLocale,
 } from "@/lib/data";
 import { useI18n } from "@/lib/i18n/LanguageProvider";
 import { site } from "@/lib/site";
@@ -14,7 +15,8 @@ import { site } from "@/lib/site";
 export default function HomePage() {
   const upcoming = getUpcomingEvents(3);
   const updates = getUpdates().slice(0, 3);
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
+  const location = t("site.location");
 
   return (
     <>
@@ -22,7 +24,11 @@ export default function HomePage() {
         <div className="hero-media">
           <Image
             src="/media/IMG-20260531-WA0017.jpg"
-            alt="Milwaukee Marathi Shala annual program"
+            alt={
+              lang === "mr"
+                ? "मिल्वॉकी मराठी शाळेचा वार्षिक कार्यक्रम"
+                : "Milwaukee Marathi Shala annual program"
+            }
             fill
             priority
             sizes="100vw"
@@ -38,7 +44,7 @@ export default function HomePage() {
             {site.motto}
           </p>
           <p className="hero-lead">
-            {t("home.lead", { year: site.yearLabel, location: site.location })}
+            {t("home.lead", { year: site.yearLabel, location })}
           </p>
           <div className="cta-row">
             <a
@@ -76,12 +82,12 @@ export default function HomePage() {
           <ul className="teaser-list reveal">
             {upcoming.map((event) => (
               <li key={event.id}>
-                <p className="event-date">{formatShortDate(event.date)}</p>
-                <h3>{event.title}</h3>
+                <p className="event-date">{formatShortDate(event.date, lang)}</p>
+                <h3>{pickLocale(lang, event.title, event.titleMr)}</h3>
                 <p>
-                  {formatTime(event.startTime)}
-                  {event.endTime ? ` – ${formatTime(event.endTime)}` : ""} ·{" "}
-                  {event.location}
+                  {formatTime(event.startTime, lang)}
+                  {event.endTime ? ` – ${formatTime(event.endTime, lang)}` : ""} ·{" "}
+                  {pickLocale(lang, event.location, event.locationMr)}
                 </p>
               </li>
             ))}
@@ -93,7 +99,7 @@ export default function HomePage() {
         <div className="section-inner">
           <div className="section-head">
             <div>
-              <p className="eyebrow">From the school</p>
+              <p className="eyebrow">{t("home.fromSchool")}</p>
               <h2>{t("home.news")}</h2>
             </div>
             <Link href="/news">{t("home.viewNews")}</Link>
@@ -101,9 +107,9 @@ export default function HomePage() {
           <ul className="teaser-list">
             {updates.map((item) => (
               <li key={item.id}>
-                <p className="news-date">{formatShortDate(item.date)}</p>
-                <h3>{item.title}</h3>
-                <p>{item.summary}</p>
+                <p className="news-date">{formatShortDate(item.date, lang)}</p>
+                <h3>{pickLocale(lang, item.title, item.titleMr)}</h3>
+                <p>{pickLocale(lang, item.summary, item.summaryMr)}</p>
               </li>
             ))}
           </ul>
@@ -114,7 +120,7 @@ export default function HomePage() {
         <div className="section-inner">
           <div className="section-head">
             <div>
-              <p className="eyebrow">Community</p>
+              <p className="eyebrow">{t("home.community")}</p>
               <h2>{t("home.gallery")}</h2>
             </div>
             <Link href="/photos">{t("home.viewPhotos")}</Link>
@@ -123,29 +129,29 @@ export default function HomePage() {
             <figure>
               <Image
                 src="/media/20260521_171946.jpg"
-                alt="Certificate celebration"
+                alt={t("home.cap.certificates")}
                 fill
                 sizes="(max-width: 900px) 100vw, 33vw"
               />
-              <figcaption>Certificates</figcaption>
+              <figcaption>{t("home.cap.certificates")}</figcaption>
             </figure>
             <figure>
               <Image
                 src="/media/IMG-20260117-WA0003.jpg"
-                alt="Exam day"
+                alt={t("home.cap.exams")}
                 fill
                 sizes="(max-width: 900px) 100vw, 33vw"
               />
-              <figcaption>Exams</figcaption>
+              <figcaption>{t("home.cap.exams")}</figcaption>
             </figure>
             <figure>
               <Image
                 src="/media/IMG-20260531-WA0004.jpg"
-                alt="MMM committee"
+                alt={t("home.cap.committee")}
                 fill
                 sizes="(max-width: 900px) 100vw, 33vw"
               />
-              <figcaption>Committee</figcaption>
+              <figcaption>{t("home.cap.committee")}</figcaption>
             </figure>
           </div>
         </div>

@@ -2,41 +2,56 @@ import events from "../../data/events.json";
 import updates from "../../data/updates.json";
 import gallery from "../../data/gallery.json";
 import staff from "../../data/staff.json";
+import type { Lang } from "@/lib/i18n/dictionaries";
 
 export type EventItem = {
   id: string;
   title: string;
+  titleMr?: string;
   date: string;
   startTime: string;
   endTime: string;
   location: string;
+  locationMr?: string;
   description: string;
+  descriptionMr?: string;
 };
 
 export type UpdateItem = {
   id: string;
   date: string;
   title: string;
+  titleMr?: string;
   summary: string;
+  summaryMr?: string;
   body: string;
+  bodyMr?: string;
 };
 
 export type GalleryPhoto = {
   src: string;
   alt: string;
+  altMr?: string;
   caption: string;
+  captionMr?: string;
 };
 
 export type GalleryAlbum = {
   id: string;
   title: string;
+  titleMr?: string;
   description: string;
+  descriptionMr?: string;
   cover: string;
   photos: GalleryPhoto[];
 };
 
+export function pickLocale<T>(lang: Lang, en: T, mr?: T | null): T {
+  return lang === "mr" && mr != null && mr !== "" ? mr : en;
+}
+
 export function getEvents(): EventItem[] {
-  return [...events].sort((a, b) => {
+  return [...(events as EventItem[])].sort((a, b) => {
     const aKey = `${a.date}T${a.startTime}`;
     const bKey = `${b.date}T${b.startTime}`;
     return aKey.localeCompare(bKey);
@@ -49,7 +64,7 @@ export function getUpcomingEvents(limit = 3): EventItem[] {
 }
 
 export function getUpdates(): UpdateItem[] {
-  return [...updates].sort((a, b) => b.date.localeCompare(a.date));
+  return [...(updates as UpdateItem[])].sort((a, b) => b.date.localeCompare(a.date));
 }
 
 export function getGallery() {
@@ -57,11 +72,36 @@ export function getGallery() {
 }
 
 export function getStaff() {
-  return staff;
+  return staff as {
+    contacts: Array<{
+      name: string;
+      role: string;
+      roleMr?: string;
+      phone: string;
+      email: string | null;
+    }>;
+    people: Array<{
+      id: string;
+      name: string;
+      nameMr?: string;
+      role: string;
+      roleMr?: string;
+      bio: string;
+      bioMr?: string;
+      photo: string;
+      order: number;
+    }>;
+    notes: string[];
+    notesMr?: string[];
+  };
 }
 
-export function formatEventDate(date: string): string {
-  return new Date(`${date}T12:00:00`).toLocaleDateString("en-US", {
+function localeTag(lang: Lang = "en"): string {
+  return lang === "mr" ? "mr-IN" : "en-US";
+}
+
+export function formatEventDate(date: string, lang: Lang = "en"): string {
+  return new Date(`${date}T12:00:00`).toLocaleDateString(localeTag(lang), {
     weekday: "long",
     month: "long",
     day: "numeric",
@@ -69,17 +109,22 @@ export function formatEventDate(date: string): string {
   });
 }
 
-export function formatShortDate(date: string): string {
-  return new Date(`${date}T12:00:00`).toLocaleDateString("en-US", {
+export function formatShortDate(date: string, lang: Lang = "en"): string {
+  return new Date(`${date}T12:00:00`).toLocaleDateString(localeTag(lang), {
     month: "short",
     day: "numeric",
     year: "numeric",
   });
 }
 
-export function formatTime(time: string): string {
+export function formatTime(time: string, lang: Lang = "en"): string {
   const [hours, minutes] = time.split(":").map(Number);
-  const period = hours >= 12 ? "PM" : "AM";
   const hour12 = hours % 12 || 12;
-  return `${hour12}:${String(minutes).padStart(2, "0")} ${period}`;
+  const mm = String(minutes).padStart(2, "0");
+  if (lang === "mr") {
+    const period = hours >= 12 ? "अपराह्न" : "पूर्वाह्न";
+    return `${hour12}:${mm} ${period}`;
+  }
+  const period = hours >= 12 ? "PM" : "AM";
+  return `${hour12}:${mm} ${period}`;
 }

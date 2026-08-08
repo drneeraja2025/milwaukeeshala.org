@@ -3,28 +3,40 @@
     "id": "new-website",
     "date": "2026-08-07",
     "title": "New website: milwaukeeshala.org",
+    "titleMr": "नवीन संकेतस्थळ: milwaukeeshala.org",
     "summary": "Milwaukee Marathi Shala now has a dedicated public website at milwaukeeshala.org for news, admissions, calendar, and photos.",
-    "body": "We are excited to launch milwaukeeshala.org as the school’s home on the web. Families can find admissions details, upcoming dates, news, and photo albums in one place."
+    "summaryMr": "मिल्वॉकी मराठी शाळेचे आता milwaukeeshala.org वर बातम्या, प्रवेश, दिनदर्शिका आणि छायाचित्रांसाठी समर्पित सार्वजनिक संकेतस्थळ आहे.",
+    "body": "We are excited to launch milwaukeeshala.org as the school’s home on the web. Families can find admissions details, upcoming dates, news, and photo albums in one place.",
+    "bodyMr": "शाळेचे वेबवरील घर म्हणून milwaukeeshala.org सुरू करताना आम्हाला आनंद आहे. कुटुंबांना प्रवेश तपशील, येणाऱ्या तारखा, बातम्या आणि छायाचित्र अल्बम एकाच ठिकाणी मिळतील."
   },
   {
     "id": "guruvidyazen-migration",
     "date": "2026-08-07",
     "title": "Migrating to GuruVidyaZen SISLMS",
+    "titleMr": "GuruVidyaZen SISLMS कडे स्थलांतर",
     "summary": "School operations are moving to GuruVidyaZen SISLMS for a smoother experience across the whole school.",
-    "body": "Milwaukee Marathi Shala is migrating to the GuruVidyaZen SISLMS system for the whole school. Families and staff will use the SISLMS login for school access going forward."
+    "summaryMr": "संपूर्ण शाळेसाठी सहज अनुभवासाठी शाळेची कार्ये GuruVidyaZen SISLMS वर जात आहेत.",
+    "body": "Milwaukee Marathi Shala is migrating to the GuruVidyaZen SISLMS system for the whole school. Families and staff will use the SISLMS login for school access going forward.",
+    "bodyMr": "मिल्वॉकी मराठी शाळा संपूर्ण शाळेसाठी GuruVidyaZen SISLMS प्रणालीकडे स्थलांतरित होत आहे. पुढे कुटुंबे आणि कर्मचारी शाळा प्रवेशासाठी SISLMS लॉगिन वापरतील."
   },
   {
     "id": "bmm-books-ordered",
     "date": "2026-08-06",
     "title": "BMM books ordered",
+    "titleMr": "BMM पुस्तके मागवली",
     "summary": "Curriculum books through Bharatiya Marathi Mandal (BMM) have been ordered for the 2026–27 year.",
-    "body": "Books aligned with the BMM Marathi Shala curriculum have been ordered so classes can start the year with the materials students need."
+    "summaryMr": "२०२६–२७ वर्षासाठी भारतीय मराठी मंडळ (BMM) द्वारे अभ्यासक्रम पुस्तके मागवली आहेत.",
+    "body": "Books aligned with the BMM Marathi Shala curriculum have been ordered so classes can start the year with the materials students need.",
+    "bodyMr": "BMM मराठी शाळा अभ्यासक्रमानुसार पुस्तके मागवली आहेत जेणेकरून विद्यार्थ्यांना आवश्यक सामग्रीसह वर्ष सुरू करता येईल."
   },
   {
     "id": "google-workspace",
     "date": "2026-08-05",
     "title": "Google Education Workspace signed up",
+    "titleMr": "Google Education Workspace नोंदणी",
     "summary": "The school has signed up for Google Education Workspace to support classroom communication and learning tools.",
-    "body": "Milwaukee Marathi Shala has enrolled in Google Education Workspace. This supports teacher collaboration, classroom communication, and digital learning for our community."
+    "summaryMr": "वर्ग संवाद आणि शिक्षण साधनांसाठी शाळेने Google Education Workspace साठी नोंदणी केली आहे.",
+    "body": "Milwaukee Marathi Shala has enrolled in Google Education Workspace. This supports teacher collaboration, classroom communication, and digital learning for our community.",
+    "bodyMr": "मिल्वॉकी मराठी शाळेने Google Education Workspace मध्ये नोंदणी केली आहे. हे शिक्षक सहकार्य, वर्ग संवाद आणि आमच्या समुदायासाठी डिजिटल शिक्षणाला समर्थन देते."
   }
 ]

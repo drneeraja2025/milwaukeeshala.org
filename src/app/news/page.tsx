@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { PageHero } from "@/components/PageHero";
-import { formatShortDate, getUpdates } from "@/lib/data";
+import { NewsView } from "./NewsView";
 
 export const metadata: Metadata = {
   title: "News & Updates",
@@ -9,24 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function NewsPage() {
-  const updates = getUpdates();
-
-  return (
-    <div className="page-shell">
-      <PageHero
-        eyebrow="News"
-        title="News & Updates"
-        lead="Announcements for families, students, and volunteers as we begin our second year."
-      />
-      <div className="news-list">
-        {updates.map((item) => (
-          <article key={item.id} id={item.id}>
-            <p className="news-date">{formatShortDate(item.date)}</p>
-            <h2>{item.title}</h2>
-            <p>{item.body}</p>
-          </article>
-        ))}
-      </div>
-    </div>
-  );
+  return <NewsView />;
 }

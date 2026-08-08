@@ -7,26 +7,7 @@ import { useI18n } from "@/lib/i18n/LanguageProvider";
 
 export default function StaffPage() {
   const { t, lang } = useI18n();
-  const data = getStaff() as {
-    contacts: Array<{
-      name: string;
-      role: string;
-      roleMr?: string;
-      phone: string;
-    }>;
-    people: Array<{
-      id: string;
-      name: string;
-      nameMr?: string;
-      role: string;
-      roleMr?: string;
-      bio: string;
-      bioMr?: string;
-      photo: string;
-      order: number;
-    }>;
-    notes: string[];
-  };
+  const data = getStaff();
   const people = [...(data.people || [])].sort((a, b) => a.order - b.order);
 
   return (

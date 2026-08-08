@@ -13,37 +13,37 @@ export default function AdmissionsPage() {
     <div className="page-shell">
       <PageHero
         eyebrow={`${t("nav.admissions")} ${site.yearLabel}`}
-        title="Join us for year two"
-        lead="New and returning students are welcome. Classes meet Saturdays from 1:00–3:00 PM starting September 5, 2026 at the Hindu Temple of Wisconsin."
+        title={t("admissions.title")}
+        lead={t("admissions.lead")}
       />
 
       <div className="split">
         <div className="content-panel">
-          <h2>What to know</h2>
+          <h2>{t("admissions.know")}</h2>
           <ul className="fact-list">
             <li>
-              <strong>School year</strong>
-              Second year · {site.yearLabel}
+              <strong>{t("admissions.schoolYear")}</strong>
+              {t("admissions.schoolYearVal", { year: site.yearLabel })}
             </li>
             <li>
-              <strong>New students</strong>
-              Balvarg pathway for beginners joining the school
+              <strong>{t("admissions.newStudents")}</strong>
+              {t("admissions.newStudentsVal")}
             </li>
             <li>
-              <strong>Fee</strong>
-              {site.fee} for the school year
+              <strong>{t("admissions.fee")}</strong>
+              {t("admissions.feeVal", { fee: site.fee })}
             </li>
             <li>
-              <strong>Books</strong>
-              BMM curriculum books (ordered for {site.yearLabel})
+              <strong>{t("admissions.books")}</strong>
+              {t("admissions.booksVal", { year: site.yearLabel })}
             </li>
             <li>
-              <strong>Schedule</strong>
-              Saturdays, 1:00–3:00 PM · begins September 5, 2026
+              <strong>{t("admissions.schedule")}</strong>
+              {t("admissions.scheduleVal")}
             </li>
             <li>
-              <strong>Location</strong>
-              {site.location}
+              <strong>{t("admissions.location")}</strong>
+              {t("site.location")}
             </li>
           </ul>
           <div className="cta-row" style={{ marginTop: "1.25rem" }}>
@@ -66,23 +66,20 @@ export default function AdmissionsPage() {
           <div className="admissions-qr">
             <Image
               src="/media/admissions-qr.png"
-              alt="QR code to Milwaukee Marathi Shala admissions Google Form"
+              alt={t("admissions.scan")}
               width={180}
               height={180}
             />
             <div>
-              <h3>Scan to apply</h3>
-              <p className="muted">
-                Point your phone camera at this QR code to open the admissions
-                form, or use the button above.
-              </p>
+              <h3>{t("admissions.scan")}</h3>
+              <p className="muted">{t("admissions.scanLead")}</p>
             </div>
           </div>
 
           <div className="admissions-qr" style={{ marginTop: "1rem" }}>
             <Image
               src={site.zelleQrSrc}
-              alt="Zelle QR code for school fees"
+              alt={t("pay.scan")}
               width={180}
               height={180}
             />
@@ -96,8 +93,18 @@ export default function AdmissionsPage() {
           </div>
 
           <p className="muted" style={{ marginTop: "1rem" }}>
-            Questions? Email{" "}
-            <a href={`mailto:${site.email}`}>{site.email}</a>.
+            {t("admissions.questions", { email: site.email })
+              .split(site.email)
+              .map((part, i, arr) =>
+                i < arr.length - 1 ? (
+                  <span key={i}>
+                    {part}
+                    <a href={`mailto:${site.email}`}>{site.email}</a>
+                  </span>
+                ) : (
+                  <span key={i}>{part}</span>
+                ),
+              )}
           </p>
         </div>
 
@@ -105,7 +112,7 @@ export default function AdmissionsPage() {
           <div className="flyer-preview">
             <Image
               src="/media/MMS2026-27flyer.jpg"
-              alt="Milwaukee Marathi Shala 2026-27 admissions flyer"
+              alt={`${site.name} ${site.yearLabel}`}
               width={900}
               height={1200}
               style={{ width: "100%", height: "auto" }}

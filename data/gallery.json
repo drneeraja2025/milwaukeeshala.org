@@ -3,69 +3,93 @@
     {
       "id": "annual-program",
       "title": "Annual Program",
+      "titleMr": "वार्षिक कार्यक्रम",
       "description": "Moments from Milwaukee Marathi Shala’s annual program.",
+      "descriptionMr": "मिल्वॉकी मराठी शाळेच्या वार्षिक कार्यक्रमातील क्षण.",
       "cover": "/media/IMG-20260531-WA0017.jpg",
       "photos": [
         {
           "src": "/media/IMG-20260531-WA0017.jpg",
           "alt": "Milwaukee Marathi Shala annual program on stage",
-          "caption": "Annual program"
+          "altMr": "मिल्वॉकी मराठी शाळेचा वार्षिक कार्यक्रम रंगमंचावर",
+          "caption": "Annual program",
+          "captionMr": "वार्षिक कार्यक्रम"
         },
         {
           "src": "/media/IMG-20260530-WA0015(1).jpg",
           "alt": "Teachers and program participants",
-          "caption": "Teachers and program"
+          "altMr": "शिक्षक आणि कार्यक्रम सहभागी",
+          "caption": "Teachers and program",
+          "captionMr": "शिक्षक आणि कार्यक्रम"
         },
         {
           "src": "/media/IMG-20260530-WA0016.jpg",
           "alt": "Speaker at the annual program",
-          "caption": "Program speaker"
+          "altMr": "वार्षिक कार्यक्रमातील वक्ता",
+          "caption": "Program speaker",
+          "captionMr": "कार्यक्रम वक्ता"
         }
       ]
     },
     {
       "id": "certificates-exams",
       "title": "Certificates & Exams",
+      "titleMr": "प्रमाणपत्रे आणि परीक्षा",
       "description": "Recognition and assessment moments for our learners.",
+      "descriptionMr": "आमच्या विद्यार्थ्यांसाठी सन्मान आणि मूल्यमापनाचे क्षण.",
       "cover": "/media/20260521_171946.jpg",
       "photos": [
         {
           "src": "/media/20260521_171946.jpg",
           "alt": "Student certificate presentation",
-          "caption": "Certificate celebration"
+          "altMr": "विद्यार्थ्याला प्रमाणपत्र प्रदान",
+          "caption": "Certificate celebration",
+          "captionMr": "प्रमाणपत्र उत्सव"
         },
         {
           "src": "/media/IMG-20260117-WA0003.jpg",
           "alt": "Students during exam session",
-          "caption": "Exam day"
+          "altMr": "परीक्षा सत्रातील विद्यार्थी",
+          "caption": "Exam day",
+          "captionMr": "परीक्षा दिवस"
         }
       ]
     },
     {
       "id": "community",
       "title": "Community & Teachers",
+      "titleMr": "समुदाय आणि शिक्षक",
       "description": "Committee, teachers, and community gatherings.",
+      "descriptionMr": "समिती, शिक्षक आणि समुदाय मेळावे.",
       "cover": "/media/IMG-20260531-WA0004.jpg",
       "photos": [
         {
           "src": "/media/IMG-20260531-WA0004.jpg",
           "alt": "Milwaukee Marathi Mandal committee",
-          "caption": "MMM committee"
+          "altMr": "महाराष्ट्र मंडळ मिल्वॉकी समिती",
+          "caption": "MMM committee",
+          "captionMr": "MMM समिती"
         },
         {
           "src": "/media/IMG-20260412-WA0066(1).jpg",
           "alt": "Milwaukee Marathi Shala teachers",
-          "caption": "Teachers"
+          "altMr": "मिल्वॉकी मराठी शाळेचे शिक्षक",
+          "caption": "Teachers",
+          "captionMr": "शिक्षक"
         },
         {
           "src": "/media/IMG-20260412-WA0102.jpg",
           "alt": "Community celebration with flowers",
-          "caption": "Community celebration"
+          "altMr": "फुलांसह समुदाय उत्सव",
+          "caption": "Community celebration",
+          "captionMr": "समुदाय उत्सव"
         },
         {
           "src": "/media/IMG-20260111-WA0029.jpg",
           "alt": "Press clipping about Milwaukee Marathi Shala",
-          "caption": "In the press"
+          "altMr": "मिल्वॉकी मराठी शाळेबद्दल वृत्तपत्र कटिंग",
+          "caption": "In the press",
+          "captionMr": "वृत्तपत्रांत"
         }
       ]
     }

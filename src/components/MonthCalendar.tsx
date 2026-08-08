@@ -2,26 +2,23 @@
 
 import { useMemo, useState } from "react";
 import type { EventItem } from "@/lib/data";
-import { formatEventDate, formatTime } from "@/lib/data";
-
-const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+import {
+  formatEventDate,
+  formatTime,
+  pickLocale,
+} from "@/lib/data";
+import { useI18n } from "@/lib/i18n/LanguageProvider";
 
 type MonthCalendarProps = {
   events: EventItem[];
 };
-
-function monthLabel(year: number, month: number): string {
-  return new Date(year, month, 1).toLocaleDateString("en-US", {
-    month: "long",
-    year: "numeric",
-  });
-}
 
 function toKey(year: number, month: number, day: number): string {
   return `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
 }
 
 export function MonthCalendar({ events }: MonthCalendarProps) {
+  const { t, lang } = useI18n();
   const firstEvent = events[0];
   const initial = firstEvent
     ? new Date(`${firstEvent.date}T12:00:00`)
@@ -30,6 +27,16 @@ export function MonthCalendar({ events }: MonthCalendarProps) {
     year: initial.getFullYear(),
     month: initial.getMonth(),
   });
+
+  const weekdays = [
+    t("calendar.wd0"),
+    t("calendar.wd1"),
+    t("calendar.wd2"),
+    t("calendar.wd3"),
+    t("calendar.wd4"),
+    t("calendar.wd5"),
+    t("calendar.wd6"),
+  ];
 
   const eventsByDate = useMemo(() => {
     const map = new Map<string, EventItem[]>();
@@ -59,6 +66,11 @@ export function MonthCalendar({ events }: MonthCalendarProps) {
     });
   }, [cursor]);
 
+  const monthLabel = new Date(cursor.year, cursor.month, 1).toLocaleDateString(
+    lang === "mr" ? "mr-IN" : "en-US",
+    { month: "long", year: "numeric" },
+  );
+
   const monthEvents = events.filter((event) => {
     const d = new Date(`${event.date}T12:00:00`);
     return d.getFullYear() === cursor.year && d.getMonth() === cursor.month;
@@ -76,9 +88,9 @@ export function MonthCalendar({ events }: MonthCalendarProps) {
             })
           }
         >
-          ← Prev
+          {t("calendar.prev")}
         </button>
-        <h2>{monthLabel(cursor.year, cursor.month)}</h2>
+        <h2>{monthLabel}</h2>
         <button
           type="button"
           onClick={() =>
@@ -88,12 +100,12 @@ export function MonthCalendar({ events }: MonthCalendarProps) {
             })
           }
         >
-          Next →
+          {t("calendar.next")}
         </button>
       </div>
 
-      <div className="calendar-grid" role="grid" aria-label="Month calendar">
-        {WEEKDAYS.map((day) => (
+      <div className="calendar-grid" role="grid" aria-label={t("calendar.aria")}>
+        {weekdays.map((day) => (
           <div key={day} className="calendar-weekday">
             {day}
           </div>
@@ -108,32 +120,37 @@ export function MonthCalendar({ events }: MonthCalendarProps) {
               className={`calendar-cell ${cell.day ? "" : "is-empty"} ${dayEvents.length ? "has-event" : ""}`}
             >
               {cell.day ? <span className="calendar-day">{cell.day}</span> : null}
-              {dayEvents.map((event) => (
-                <span key={event.id} className="calendar-dot" title={event.title}>
-                  {event.title}
-                </span>
-              ))}
+              {dayEvents.map((event) => {
+                const title = pickLocale(lang, event.title, event.titleMr);
+                return (
+                  <span key={event.id} className="calendar-dot" title={title}>
+                    {title}
+                  </span>
+                );
+              })}
             </div>
           );
         })}
       </div>
 
       <div className="calendar-list">
-        <h3>Events this month</h3>
+        <h3>{t("calendar.eventsMonth")}</h3>
         {monthEvents.length === 0 ? (
-          <p className="muted">No events scheduled in this month yet.</p>
+          <p className="muted">{t("calendar.noEvents")}</p>
         ) : (
           <ul>
             {monthEvents.map((event) => (
               <li key={event.id}>
-                <p className="event-date">{formatEventDate(event.date)}</p>
-                <h4>{event.title}</h4>
+                <p className="event-date">{formatEventDate(event.date, lang)}</p>
+                <h4>{pickLocale(lang, event.title, event.titleMr)}</h4>
                 <p>
-                  {formatTime(event.startTime)}
-                  {event.endTime ? ` – ${formatTime(event.endTime)}` : ""} ·{" "}
-                  {event.location}
+                  {formatTime(event.startTime, lang)}
+                  {event.endTime ? ` – ${formatTime(event.endTime, lang)}` : ""} ·{" "}
+                  {pickLocale(lang, event.location, event.locationMr)}
                 </p>
-                <p className="muted">{event.description}</p>
+                <p className="muted">
+                  {pickLocale(lang, event.description, event.descriptionMr)}
+                </p>
               </li>
             ))}
           </ul>
