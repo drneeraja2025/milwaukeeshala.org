@@ -353,6 +353,7 @@ export const mr: Dict = {
   "calendar.lead":
     "शाळा तारखा, एमएमएम समुदाय कार्यक्रम (२०२६ वेळापत्रक) आणि कालनिर्णय महत्त्वाचे सण — संकष्टी अथर्वशीर्ष पठण सहित. सांस्कृतिक आणि सण कार्यक्रम शाळा अभ्यासक्रमाचा भाग आहेत. ICS द्वारे निर्यात करा.",
   "calendar.kalnirnay": "मराठी दिनदर्शिका (कालनिर्णय) →",
+  "calendar.mmmEvents": "एमएमएम कार्यक्रम (mmmilwaukee.org) →",
   "calendar.downloadIcs": "ICS डाउनलोड करा",
   "calendar.prev": "← मागे",
   "calendar.next": "पुढे →",

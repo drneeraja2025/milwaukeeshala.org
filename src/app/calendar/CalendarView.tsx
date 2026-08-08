@@ -29,6 +29,14 @@ export function CalendarView() {
         >
           {t("calendar.kalnirnay")}
         </a>
+        <a
+          className="ics-btn"
+          href="https://www.mmmilwaukee.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {t("calendar.mmmEvents")}
+        </a>
       </div>
       <MonthCalendar events={events} />
     </div>
