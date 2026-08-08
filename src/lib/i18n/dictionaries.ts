@@ -68,6 +68,8 @@ export const en: Dict = {
   "about.press": "In the press",
   "about.pressLead":
     "Local coverage of Milwaukee Marathi Shala and our growing community.",
+  "about.ctaMmm": "About Milwaukee Marathi Mandal",
+  "about.ctaBmm": "BMM Marathi Shala",
   "admissions.title": "Join us for {year}",
   "admissions.lead":
     "New and returning students are welcome. Classes meet Saturdays from 1:00–3:00 PM starting September 5, 2026 at the Hindu Temple of Wisconsin.",
@@ -281,6 +283,8 @@ export const mr: Dict = {
   "about.press": "वृत्तपत्रांत",
   "about.pressLead":
     "मिल्वॉकी मराठी शाळा आणि आमच्या वाढत्या समुदायाबद्दल स्थानिक प्रसिद्धी.",
+  "about.ctaMmm": "महाराष्ट्र मंडळ मिल्वॉकी बद्दल",
+  "about.ctaBmm": "BMM मराठी शाळा",
   "admissions.title": "{year} साठी आमच्यात सामील व्हा",
   "admissions.lead":
     "नवीन आणि परत येणाऱ्या विद्यार्थ्यांचे स्वागत आहे. वर्ग शनिवारी दुपारी १:००–३:०० वाजेपर्यंत, ५ सप्टेंबर २०२६ पासून हिंदू टेम्पल ऑफ विस्कॉन्सिन येथे सुरू होतात.",
