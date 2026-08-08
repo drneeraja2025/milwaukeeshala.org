@@ -1,0 +1,74 @@
+{
+  "albums": [
+    {
+      "id": "annual-program",
+      "title": "Annual Program",
+      "description": "Moments from Milwaukee Marathi Shala’s annual program.",
+      "cover": "/media/IMG-20260531-WA0017.jpg",
+      "photos": [
+        {
+          "src": "/media/IMG-20260531-WA0017.jpg",
+          "alt": "Milwaukee Marathi Shala annual program on stage",
+          "caption": "Annual program"
+        },
+        {
+          "src": "/media/IMG-20260530-WA0015(1).jpg",
+          "alt": "Teachers and program participants",
+          "caption": "Teachers and program"
+        },
+        {
+          "src": "/media/IMG-20260530-WA0016.jpg",
+          "alt": "Speaker at the annual program",
+          "caption": "Program speaker"
+        }
+      ]
+    },
+    {
+      "id": "certificates-exams",
+      "title": "Certificates & Exams",
+      "description": "Recognition and assessment moments for our learners.",
+      "cover": "/media/20260521_171946.jpg",
+      "photos": [
+        {
+          "src": "/media/20260521_171946.jpg",
+          "alt": "Student certificate presentation",
+          "caption": "Certificate celebration"
+        },
+        {
+          "src": "/media/IMG-20260117-WA0003.jpg",
+          "alt": "Students during exam session",
+          "caption": "Exam day"
+        }
+      ]
+    },
+    {
+      "id": "community",
+      "title": "Community & Teachers",
+      "description": "Committee, teachers, and community gatherings.",
+      "cover": "/media/IMG-20260531-WA0004.jpg",
+      "photos": [
+        {
+          "src": "/media/IMG-20260531-WA0004.jpg",
+          "alt": "Milwaukee Marathi Mandal committee",
+          "caption": "MMM committee"
+        },
+        {
+          "src": "/media/IMG-20260412-WA0066(1).jpg",
+          "alt": "Milwaukee Marathi Shala teachers",
+          "caption": "Teachers"
+        },
+        {
+          "src": "/media/IMG-20260412-WA0102.jpg",
+          "alt": "Community celebration with flowers",
+          "caption": "Community celebration"
+        },
+        {
+          "src": "/media/IMG-20260111-WA0029.jpg",
+          "alt": "Press clipping about Milwaukee Marathi Shala",
+          "caption": "In the press"
+        }
+      ]
+    }
+  ],
+  "videos": []
+}

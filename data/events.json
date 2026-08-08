@@ -1,0 +1,29 @@
+[
+  {
+    "id": "teacher-staff-meeting-2026-08-22",
+    "title": "Teacher & Staff Meeting",
+    "date": "2026-08-22",
+    "startTime": "14:00",
+    "endTime": "15:30",
+    "location": "Hindu Temple of Wisconsin (HTW)",
+    "description": "Planning meeting for teachers and staff ahead of the 2026–27 school year."
+  },
+  {
+    "id": "all-school-meeting-2026-08-29",
+    "title": "All-School Meeting",
+    "date": "2026-08-29",
+    "startTime": "16:00",
+    "endTime": "17:30",
+    "location": "Hindu Temple of Wisconsin (HTW)",
+    "description": "Welcome meeting for families, students, and volunteers before classes begin."
+  },
+  {
+    "id": "classes-begin-2026-09-05",
+    "title": "Classes Begin",
+    "date": "2026-09-05",
+    "startTime": "13:00",
+    "endTime": "15:00",
+    "location": "Hindu Temple of Wisconsin (HTW)",
+    "description": "First day of Milwaukee Marathi Shala classes for the 2026–27 school year. Saturdays 1:00–3:00 PM."
+  }
+]

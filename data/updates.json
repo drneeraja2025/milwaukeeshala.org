@@ -1,0 +1,30 @@
+[
+  {
+    "id": "new-website",
+    "date": "2026-08-07",
+    "title": "New website: milwaukeeshala.org",
+    "summary": "Milwaukee Marathi Shala now has a dedicated public website at milwaukeeshala.org for news, admissions, calendar, and photos.",
+    "body": "We are excited to launch milwaukeeshala.org as the school’s home on the web. Families can find admissions details, upcoming dates, news, and photo albums in one place."
+  },
+  {
+    "id": "guruvidyazen-migration",
+    "date": "2026-08-07",
+    "title": "Migrating to GuruVidyaZen SISLMS",
+    "summary": "Student and family portal access is moving to GuruVidyaZen SISLMS for a smoother school experience.",
+    "body": "Milwaukee Marathi Shala is migrating to the GuruVidyaZen SISLMS student information system. Families will use the Student Portal for school access going forward."
+  },
+  {
+    "id": "bmm-books-ordered",
+    "date": "2026-08-06",
+    "title": "BMM books ordered",
+    "summary": "Curriculum books through Bharatiya Marathi Mandal (BMM) have been ordered for the 2026–27 year.",
+    "body": "Books aligned with the BMM Marathi Shala curriculum have been ordered so classes can start the year with the materials students need."
+  },
+  {
+    "id": "google-workspace",
+    "date": "2026-08-05",
+    "title": "Google Education Workspace signed up",
+    "summary": "The school has signed up for Google Education Workspace to support classroom communication and learning tools.",
+    "body": "Milwaukee Marathi Shala has enrolled in Google Education Workspace. This supports teacher collaboration, classroom communication, and digital learning for our community."
+  }
+]

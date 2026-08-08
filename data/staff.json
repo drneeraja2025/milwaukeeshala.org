@@ -1,0 +1,27 @@
+{
+  "contacts": [
+    {
+      "name": "Dr. Neeraj Agrawal",
+      "role": "School contact",
+      "phone": "262-352-1845",
+      "email": null
+    },
+    {
+      "name": "Sachin Kende",
+      "role": "School contact",
+      "phone": "262-225-2817",
+      "email": null
+    },
+    {
+      "name": "Ashish Ingole",
+      "role": "School contact",
+      "phone": "603-814-0335",
+      "email": null
+    }
+  ],
+  "staff": [],
+  "notes": [
+    "Full staff profiles coming soon.",
+    "Certified Avant Assessment proctors are on staff."
+  ]
+}
