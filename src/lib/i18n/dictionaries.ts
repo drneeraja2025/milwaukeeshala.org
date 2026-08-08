@@ -8,6 +8,7 @@ export const en: Dict = {
   "nav.admissions": "Admissions",
   "nav.staff": "Staff",
   "nav.programs": "Programs",
+  "nav.biliteracy": "Biliteracy",
   "nav.calendar": "Calendar",
   "nav.news": "News",
   "nav.photos": "Photos",
@@ -20,6 +21,8 @@ export const en: Dict = {
   "cta.downloadFlyer": "Download flyer",
   "cta.menu": "Menu",
   "cta.avant": "Learn about Avant / BMM",
+  "cta.bmm": "BMM Marathi Shala",
+  "cta.biliteracy": "Seal of Biliteracy pathway",
   "footer.explore": "Explore",
   "footer.connect": "Connect",
   "footer.legal": "Legal",
@@ -52,6 +55,8 @@ export const en: Dict = {
     "Milwaukee Marathi Shala is a community language school organized with",
   "about.mmmMid": "and aligned with the",
   "about.mmmAfter": "curriculum.",
+  "about.founded":
+    "Founded in 2025 by Mr. Praful Patil and Dr. Neeraj Agrawal.",
   "about.mmmBody2":
     "Our mission is to help children build confidence in Marathi speaking, reading, and writing while celebrating the culture that connects our families across Greater Milwaukee.",
   "about.glance": "At a glance",
@@ -85,7 +90,7 @@ export const en: Dict = {
   "programs.eyebrow": "Programs",
   "programs.title": "Language learning with a path forward",
   "programs.lead":
-    "Our Saturday classes build Marathi skills for ages 5–14. Students interested in college credit can pursue Avant Assessment in 11th grade with support from certified proctors on staff.",
+    "Our Saturday classes build Marathi skills for ages 5–14. Cultural festivals are part of the curriculum, and students can pursue the Seal of Biliteracy through Avant Assessment and BMM.",
   "programs.classroom": "Classroom program",
   "programs.p1":
     "Age-appropriate Marathi speaking, reading, and writing aligned with the BMM Marathi Shala curriculum.",
@@ -93,17 +98,44 @@ export const en: Dict = {
     "Community learning on Saturdays at {location}, 1:00–3:00 PM.",
   "programs.p3":
     "Cultural connection through songs, stories, celebrations, and family involvement.",
-  "programs.avant": "Avant Assessment",
+  "programs.p4":
+    "Cultural and festival events are part of Shala curriculum (dates follow the Marathi Kalnirnay calendar).",
+  "programs.avant": "Seal of Biliteracy & Avant",
   "programs.a1":
-    "Milwaukee Marathi Shala is not a Seal of Biliteracy Avant-certified program.",
+    "Students of Milwaukee Marathi Shala can get a Seal of Biliteracy Avant-certified program now. Contact a staff member for more details.",
   "programs.a2":
-    "Students can still take the Avant exam in 11th grade as a pathway toward college credit.",
+    "Through the BMM–Avant pathway, learners can take STAMP assessments that support the Global Seal of Biliteracy and college-credit options.",
   "programs.a3":
     "Certified Avant Assessment proctors are on staff to help families navigate testing.",
+  "biliteracy.eyebrow": "Avant · BMM",
+  "biliteracy.title": "Seal of Biliteracy pathway",
+  "biliteracy.lead":
+    "How Milwaukee Marathi Shala students can earn biliteracy recognition and work toward college credit through Avant Assessment and BMM.",
+  "biliteracy.highlight":
+    "Students of Milwaukee Marathi Shala can get a Seal of Biliteracy Avant-certified program now.",
+  "biliteracy.contactStaff":
+    "Contact a staff member for eligibility, testing dates, and next steps.",
+  "biliteracy.howTitle": "How the Biliteracy batch works",
+  "biliteracy.how1":
+    "Milwaukee Marathi Shala follows the BMM Marathi Shala curriculum and partners with the Avant Assessment pathway used by BMM schools.",
+  "biliteracy.how2":
+    "Students prepare in Shala classes, then may take the Avant STAMP language assessment (discounted pricing is available for BMM Marathi Shala students).",
+  "biliteracy.how3":
+    "Strong STAMP results can support a Global Seal of Biliteracy — official recognition of bilingual proficiency.",
+  "biliteracy.how4":
+    "Certified Avant Assessment proctors on our staff help families schedule and complete testing.",
+  "biliteracy.creditTitle": "How this helps with college credit",
+  "biliteracy.credit1":
+    "Avant STAMP scores can be used toward college credit recommendations through the American Council on Education (ACE), depending on the college or university.",
+  "biliteracy.credit2":
+    "Many high schools and colleges recognize Seal of Biliteracy / STAMP results for world-language placement or credit — always confirm with your school counselor and intended college.",
+  "biliteracy.credit3":
+    "Start early: build Marathi proficiency in Shala, then ask staff about the Biliteracy batch timeline (often aligned with later grades such as 11th grade testing windows).",
   "calendar.eyebrow": "Schedule",
   "calendar.title": "School calendar",
   "calendar.lead":
-    "Key dates for teachers, families, and the start of Saturday classes. Export events to your own calendar with ICS.",
+    "School meetings, class start dates, and Marathi festival observances from the Kalnirnay calendar. Cultural and festival events are part of Shala curriculum. Export with ICS.",
+  "calendar.kalnirnay": "Marathi calendar (Kalnirnay) →",
   "calendar.downloadIcs": "Download ICS",
   "calendar.prev": "← Prev",
   "calendar.next": "Next →",
@@ -184,6 +216,7 @@ export const mr: Dict = {
   "nav.admissions": "प्रवेश",
   "nav.staff": "कर्मचारी",
   "nav.programs": "कार्यक्रम",
+  "nav.biliteracy": "द्विभाषिकता",
   "nav.calendar": "दिनदर्शिका",
   "nav.news": "बातम्या",
   "nav.photos": "छायाचित्रे",
@@ -196,6 +229,8 @@ export const mr: Dict = {
   "cta.downloadFlyer": "फलक डाउनलोड करा",
   "cta.menu": "मेनू",
   "cta.avant": "Avant / BMM बद्दल जाणून घ्या",
+  "cta.bmm": "BMM मराठी शाळा",
+  "cta.biliteracy": "Seal of Biliteracy मार्ग",
   "footer.explore": "शोधा",
   "footer.connect": "संपर्क",
   "footer.legal": "कायदेशीर",
@@ -228,6 +263,8 @@ export const mr: Dict = {
     "मिल्वॉकी मराठी शाळा ही",
   "about.mmmMid": "सोबत आयोजित सामुदायिक भाषा शाळा आहे आणि",
   "about.mmmAfter": "अभ्यासक्रमाशी सुसंगत आहे.",
+  "about.founded":
+    "२०२५ मध्ये श्री. प्रफुल पाटील आणि डॉ. नीरज अग्रवाल यांनी स्थापन केली.",
   "about.mmmBody2":
     "आमचे उद्दिष्ट मुलांना मराठी बोलणे, वाचन आणि लेखनात आत्मविश्वास देणे आणि ग्रेटेर मिल्वॉकीतील कुटुंबांना जोडणाऱ्या संस्कृतीचा उत्सव करणे आहे.",
   "about.glance": "एका नजरेत",
@@ -261,7 +298,7 @@ export const mr: Dict = {
   "programs.eyebrow": "कार्यक्रम",
   "programs.title": "पुढची वाट मोकळी करणारे भाषा शिक्षण",
   "programs.lead":
-    "आमचे शनिवारचे वर्ग ५–१४ वयोगटासाठी मराठी कौशल्ये वाढवतात. महाविद्यालयीन क्रेडिटसाठी इच्छुक विद्यार्थी ११वीत Avant Assessment घेऊ शकतात; प्रमाणित परीक्षक कर्मचारी आहेत.",
+    "आमचे शनिवारचे वर्ग ५–१४ वयोगटासाठी मराठी कौशल्ये वाढवतात. सांस्कृतिक सण अभ्यासक्रमाचा भाग आहेत, आणि विद्यार्थी Avant Assessment व BMM द्वारे Seal of Biliteracy मिळवू शकतात.",
   "programs.classroom": "वर्ग कार्यक्रम",
   "programs.p1":
     "BMM मराठी शाळा अभ्यासक्रमानुसार वयानुसार मराठी बोलणे, वाचन आणि लेखन.",
@@ -269,17 +306,44 @@ export const mr: Dict = {
     "{location} येथे शनिवारी दुपारी १:००–३:०० वाजेपर्यंत सामुदायिक शिक्षण.",
   "programs.p3":
     "गाणी, कथा, उत्सव आणि कुटुंबाच्या सहभागाद्वारे सांस्कृतिक जोड.",
-  "programs.avant": "Avant Assessment",
+  "programs.p4":
+    "सांस्कृतिक आणि सण कार्यक्रम शाळा अभ्यासक्रमाचा भाग आहेत (तारखा मराठी कालनिर्णय दिनदर्शिकेनुसार).",
+  "programs.avant": "Seal of Biliteracy आणि Avant",
   "programs.a1":
-    "मिल्वॉकी मराठी शाळा Seal of Biliteracy Avant-प्रमाणित कार्यक्रम नाही.",
+    "मिल्वॉकी मराठी शाळेचे विद्यार्थी आता Seal of Biliteracy Avant-प्रमाणित कार्यक्रम घेऊ शकतात. अधिक तपशीलासाठी कर्मचाऱ्यांशी संपर्क साधा.",
   "programs.a2":
-    "विद्यार्थी तरीही ११वीत Avant परीक्षा देऊन महाविद्यालयीन क्रेडिटचा मार्ग अवलंबू शकतात.",
+    "BMM–Avant मार्गाद्वारे विद्यार्थी STAMP चाचण्या देऊ शकतात, ज्या Global Seal of Biliteracy आणि महाविद्यालयीन क्रेडिट पर्यायांना समर्थन देतात.",
   "programs.a3":
     "कुटुंबांना चाचणी समजून घेण्यासाठी प्रमाणित Avant Assessment परीक्षक कर्मचारी आहेत.",
+  "biliteracy.eyebrow": "Avant · BMM",
+  "biliteracy.title": "Seal of Biliteracy मार्ग",
+  "biliteracy.lead":
+    "Avant Assessment आणि BMM द्वारे मिल्वॉकी मराठी शाळेचे विद्यार्थी द्विभाषिकता मान्यता आणि महाविद्यालयीन क्रेडिट कसे मिळवू शकतात.",
+  "biliteracy.highlight":
+    "मिल्वॉकी मराठी शाळेचे विद्यार्थी आता Seal of Biliteracy Avant-प्रमाणित कार्यक्रम घेऊ शकतात.",
+  "biliteracy.contactStaff":
+    "पात्रता, चाचणी तारखा आणि पुढील पावलांसाठी कर्मचाऱ्यांशी संपर्क साधा.",
+  "biliteracy.howTitle": "Biliteracy बॅच कसे काम करते",
+  "biliteracy.how1":
+    "मिल्वॉकी मराठी शाळा BMM मराठी शाळा अभ्यासक्रम पाळते आणि BMM शाळांनी वापरलेल्या Avant Assessment मार्गाशी जोडलेली आहे.",
+  "biliteracy.how2":
+    "विद्यार्थी शाळेत तयारी करतात, नंतर Avant STAMP भाषा चाचणी देऊ शकतात (BMM मराठी शाळा विद्यार्थ्यांसाठी सवलतीचे दर उपलब्ध).",
+  "biliteracy.how3":
+    "चांगल्या STAMP निकालांमुळे Global Seal of Biliteracy — द्विभाषिक प्रावीण्याची अधिकृत मान्यता — मिळू शकते.",
+  "biliteracy.how4":
+    "आमच्या कर्मचाऱ्यांतील प्रमाणित Avant Assessment परीक्षक कुटुंबांना चाचणी नियोजन आणि पूर्ण करण्यात मदत करतात.",
+  "biliteracy.creditTitle": "महाविद्यालयीन क्रेडिटमध्ये कशी मदत होते",
+  "biliteracy.credit1":
+    "Avant STAMP गुण American Council on Education (ACE) द्वारे महाविद्यालयीन क्रेडिट शिफारशींसाठी वापरले जाऊ शकतात — महाविद्यालयानुसार.",
+  "biliteracy.credit2":
+    "अनेक हायस्कूल आणि महाविद्यालये Seal of Biliteracy / STAMP निकाल जागतिक भाषा प्लेसमेंट किंवा क्रेडिटसाठी मान्य करतात — नेहमी तुमच्या शाळा सल्लागार आणि इच्छित महाविद्यालयाशी खातरजमा करा.",
+  "biliteracy.credit3":
+    "लवकर सुरू करा: शाळेत मराठी प्रावीण्य वाढवा, नंतर Biliteracy बॅच वेळापत्रकाबद्दल कर्मचाऱ्यांना विचारा (बहुतेकदा नंतरच्या इयत्तांतील चाचणी खिडक्यांशी जुळते).",
   "calendar.eyebrow": "वेळापत्रक",
   "calendar.title": "शाळेची दिनदर्शिका",
   "calendar.lead":
-    "शिक्षक, कुटुंबे आणि शनिवारच्या वर्गांच्या सुरुवातीच्या महत्त्वाच्या तारखा. ICS द्वारे तुमच्या दिनदर्शिकेत निर्यात करा.",
+    "शाळा बैठका, वर्ग सुरू होण्याच्या तारखा आणि कालनिर्णय मराठी सण. सांस्कृतिक आणि सण कार्यक्रम शाळा अभ्यासक्रमाचा भाग आहेत. ICS द्वारे निर्यात करा.",
+  "calendar.kalnirnay": "मराठी दिनदर्शिका (कालनिर्णय) →",
   "calendar.downloadIcs": "ICS डाउनलोड करा",
   "calendar.prev": "← मागे",
   "calendar.next": "पुढे →",

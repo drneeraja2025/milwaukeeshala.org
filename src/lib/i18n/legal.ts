@@ -125,7 +125,7 @@ function terms(lang: Lang): LegalBlock[] {
       { type: "h2", text: "संकेतस्थळाचा उद्देश" },
       {
         type: "p",
-        text: "हे संकेतस्थळ मिल्वॉकी मराठी शाळेबद्दल सार्वजनिक माहिती प्रकाशित करते (प्रवेश, दिनदर्शिका, बातम्या, छायाचित्रे आणि संबंधित समुदाय माहिती). हे मान्यताप्राप्त Seal of Biliteracy कार्यक्रम पृष्ठ नाही आणि अधिकृत शाळा किंवा सरकारी मार्गदर्शनाची जागा घेत नाही.",
+        text: "हे संकेतस्थळ मिल्वॉकी मराठी शाळेबद्दल सार्वजनिक माहिती प्रकाशित करते (प्रवेश, दिनदर्शिका, बातम्या, छायाचित्रे आणि संबंधित समुदाय माहिती). हे अधिकृत शाळा किंवा सरकारी मार्गदर्शनाची जागा घेत नाही. Seal of Biliteracy / Avant तपशील संबंधित पृष्ठावर आणि कर्मचाऱ्यांकडे आहेत.",
       },
       { type: "h2", text: "शाळा विरुद्ध सॉफ्टवेअर" },
       {
@@ -175,7 +175,7 @@ function terms(lang: Lang): LegalBlock[] {
     { type: "h2", text: "Purpose of the site" },
     {
       type: "p",
-      text: "This site publishes public information about Milwaukee Marathi Shala (admissions, calendar, news, photos, and related community information). It is not an accredited Seal of Biliteracy program page and does not replace official school or government guidance.",
+      text: "This site publishes public information about Milwaukee Marathi Shala (admissions, calendar, news, photos, and related community information). It does not replace official school or government guidance. Seal of Biliteracy / Avant details are on the Biliteracy page and with school staff.",
     },
     { type: "h2", text: "School vs software" },
     {
@@ -227,7 +227,7 @@ function disclaimer(lang: Lang): LegalBlock[] {
       { type: "h2", text: "शैक्षणिक हमी नाहीत" },
       {
         type: "p",
-        text: "मिल्वॉकी मराठी शाळा Seal of Biliteracy Avant-प्रमाणित कार्यक्रम नाही. Avant Assessment चा उल्लेख संभाव्य मार्ग (नंतरच्या इयत्तांमध्ये घेतल्या जाणाऱ्या परीक्षा सहित) वर्णन करतो आणि महाविद्यालयीन क्रेडिट, प्रमाणपत्र किंवा निकालांची हमी देत नाही. कुटुंबांनी शाळा आणि Avant / BMM स्त्रोतांकडे आवश्यकता तपासाव्यात.",
+        text: "मिल्वॉकी मराठी शाळेचे विद्यार्थी Avant Assessment आणि BMM मार्गातून Seal of Biliteracy कार्यक्रम घेऊ शकतात. Avant / STAMP निकाल, Seal of Biliteracy किंवा महाविद्यालयीन क्रेडिटची हमी या संकेतस्थळावर दिली जात नाही — पात्रता आणि निकाल शाळा, Avant / BMM आणि महाविद्यालयांच्या धोरणांनुसार बदलतात. तपशीलासाठी कर्मचाऱ्यांशी संपर्क साधा आणि Avant / BMM स्त्रोत तपासा.",
       },
       { type: "h2", text: "Saaniya Software LLC" },
       {
@@ -274,7 +274,7 @@ function disclaimer(lang: Lang): LegalBlock[] {
     { type: "h2", text: "No educational warranties" },
     {
       type: "p",
-      text: "Milwaukee Marathi Shala is not a Seal of Biliteracy Avant-certified program. Mentions of Avant Assessment describe a possible pathway (including exams often taken in later grades) and do not guarantee college credit, certification, or outcomes. Families should verify requirements with schools and Avant / BMM resources.",
+      text: "Milwaukee Marathi Shala students can pursue a Seal of Biliteracy Avant-certified pathway through Avant Assessment and BMM. This website does not guarantee STAMP scores, a Seal of Biliteracy, or college credit — eligibility and outcomes depend on school, Avant / BMM, and college policies. Contact staff for details and verify requirements with Avant / BMM resources.",
     },
     { type: "h2", text: "Saaniya Software LLC" },
     {

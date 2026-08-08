@@ -43,6 +43,7 @@ export function AboutView() {
             </a>{" "}
             {t("about.mmmAfter")}
           </p>
+          <p>{t("about.founded")}</p>
           <p>{t("about.mmmBody2")}</p>
         </div>
 

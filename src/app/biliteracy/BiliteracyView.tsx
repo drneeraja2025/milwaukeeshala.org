@@ -6,39 +6,40 @@ import { PageHero } from "@/components/PageHero";
 import { useI18n } from "@/lib/i18n/LanguageProvider";
 import { site } from "@/lib/site";
 
-export function ProgramsView() {
+export function BiliteracyView() {
   const { t } = useI18n();
 
   return (
     <div className="page-shell">
       <PageHero
-        eyebrow={t("programs.eyebrow")}
-        title={t("programs.title")}
-        lead={t("programs.lead")}
+        eyebrow={t("biliteracy.eyebrow")}
+        title={t("biliteracy.title")}
+        lead={t("biliteracy.lead")}
       />
 
       <div className="split">
         <div className="content-panel">
-          <h2>{t("programs.classroom")}</h2>
+          <p className="biliteracy-highlight">{t("biliteracy.highlight")}</p>
+          <p>{t("biliteracy.contactStaff")}</p>
+
+          <h2 style={{ marginTop: "1.75rem" }}>{t("biliteracy.howTitle")}</h2>
           <ul className="program-points">
-            <li>{t("programs.p1")}</li>
-            <li>{t("programs.p2", { location: t("site.location") })}</li>
-            <li>{t("programs.p3")}</li>
-            <li>{t("programs.p4")}</li>
+            <li>{t("biliteracy.how1")}</li>
+            <li>{t("biliteracy.how2")}</li>
+            <li>{t("biliteracy.how3")}</li>
+            <li>{t("biliteracy.how4")}</li>
           </ul>
 
-          <h2 style={{ marginTop: "1.75rem" }}>{t("programs.avant")}</h2>
+          <h2 style={{ marginTop: "1.75rem" }}>{t("biliteracy.creditTitle")}</h2>
           <ul className="program-points">
-            <li>{t("programs.a1")}</li>
-            <li>{t("programs.a2")}</li>
-            <li>{t("programs.a3")}</li>
+            <li>{t("biliteracy.credit1")}</li>
+            <li>{t("biliteracy.credit2")}</li>
+            <li>{t("biliteracy.credit3")}</li>
           </ul>
+
           <div className="cta-row" style={{ marginTop: "1.25rem" }}>
-            <Link className="btn btn-navy" href={site.biliteracyPath}>
-              {t("cta.biliteracy")}
-            </Link>
             <a
-              className="btn btn-secondary"
+              className="btn btn-navy"
               href={site.avantUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -46,13 +47,19 @@ export function ProgramsView() {
               {t("cta.avant")}
             </a>
             <a
-              className="btn btn-ghost"
-              href={site.kalnirnayUrl}
+              className="btn btn-secondary"
+              href={site.bmmShalaUrl}
               target="_blank"
               rel="noopener noreferrer"
             >
-              {t("calendar.kalnirnay")}
+              {t("cta.bmm")}
             </a>
+            <Link className="btn btn-ghost" href="/staff">
+              {t("nav.staff")}
+            </Link>
+            <Link className="btn btn-ghost" href="/contact">
+              {t("nav.contact")}
+            </Link>
           </div>
         </div>
 
