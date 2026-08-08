@@ -215,6 +215,14 @@ img {
   color: white;
 }
 
+.about-hero {
+  min-height: min(78vh, 720px);
+}
+
+.about-hero .hero-lead {
+  max-width: 38rem;
+}
+
 .hero-media {
   position: absolute;
   inset: 0;
