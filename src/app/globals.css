@@ -494,6 +494,43 @@ img {
   box-shadow: var(--shadow);
 }
 
+.admissions-qr {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, #fffef8 0%, #fff7d6 100%);
+}
+
+.admissions-qr img {
+  flex-shrink: 0;
+  width: 7.5rem;
+  height: 7.5rem;
+  border-radius: 0.5rem;
+  background: #fff;
+}
+
+.admissions-qr h3 {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-display), sans-serif;
+  color: var(--navy);
+  font-size: 1.15rem;
+}
+
+.admissions-qr p {
+  margin: 0;
+}
+
+@media (max-width: 560px) {
+  .admissions-qr {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
 .flyer-preview img {
   width: 100%;
   height: auto;

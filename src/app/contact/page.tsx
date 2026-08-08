@@ -27,8 +27,16 @@ export default function ContactPage() {
             <a href={`mailto:${site.email}`}>{site.email}</a>
           </p>
           <p className="muted">
-            Prefer a ready-made admissions note?{" "}
-            <a href={site.admissionsMailto}>Start an admissions email</a>.
+            Ready to apply?{" "}
+            <a
+              href={site.admissionsFormUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open the admissions form
+            </a>
+            , or email{" "}
+            <a href={site.admissionsMailto}>{site.email}</a> with questions.
           </p>
 
           <h2 style={{ marginTop: "1.75rem" }}>Phone contacts</h2>
@@ -63,10 +71,11 @@ export default function ContactPage() {
               </li>
             ))}
           </ul>
-          <h2 style={{ marginTop: "1.75rem" }}>Student Portal</h2>
+          <h2 style={{ marginTop: "1.75rem" }}>{site.portalLabel}</h2>
           <p>
+            School-wide login for Milwaukee Marathi Shala on GuruVidyaZen SISLMS.{" "}
             <a href={site.portalUrl} target="_blank" rel="noopener noreferrer">
-              GuruVidyaZen SISLMS
+              Open {site.portalLabel}
             </a>
           </p>
         </div>

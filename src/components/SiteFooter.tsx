@@ -42,7 +42,13 @@ export function SiteFooter() {
                 <a href={`mailto:${site.email}`}>{site.email}</a>
               </li>
               <li>
-                <a href={site.admissionsMailto}>Admissions</a>
+                <a
+                  href={site.admissionsFormUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Admissions form
+                </a>
               </li>
               <li>
                 <a
@@ -50,7 +56,7 @@ export function SiteFooter() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  GuruVidyaZen SISLMS Portal
+                  {site.portalLabel}
                 </a>
               </li>
               {site.parents.map((parent) => (

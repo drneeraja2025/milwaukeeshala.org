@@ -38,7 +38,12 @@ export default function HomePage() {
             Saturday Marathi community at {site.location}.
           </p>
           <div className="cta-row">
-            <a className="btn btn-primary" href={site.admissionsMailto}>
+            <a
+              className="btn btn-primary"
+              href={site.admissionsFormUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Apply for Admissions
             </a>
             <a
@@ -47,7 +52,7 @@ export default function HomePage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Student Portal
+              {site.portalLabel}
             </a>
           </div>
         </div>

@@ -48,15 +48,37 @@ export default function AdmissionsPage() {
             </li>
           </ul>
           <div className="cta-row" style={{ marginTop: "1.25rem" }}>
-            <a className="btn btn-primary" href={site.admissionsMailto}>
-              Email to apply
+            <a
+              className="btn btn-primary"
+              href={site.admissionsFormUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open admissions form
             </a>
             <a className="btn btn-ghost" href="/media/MMS2026-27flyer.jpg" download>
               Download flyer
             </a>
           </div>
+
+          <div className="admissions-qr">
+            <Image
+              src="/media/admissions-qr.png"
+              alt="QR code to Milwaukee Marathi Shala admissions Google Form"
+              width={180}
+              height={180}
+            />
+            <div>
+              <h3>Scan to apply</h3>
+              <p className="muted">
+                Point your phone camera at this QR code to open the admissions
+                form, or use the button above.
+              </p>
+            </div>
+          </div>
+
           <p className="muted" style={{ marginTop: "1rem" }}>
-            Send admissions questions to{" "}
+            Questions? Email{" "}
             <a href={`mailto:${site.email}`}>{site.email}</a>.
           </p>
         </div>

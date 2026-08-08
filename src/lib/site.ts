@@ -5,6 +5,9 @@ export const site = {
   email: "mmm.marathishala@gmail.com",
   domain: "milwaukeeshala.org",
   portalUrl: "https://sislms.guruvidyazen.nasneeraj.com/auth",
+  portalLabel: "SISLMS",
+  admissionsFormUrl:
+    "https://docs.google.com/forms/d/19Tjlej2LXYiH7Kuwv9YBcL23wvzu3LWRcDzTRh0_ggE/viewform",
   admissionsMailto: "mailto:mmm.marathishala@gmail.com?subject=Milwaukee%20Marathi%20Shala%20Admissions%202026-27",
   parents: [
     {

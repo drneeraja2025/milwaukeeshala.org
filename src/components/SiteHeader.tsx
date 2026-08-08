@@ -68,7 +68,7 @@ export function SiteHeader() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Student Portal
+            {site.portalLabel}
           </a>
         </nav>
       </div>

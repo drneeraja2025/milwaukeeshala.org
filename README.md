@@ -43,5 +43,6 @@ Do **not** change Squarespace nameservers to Vercel unless you intend to move DN
 
 ## Important links
 
-- Student Portal: https://sislms.guruvidyazen.nasneeraj.com/auth
+- SISLMS: https://sislms.guruvidyazen.nasneeraj.com/auth
+- Admissions form: https://docs.google.com/forms/d/19Tjlej2LXYiH7Kuwv9YBcL23wvzu3LWRcDzTRh0_ggE/viewform
 - Admissions email: mmm.marathishala@gmail.com
