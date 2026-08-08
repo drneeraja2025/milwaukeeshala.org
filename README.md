@@ -17,19 +17,29 @@ npm run dev
 
 ## Deploy
 
-Vercel team: `nas25`  
-Domain: `milwaukeeshala.org` (DNS configured later at Squarespace)
+- Vercel team: `nas25` (`team_lHXh86Jypc6v6Hnt9vJgsH9A`)
+- Vercel project: `milwaukeeshala-org`
+- Production URL: https://milwaukeeshala-org.vercel.app
+- GitHub: https://github.com/drneeraja2025/milwaukeeshala.org
 
-### Squarespace DNS (after Vercel domain is attached)
+Domains `milwaukeeshala.org` and `www.milwaukeeshala.org` are attached on Vercel. Keep Squarespace nameservers; only update DNS records.
 
-Point the apex and www to Vercel using the records shown in the Vercel domain settings. Typical values:
+### Squarespace DNS records (recommended by Vercel)
+
+| Host | Type | Value |
+|------|------|-------|
+| `@` | A | `216.150.1.1` |
+| `@` | A | `216.150.16.1` |
+| `www` | CNAME | `dc3ccac0eb87bf52.vercel-dns-016.com` |
+
+### Alternate (still accepted by Vercel)
 
 | Host | Type | Value |
 |------|------|-------|
 | `@` | A | `76.76.21.21` |
 | `www` | CNAME | `cname.vercel-dns.com` |
 
-Confirm exact values in the Vercel project → Settings → Domains.
+Do **not** change Squarespace nameservers to Vercel unless you intend to move DNS hosting entirely.
 
 ## Important links
 
