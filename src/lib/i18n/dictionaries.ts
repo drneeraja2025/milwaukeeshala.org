@@ -138,8 +138,9 @@ export const en: Dict = {
   "calendar.eyebrow": "Schedule",
   "calendar.title": "School calendar",
   "calendar.lead":
-    "School meetings, class start dates, and Marathi festival observances from the Kalnirnay calendar. Cultural and festival events are part of Shala curriculum. Export with ICS.",
+    "Shala dates, MMM community events (2026 schedule), and important Marathi festivals from Kalnirnay — including Sankashti Atharvashirsha Pathan. Cultural and festival events are part of Shala curriculum. Export with ICS.",
   "calendar.kalnirnay": "Marathi calendar (Kalnirnay) →",
+  "calendar.mmmEvents": "MMM events (mmmilwaukee.org) →",
   "calendar.downloadIcs": "Download ICS",
   "calendar.prev": "← Prev",
   "calendar.next": "Next →",
@@ -350,7 +351,7 @@ export const mr: Dict = {
   "calendar.eyebrow": "वेळापत्रक",
   "calendar.title": "शाळेची दिनदर्शिका",
   "calendar.lead":
-    "शाळा बैठका, वर्ग सुरू होण्याच्या तारखा आणि कालनिर्णय मराठी सण. सांस्कृतिक आणि सण कार्यक्रम शाळा अभ्यासक्रमाचा भाग आहेत. ICS द्वारे निर्यात करा.",
+    "शाळा तारखा, एमएमएम समुदाय कार्यक्रम (२०२६ वेळापत्रक) आणि कालनिर्णय महत्त्वाचे सण — संकष्टी अथर्वशीर्ष पठण सहित. सांस्कृतिक आणि सण कार्यक्रम शाळा अभ्यासक्रमाचा भाग आहेत. ICS द्वारे निर्यात करा.",
   "calendar.kalnirnay": "मराठी दिनदर्शिका (कालनिर्णय) →",
   "calendar.downloadIcs": "ICS डाउनलोड करा",
   "calendar.prev": "← मागे",
