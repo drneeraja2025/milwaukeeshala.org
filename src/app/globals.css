@@ -1018,3 +1018,17 @@ html[lang="mr"] body,
   line-height: 1.5;
   margin: 0 0 0.75rem;
 }
+
+.staff-photo-placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(145deg, #0b1f4d 0%, #1a3a7a 55%, #f5c518 160%);
+  color: #fff;
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}

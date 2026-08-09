@@ -2,56 +2,133 @@
   "contacts": [
     {
       "name": "Dr. Neeraj Agrawal",
-      "role": "School contact",
-      "roleMr": "शाळा संपर्क",
+      "role": "Teacher and School Director",
+      "roleMr": "शिक्षक आणि शाळा संचालक",
       "phone": "262-352-1845",
       "email": null
     },
     {
-      "name": "Sachin Kende",
-      "role": "School contact",
-      "roleMr": "शाळा संपर्क",
+      "name": "Sachin Kendale",
+      "role": "School Management Committee · MMM President",
+      "roleMr": "शाळा व्यवस्थापन समिती · एमएमएम अध्यक्ष",
       "phone": "262-225-2817",
       "email": null
     },
     {
       "name": "Ashish Ingole",
-      "role": "School contact",
-      "roleMr": "शाळा संपर्क",
+      "role": "School Management Committee",
+      "roleMr": "शाळा व्यवस्थापन समिती",
       "phone": "603-814-0335",
       "email": null
     }
   ],
   "people": [
     {
-      "id": "placeholder-1",
-      "name": "Teaching team",
-      "nameMr": "शिक्षक संघ",
-      "role": "Teachers & volunteers",
-      "roleMr": "शिक्षक आणि स्वयंसेवक",
-      "bio": "Profiles with individual names and photos will be published here soon. Milwaukee Marathi Shala is staffed by community teachers and volunteers.",
-      "bioMr": "वैयक्तिक नावे आणि छायाचित्रे लवकरच येथे प्रकाशित केली जातील. मिल्वॉकी मराठी शाळेत समुदायातील शिक्षक आणि स्वयंसेवक कार्यरत आहेत.",
-      "photo": "/media/IMG-20260412-WA0066(1).jpg",
+      "id": "neeraj-agrawal",
+      "name": "Dr. Neeraj Agrawal",
+      "nameMr": "डॉ. नीरज अग्रवाल",
+      "role": "Teacher and School Director",
+      "roleMr": "शिक्षक आणि शाळा संचालक",
+      "bio": "Photo and short bio coming soon.",
+      "bioMr": "छायाचित्र आणि लहान जीवनवृत्त लवकरच.",
+      "photo": null,
       "order": 1
     },
     {
-      "id": "placeholder-2",
-      "name": "MMM committee partners",
-      "nameMr": "एमएमएम समिती भागीदार",
-      "role": "Community leadership",
-      "roleMr": "समुदाय नेतृत्व",
-      "bio": "Maharashtra Mandal Milwaukee partners with the school. Individual committee bios coming soon.",
-      "bioMr": "महाराष्ट्र मंडळ मिल्वॉकी शाळेशी भागीदारी करते. समितीची वैयक्तिक माहिती लवकरच.",
-      "photo": "/media/IMG-20260531-WA0004.jpg",
+      "id": "sayali-borker-hede",
+      "name": "Sayali Borker Hede",
+      "nameMr": "सायली बोरकर हेडे",
+      "role": "Teacher",
+      "roleMr": "शिक्षक",
+      "bio": "Photo and short bio coming soon.",
+      "bioMr": "छायाचित्र आणि लहान जीवनवृत्त लवकरच.",
+      "photo": null,
       "order": 2
+    },
+    {
+      "id": "shreyal-deshmukh",
+      "name": "Shreyal Deshmukh",
+      "nameMr": "श्रेयल देशमुख",
+      "role": "Teacher and Administrator",
+      "roleMr": "शिक्षक आणि प्रशासक",
+      "bio": "Photo and short bio coming soon.",
+      "bioMr": "छायाचित्र आणि लहान जीवनवृत्त लवकरच.",
+      "photo": null,
+      "order": 3
+    },
+    {
+      "id": "minal-kanade",
+      "name": "Minal Kanade",
+      "nameMr": "मिनल कनाडे",
+      "role": "Teacher",
+      "roleMr": "शिक्षक",
+      "bio": "Photo and short bio coming soon.",
+      "bioMr": "छायाचित्र आणि लहान जीवनवृत्त लवकरच.",
+      "photo": null,
+      "order": 4
+    },
+    {
+      "id": "anjali-kekane",
+      "name": "Anjali Kekane",
+      "nameMr": "अंजली केकणे",
+      "role": "Teacher",
+      "roleMr": "शिक्षक",
+      "bio": "Photo and short bio coming soon.",
+      "bioMr": "छायाचित्र आणि लहान जीवनवृत्त लवकरच.",
+      "photo": null,
+      "order": 5
+    },
+    {
+      "id": "vijay-kekane",
+      "name": "Vijay Kekane",
+      "nameMr": "विजय केकणे",
+      "role": "Teacher",
+      "roleMr": "शिक्षक",
+      "bio": "Photo and short bio coming soon.",
+      "bioMr": "छायाचित्र आणि लहान जीवनवृत्त लवकरच.",
+      "photo": null,
+      "order": 6
+    },
+    {
+      "id": "ashish-ingole",
+      "name": "Ashish Ingole",
+      "nameMr": "आशिष इंगोले",
+      "role": "School Management Committee",
+      "roleMr": "शाळा व्यवस्थापन समिती",
+      "bio": "Photo and short bio coming soon.",
+      "bioMr": "छायाचित्र आणि लहान जीवनवृत्त लवकरच.",
+      "photo": null,
+      "order": 7
+    },
+    {
+      "id": "lalan-kanade",
+      "name": "Lalan Kanade",
+      "nameMr": "लालन कनाडे",
+      "role": "Treasurer",
+      "roleMr": "कोषाध्यक्ष",
+      "bio": "Photo and short bio coming soon.",
+      "bioMr": "छायाचित्र आणि लहान जीवनवृत्त लवकरच.",
+      "photo": null,
+      "order": 8
+    },
+    {
+      "id": "sachin-kendale",
+      "name": "Sachin Kendale",
+      "nameMr": "सचिन केंदळे",
+      "role": "School Management Committee · Milwaukee Maharashtra Mandal President",
+      "roleMr": "शाळा व्यवस्थापन समिती · महाराष्ट्र मंडळ मिल्वॉकी अध्यक्ष",
+      "bio": "Photo and short bio coming soon.",
+      "bioMr": "छायाचित्र आणि लहान जीवनवृत्त लवकरच.",
+      "photo": null,
+      "order": 9
     }
   ],
   "notes": [
-    "Full named staff profiles coming soon — send photos and short bios to update this page.",
+    "Photos and short bios will be added as they arrive — email updates to the school.",
     "Certified Avant Assessment proctors are on staff."
   ],
   "notesMr": [
-    "पूर्ण नावासह कर्मचारी प्रोफाइल लवकरच — हे पृष्ठ अद्यतनित करण्यासाठी छायाचित्रे आणि लहान जीवनवृत्त पाठवा.",
+    "छायाचित्रे आणि लहान जीवनवृत्त येईल तसे जोडली जातील — अद्यतनांसाठी शाळेला ईमेल करा.",
     "प्रमाणित Avant Assessment परीक्षक कर्मचारी आहेत."
   ]
 }

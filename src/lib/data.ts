@@ -88,7 +88,7 @@ export function getStaff() {
       roleMr?: string;
       bio: string;
       bioMr?: string;
-      photo: string;
+      photo: string | null;
       order: number;
     }>;
     notes: string[];
