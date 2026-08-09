@@ -35,61 +35,6 @@
       "order": 1
     },
     {
-      "id": "sayali-borker-hede",
-      "name": "Sayali Borker Hede",
-      "nameMr": "सायली बोरकर हेडे",
-      "role": "Teacher",
-      "roleMr": "शिक्षक",
-      "bio": "Photo and short bio coming soon.",
-      "bioMr": "छायाचित्र आणि लहान जीवनवृत्त लवकरच.",
-      "photo": null,
-      "order": 2
-    },
-    {
-      "id": "shreyal-deshmukh",
-      "name": "Shreyal Deshmukh",
-      "nameMr": "श्रेयल देशमुख",
-      "role": "Teacher and Administrator",
-      "roleMr": "शिक्षक आणि प्रशासक",
-      "bio": "Photo and short bio coming soon.",
-      "bioMr": "छायाचित्र आणि लहान जीवनवृत्त लवकरच.",
-      "photo": null,
-      "order": 3
-    },
-    {
-      "id": "minal-kanade",
-      "name": "Minal Kanade",
-      "nameMr": "मिनल कनाडे",
-      "role": "Teacher",
-      "roleMr": "शिक्षक",
-      "bio": "Photo and short bio coming soon.",
-      "bioMr": "छायाचित्र आणि लहान जीवनवृत्त लवकरच.",
-      "photo": null,
-      "order": 4
-    },
-    {
-      "id": "anjali-kekane",
-      "name": "Anjali Kekane",
-      "nameMr": "अंजली केकणे",
-      "role": "Teacher",
-      "roleMr": "शिक्षक",
-      "bio": "Photo and short bio coming soon.",
-      "bioMr": "छायाचित्र आणि लहान जीवनवृत्त लवकरच.",
-      "photo": null,
-      "order": 5
-    },
-    {
-      "id": "vijay-kekane",
-      "name": "Vijay Kekane",
-      "nameMr": "विजय केकणे",
-      "role": "Teacher",
-      "roleMr": "शिक्षक",
-      "bio": "Photo and short bio coming soon.",
-      "bioMr": "छायाचित्र आणि लहान जीवनवृत्त लवकरच.",
-      "photo": null,
-      "order": 6
-    },
-    {
       "id": "ashish-ingole",
       "name": "Ashish Ingole",
       "nameMr": "आशिष इंगोले",
@@ -98,7 +43,7 @@
       "bio": "Photo and short bio coming soon.",
       "bioMr": "छायाचित्र आणि लहान जीवनवृत्त लवकरच.",
       "photo": null,
-      "order": 7
+      "order": 2
     },
     {
       "id": "lalan-kanade",
@@ -109,7 +54,7 @@
       "bio": "Photo and short bio coming soon.",
       "bioMr": "छायाचित्र आणि लहान जीवनवृत्त लवकरच.",
       "photo": null,
-      "order": 8
+      "order": 3
     },
     {
       "id": "sachin-kendale",
@@ -117,6 +62,61 @@
       "nameMr": "सचिन केंदळे",
       "role": "School Management Committee · Milwaukee Maharashtra Mandal President",
       "roleMr": "शाळा व्यवस्थापन समिती · महाराष्ट्र मंडळ मिल्वॉकी अध्यक्ष",
+      "bio": "Photo and short bio coming soon.",
+      "bioMr": "छायाचित्र आणि लहान जीवनवृत्त लवकरच.",
+      "photo": null,
+      "order": 4
+    },
+    {
+      "id": "sayali-borker-hede",
+      "name": "Sayali Borker Hede",
+      "nameMr": "सायली बोरकर हेडे",
+      "role": "Teacher",
+      "roleMr": "शिक्षक",
+      "bio": "Photo and short bio coming soon.",
+      "bioMr": "छायाचित्र आणि लहान जीवनवृत्त लवकरच.",
+      "photo": null,
+      "order": 5
+    },
+    {
+      "id": "shreyal-deshmukh",
+      "name": "Shreyal Deshmukh",
+      "nameMr": "श्रेयल देशमुख",
+      "role": "Teacher and Administrator",
+      "roleMr": "शिक्षक आणि प्रशासक",
+      "bio": "Photo and short bio coming soon.",
+      "bioMr": "छायाचित्र आणि लहान जीवनवृत्त लवकरच.",
+      "photo": null,
+      "order": 6
+    },
+    {
+      "id": "minal-kanade",
+      "name": "Minal Kanade",
+      "nameMr": "मिनल कनाडे",
+      "role": "Teacher",
+      "roleMr": "शिक्षक",
+      "bio": "Photo and short bio coming soon.",
+      "bioMr": "छायाचित्र आणि लहान जीवनवृत्त लवकरच.",
+      "photo": null,
+      "order": 7
+    },
+    {
+      "id": "anjali-kekane",
+      "name": "Anjali Kekane",
+      "nameMr": "अंजली केकणे",
+      "role": "Teacher",
+      "roleMr": "शिक्षक",
+      "bio": "Photo and short bio coming soon.",
+      "bioMr": "छायाचित्र आणि लहान जीवनवृत्त लवकरच.",
+      "photo": null,
+      "order": 8
+    },
+    {
+      "id": "vijay-kekane",
+      "name": "Vijay Kekane",
+      "nameMr": "विजय केकणे",
+      "role": "Teacher",
+      "roleMr": "शिक्षक",
       "bio": "Photo and short bio coming soon.",
       "bioMr": "छायाचित्र आणि लहान जीवनवृत्त लवकरच.",
       "photo": null,
