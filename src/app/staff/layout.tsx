@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Staff",
+  title: "Teachers and Volunteers",
   description:
     "Milwaukee Marathi Shala teachers, volunteers, and school contacts.",
 };
