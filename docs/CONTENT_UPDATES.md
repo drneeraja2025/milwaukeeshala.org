@@ -54,8 +54,8 @@ No. Anyone with repo access can edit the JSON files and push. Cursor chat is opt
 
 ## SISLMS calendar sync (live)
 
-1. **Source:** GuruVidyaZen academy **Milwaukee Marathi School** via public feed  
-   `GET https://guruvidyazen.nasneeraj.com/api/public-school-calendar?school=Milwaukee%20Marathi%20School`  
+1. **Source:** GuruVidyaZen academy **Milwaukee Marathi Shala** via public feed  
+   `GET https://guruvidyazen.nasneeraj.com/api/public-school-calendar?school=Milwaukee%20Marathi%20Shala`  
    (implemented in Gurukul-by-NAS `api/public-school-calendar.ts`).
 2. **Merge rules:** Manual events in `events.manual.json` are never replaced. Sync only rewrites `events.sislms.json` (ids prefixed `sislms-`).
 3. **Automation:** GitHub Action `.github/workflows/sync-sislms-calendar.yml` runs **weekly (Mondays)** and on `workflow_dispatch`. Local: `npm run sync:sislms-calendar`.

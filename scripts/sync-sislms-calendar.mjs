@@ -16,7 +16,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
 const outPath = join(root, "data", "events.sislms.json");
 
-const SCHOOL = process.env.SISLMS_SCHOOL_NAME || "Milwaukee Marathi School";
+const SCHOOL = process.env.SISLMS_SCHOOL_NAME || "Milwaukee Marathi Shala";
 const DEFAULT_URL = `https://guruvidyazen.nasneeraj.com/api/public-school-calendar?school=${encodeURIComponent(SCHOOL)}`;
 const FEED_URL = process.env.SISLMS_CALENDAR_URL || DEFAULT_URL;
 const TIME_ZONE = "America/Chicago";

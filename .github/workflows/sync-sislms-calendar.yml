@@ -23,7 +23,7 @@ jobs:
 
       - name: Sync from GuruVidyaZen
         env:
-          SISLMS_SCHOOL_NAME: Milwaukee Marathi School
+          SISLMS_SCHOOL_NAME: Milwaukee Marathi Shala
           SISLMS_CALENDAR_URL: ${{ vars.SISLMS_CALENDAR_URL }}
         run: node scripts/sync-sislms-calendar.mjs
 
