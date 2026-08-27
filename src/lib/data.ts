@@ -1,4 +1,5 @@
-import events from "../../data/events.json";
+import manualEvents from "../../data/events.manual.json";
+import sislmsEvents from "../../data/events.sislms.json";
 import updates from "../../data/updates.json";
 import gallery from "../../data/gallery.json";
 import staff from "../../data/staff.json";
@@ -15,6 +16,8 @@ export type EventItem = {
   locationMr?: string;
   description: string;
   descriptionMr?: string;
+  /** Present on SISLMS-synced rows only; hardcoded Kalnirnay/MMM rows omit this. */
+  source?: "sislms" | string;
 };
 
 export type UpdateItem = {
@@ -51,7 +54,12 @@ export function pickLocale<T>(lang: Lang, en: T, mr?: T | null): T {
 }
 
 export function getEvents(): EventItem[] {
-  return [...(events as EventItem[])].sort((a, b) => {
+  // Hardcoded Kalnirnay/MMM/etc. stay forever; SISLMS layer adds/updates separately.
+  const merged = [
+    ...(manualEvents as EventItem[]),
+    ...(sislmsEvents as EventItem[]),
+  ];
+  return merged.sort((a, b) => {
     const aKey = `${a.date}T${a.startTime}`;
     const bKey = `${b.date}T${b.startTime}`;
     return aKey.localeCompare(bKey);

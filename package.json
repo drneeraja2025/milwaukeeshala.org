@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "sync:sislms-calendar": "node scripts/sync-sislms-calendar.mjs"
   },
   "dependencies": {
     "next": "^15.5.9",

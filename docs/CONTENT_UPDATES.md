@@ -8,10 +8,13 @@ Edit JSON under `data/` and push to `main` (or ask Cursor in chat with the new f
 
 | File | Purpose |
 |------|---------|
-| `data/events.json` | Calendar / upcoming dates |
+| `data/events.manual.json` | Hardcoded calendar (Kalnirnay, MMM, fixed Shala dates). **Never overwritten by sync.** |
+| `data/events.sislms.json` | GuruVidyaZen SISLMS overlay (auto). Do not hand-edit unless fixing a bad sync. |
 | `data/updates.json` | News & Updates |
 | `data/gallery.json` | Photo albums |
 | `data/staff.json` | Staff cards (`people`) + phone `contacts` |
+
+The site calendar **merges** manual + SISLMS (add/update SISLMS rows; manual rows stay).
 
 ### Example event
 
@@ -49,11 +52,14 @@ Put photos in `public/media/` (or `public/media/staff/`) and reference them as `
 
 No. Anyone with repo access can edit the JSON files and push. Cursor chat is optional for non-technical editors (“add Aug 29 all-school meeting 4pm HTW”).
 
-## When SISLMS calendar goes live
+## SISLMS calendar sync (live)
 
-1. Keep publishing **public** dates on this site via `events.json` (families expect a public page).
-2. Later option: export or sync from GuruVidyaZen SISLMS into `events.json`, or a read-only ICS/API if the product exposes one.
-3. Do **not** put private student data on this marketing site.
+1. **Source:** GuruVidyaZen academy **Milwaukee Marathi School** via public feed  
+   `GET https://guruvidyazen.nasneeraj.com/api/public-school-calendar?school=Milwaukee%20Marathi%20School`  
+   (implemented in Gurukul-by-NAS `api/public-school-calendar.ts`).
+2. **Merge rules:** Manual events in `events.manual.json` are never replaced. Sync only rewrites `events.sislms.json` (ids prefixed `sislms-`).
+3. **Automation:** GitHub Action `.github/workflows/sync-sislms-calendar.yml` runs **weekly (Mondays)** and on `workflow_dispatch`. Local: `npm run sync:sislms-calendar`.
+4. Do **not** put private student data on this marketing site (feed excludes assignments/announcements/participants).
 
 ## Legal / branding notes
 
