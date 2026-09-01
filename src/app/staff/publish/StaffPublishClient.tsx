@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 import { PageHero } from "@/components/PageHero";
 
 type Tab = "news" | "photo" | "teacher" | "qr";
@@ -27,8 +28,8 @@ const TABS: { id: Tab; label: string }[] = [
 ];
 
 export function StaffPublishClient({ people }: { people: StaffPersonOption[] }) {
+  const router = useRouter();
   const [tab, setTab] = useState<Tab>("news");
-  const [secret, setSecret] = useState("");
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -36,6 +37,17 @@ export function StaffPublishClient({ people }: { people: StaffPersonOption[] }) 
 
   const today = useMemo(() => new Date().toISOString().slice(0, 10), []);
   const selected = people.find((p) => p.id === personId) || people[0];
+
+  async function onLogout() {
+    setBusy(true);
+    try {
+      await fetch("/api/staff/logout", { method: "POST" });
+      router.replace("/staff/login");
+      router.refresh();
+    } finally {
+      setBusy(false);
+    }
+  }
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -50,8 +62,8 @@ export function StaffPublishClient({ people }: { people: StaffPersonOption[] }) 
     try {
       const res = await fetch("/api/staff/publish", {
         method: "POST",
-        headers: { Authorization: `Bearer ${secret.trim()}` },
         body: data,
+        credentials: "same-origin",
       });
       const payload = (await res.json()) as {
         error?: string;
@@ -62,6 +74,11 @@ export function StaffPublishClient({ people }: { people: StaffPersonOption[] }) 
         personId?: string;
         target?: string;
       };
+      if (res.status === 401) {
+        router.replace("/staff/login");
+        router.refresh();
+        return;
+      }
       if (!res.ok) {
         setError(payload.error || `Publish failed (${res.status})`);
         return;
@@ -105,17 +122,12 @@ export function StaffPublishClient({ people }: { people: StaffPersonOption[] }) 
       />
 
       <div className="content-panel staff-publish">
-        <label className="staff-field">
-          <span>Publish secret</span>
-          <input
-            type="password"
-            autoComplete="off"
-            value={secret}
-            onChange={(e) => setSecret(e.target.value)}
-            placeholder="CONTENT_PUBLISH_SECRET"
-            required
-          />
-        </label>
+        <div className="staff-toolbar">
+          <p className="muted staff-hint staff-toolbar-note">Signed in · session ~7 days</p>
+          <button type="button" className="btn btn-ghost" onClick={onLogout} disabled={busy}>
+            Log out
+          </button>
+        </div>
 
         <div className="staff-tabs" role="tablist">
           {TABS.map((item) => (
@@ -285,7 +297,7 @@ export function StaffPublishClient({ people }: { people: StaffPersonOption[] }) 
             </>
           ) : null}
 
-          <button className="btn btn-navy" type="submit" disabled={busy || !secret.trim()}>
+          <button className="btn btn-navy" type="submit" disabled={busy}>
             {busy ? "Publishing…" : submitLabel}
           </button>
         </form>

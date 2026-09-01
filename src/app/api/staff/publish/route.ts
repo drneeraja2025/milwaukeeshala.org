@@ -1,11 +1,7 @@
 import { NextResponse } from "next/server";
 import type { GalleryAlbum, UpdateItem } from "@/lib/data";
-import {
-  assertPublishSecret,
-  getRepoFile,
-  putRepoFile,
-  slugify,
-} from "@/lib/githubContent";
+import { getRepoFile, putRepoFile, slugify } from "@/lib/githubContent";
+import { assertStaffAuth } from "@/lib/staffAuth";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -23,7 +19,7 @@ function todayIso(): string {
 
 export async function POST(req: Request) {
   try {
-    assertPublishSecret(req);
+    assertStaffAuth(req);
   } catch (e) {
     const status = (e as { status?: number }).status === 401 ? 401 : 500;
     return jsonError(e instanceof Error ? e.message : "Unauthorized", status);

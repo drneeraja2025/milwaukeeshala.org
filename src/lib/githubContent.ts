@@ -101,15 +101,5 @@ export function slugify(input: string): string {
   return base || "update";
 }
 
-export function assertPublishSecret(req: Request): void {
-  const expected = process.env.CONTENT_PUBLISH_SECRET?.trim();
-  if (!expected) throw new Error("CONTENT_PUBLISH_SECRET is not configured");
-  const header = req.headers.get("authorization") || "";
-  const match = header.match(/^Bearer\s+(.+)$/i);
-  const token = match?.[1]?.trim() || "";
-  if (!token || token !== expected) {
-    const err = new Error("Unauthorized");
-    (err as Error & { status: number }).status = 401;
-    throw err;
-  }
-}
+/** @deprecated Prefer assertStaffAuth from staffAuth — re-exported for callers. */
+export { assertStaffAuth as assertPublishSecret } from "@/lib/staffAuth";

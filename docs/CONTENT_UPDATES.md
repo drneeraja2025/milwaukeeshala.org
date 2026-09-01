@@ -57,18 +57,20 @@ No. Anyone with repo access can edit the JSON files and push. Cursor chat is opt
 | Content | Where staff work | How it reaches the site |
 |---------|------------------|-------------------------|
 | Upcoming / calendar | GuruVidyaZen → **Milwaukee Marathi Shala** calendar | Weekly sync → `events.sislms.json` (manual Kalnirnay/MMM stay in `events.manual.json`) |
-| News (text + optional image) | [milwaukeeshala.org/staff/publish](https://milwaukeeshala.org/staff/publish) | Commits `data/updates.json` (+ image under `public/media/uploads/news/`) |
-| Gallery photos | Same page → **Photo** | Commits photo + `data/gallery.json` |
-| Teacher bio / photo / phone | Same page → **Teachers** | Commits `data/staff.json` (+ `public/media/uploads/staff/`) |
-| Pay / admissions QR | Same page → **QR** | Replaces `/media/zelle-pay-qr.png` or `/media/admissions-qr.png` |
+| News (text + optional image) | [milwaukeeshala.org/staff/login](https://milwaukeeshala.org/staff/login) → Publish | Commits `data/updates.json` (+ image under `public/media/uploads/news/`) |
+| Gallery photos | Same → **Photo** | Commits photo + `data/gallery.json` |
+| Teacher bio / photo / phone | Same → **Teachers** | Commits `data/staff.json` (+ `public/media/uploads/staff/`) |
+| Pay / admissions QR | Same → **QR** | Replaces `/media/zelle-pay-qr.png` or `/media/admissions-qr.png` |
 
-Staff page is **not** in the public nav. Bookmark it. Needs Vercel env:
+**Entry point:** bookmark [**/staff/login**](https://milwaukeeshala.org/staff/login) (not in public nav). After login you land on `/staff/publish`. Session cookie lasts ~7 days.
 
-- `CONTENT_PUBLISH_SECRET` — shared password staff enter on the form  
+Needs Vercel env:
+
+- `CONTENT_PUBLISH_SECRET` (or optional `ADMIN_PASSWORD`) — admin login password  
 - `GITHUB_CONTENT_TOKEN` — GitHub PAT with `contents:write` on this repo  
 - Optional: `GITHUB_CONTENT_REPO` (default `drneeraja2025/milwaukeeshala.org`), `GITHUB_CONTENT_BRANCH` (default `main`)
 
-Plan: `docs/plans/2026-08-31-hybrid-admin-content.md`. Never put private student data on the marketing site.
+API still accepts `Authorization: Bearer <same password>` for scripts.
 
 ## SISLMS calendar sync (live)
 

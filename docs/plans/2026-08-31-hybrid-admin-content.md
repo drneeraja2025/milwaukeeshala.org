@@ -18,8 +18,8 @@ Let school admins update public website content without editing code:
 
 ## Done when
 
-1. `/staff/publish` has tabs: News | Photo | Teachers | QR  
-2. API accepts `kind=news|photo|teacher|qr` with publish secret  
+1. `/staff/login` sets a signed session; `/staff/publish` has tabs: News | Photo | Teachers | QR  
+2. API accepts session cookie or Bearer `kind=news|photo|teacher|qr`  
 3. `npm run build` succeeds  
 4. Changes committed and pushed to `main` (Production)  
 5. Docs list env vars and entry points  
@@ -33,7 +33,7 @@ Let school admins update public website content without editing code:
 
 ## Implementation notes
 
-- Auth: `CONTENT_PUBLISH_SECRET` Bearer token  
+- Auth: `/staff/login` password (`ADMIN_PASSWORD` or `CONTENT_PUBLISH_SECRET`) → signed httpOnly cookie; API also accepts Bearer for scripts  
 - Persist via GitHub Contents API (`GITHUB_CONTENT_TOKEN`)  
 - Teacher photos → `public/media/uploads/staff/` + `data/staff.json`  
 - QR replaces fixed paths: `/media/zelle-pay-qr.png`, `/media/admissions-qr.png`  
