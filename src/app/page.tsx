@@ -104,13 +104,14 @@ export default function HomePage() {
             </div>
             <Link href="/news">{t("home.viewNews")}</Link>
           </div>
-          <ul className="teaser-list">
+          <ul className="teaser-list teaser-list--links">
             {updates.map((item) => (
               <li key={item.id}>
                 <Link href={`/news#${item.id}`} className="teaser-card-link">
                   <p className="news-date">{formatShortDate(item.date, lang)}</p>
                   <h3>{pickLocale(lang, item.title, item.titleMr)}</h3>
                   <p>{pickLocale(lang, item.summary, item.summaryMr)}</p>
+                  <span className="teaser-read-more">{t("home.readNews")}</span>
                 </Link>
               </li>
             ))}
