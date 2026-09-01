@@ -181,6 +181,7 @@ export const en: Dict = {
   "staff.empty": "Teacher and volunteer profiles are being added. Check back soon.",
   "staff.proctors": "Certified Avant Assessment proctors are on staff.",
   "staff.contacts": "Phone contacts",
+  "staff.adminLogin": "Admin login",
   "contact.eyebrow": "Reach us",
   "contact.title": "Contact",
   "contact.lead":
@@ -396,6 +397,7 @@ export const mr: Dict = {
   "staff.empty": "शिक्षक आणि स्वयंसेवक माहिती लवकरच जोडली जाईल.",
   "staff.proctors": "प्रमाणित Avant Assessment परीक्षक कर्मचारी आहेत.",
   "staff.contacts": "फोन संपर्क",
+  "staff.adminLogin": "प्रशासन लॉगिन",
   "contact.eyebrow": "आमच्याशी संपर्क साधा",
   "contact.title": "संपर्क",
   "contact.lead":

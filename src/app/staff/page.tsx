@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { getStaff } from "@/lib/data";
 import { useI18n } from "@/lib/i18n/LanguageProvider";
@@ -27,6 +28,12 @@ export default function StaffPage() {
         title={t("staff.title")}
         lead={t("staff.lead")}
       />
+
+      <p className="staff-admin-bar">
+        <Link className="btn btn-ghost" href="/staff/login">
+          {t("staff.adminLogin")}
+        </Link>
+      </p>
 
       {people.length === 0 ? (
         <p className="muted">{t("staff.empty")}</p>
