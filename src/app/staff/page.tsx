@@ -68,7 +68,7 @@ export default function StaffPage() {
                       ? person.roleMr
                       : person.role}
                   </p>
-                  <p>
+                  <p className="staff-bio">
                     {lang === "mr" && person.bioMr ? person.bioMr : person.bio}
                   </p>
                 </div>
