@@ -19,14 +19,18 @@ function toKey(year: number, month: number, day: number): string {
 
 export function MonthCalendar({ events }: MonthCalendarProps) {
   const { t, lang } = useI18n();
-  const firstEvent = events[0];
-  const initial = firstEvent
-    ? new Date(`${firstEvent.date}T12:00:00`)
-    : new Date(2026, 7, 1);
+  const today = new Date();
   const [cursor, setCursor] = useState({
-    year: initial.getFullYear(),
-    month: initial.getMonth(),
+    year: today.getFullYear(),
+    month: today.getMonth(),
   });
+
+  const todayKey = toKey(today.getFullYear(), today.getMonth(), today.getDate());
+
+  function goToToday() {
+    const now = new Date();
+    setCursor({ year: now.getFullYear(), month: now.getMonth() });
+  }
 
   const weekdays = [
     t("calendar.wd0"),
@@ -102,6 +106,9 @@ export function MonthCalendar({ events }: MonthCalendarProps) {
         >
           {t("calendar.next")}
         </button>
+        <button type="button" className="calendar-today-btn" onClick={goToToday}>
+          {t("calendar.today")}
+        </button>
       </div>
 
       <div className="calendar-grid" role="grid" aria-label={t("calendar.aria")}>
@@ -117,7 +124,7 @@ export function MonthCalendar({ events }: MonthCalendarProps) {
           return (
             <div
               key={cell.key}
-              className={`calendar-cell ${cell.day ? "" : "is-empty"} ${dayEvents.length ? "has-event" : ""}`}
+              className={`calendar-cell ${cell.day ? "" : "is-empty"} ${dayEvents.length ? "has-event" : ""} ${cell.dateKey === todayKey ? "is-today" : ""}`}
             >
               {cell.day ? <span className="calendar-day">{cell.day}</span> : null}
               {dayEvents.map((event) => {
