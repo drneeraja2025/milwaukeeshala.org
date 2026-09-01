@@ -52,6 +52,24 @@ Put photos in `public/media/` (or `public/media/staff/`) and reference them as `
 
 No. Anyone with repo access can edit the JSON files and push. Cursor chat is optional for non-technical editors (“add Aug 29 all-school meeting 4pm HTW”).
 
+## Hybrid content entry points
+
+| Content | Where staff work | How it reaches the site |
+|---------|------------------|-------------------------|
+| Upcoming / calendar | GuruVidyaZen → **Milwaukee Marathi Shala** calendar | Weekly sync → `events.sislms.json` (manual Kalnirnay/MMM stay in `events.manual.json`) |
+| News (text + optional image) | [milwaukeeshala.org/staff/publish](https://milwaukeeshala.org/staff/publish) | Commits `data/updates.json` (+ image under `public/media/uploads/news/`) |
+| Gallery photos | Same page → **Photo** | Commits photo + `data/gallery.json` |
+| Teacher bio / photo / phone | Same page → **Teachers** | Commits `data/staff.json` (+ `public/media/uploads/staff/`) |
+| Pay / admissions QR | Same page → **QR** | Replaces `/media/zelle-pay-qr.png` or `/media/admissions-qr.png` |
+
+Staff page is **not** in the public nav. Bookmark it. Needs Vercel env:
+
+- `CONTENT_PUBLISH_SECRET` — shared password staff enter on the form  
+- `GITHUB_CONTENT_TOKEN` — GitHub PAT with `contents:write` on this repo  
+- Optional: `GITHUB_CONTENT_REPO` (default `drneeraja2025/milwaukeeshala.org`), `GITHUB_CONTENT_BRANCH` (default `main`)
+
+Plan: `docs/plans/2026-08-31-hybrid-admin-content.md`. Never put private student data on the marketing site.
+
 ## SISLMS calendar sync (live)
 
 1. **Source:** GuruVidyaZen academy **Milwaukee Marathi Shala** via public feed  

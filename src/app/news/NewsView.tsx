@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { PageHero } from "@/components/PageHero";
 import { formatShortDate, getUpdates, pickLocale } from "@/lib/data";
 import { useI18n } from "@/lib/i18n/LanguageProvider";
@@ -20,6 +21,17 @@ export function NewsView() {
           <article key={item.id} id={item.id}>
             <p className="news-date">{formatShortDate(item.date, lang)}</p>
             <h2>{pickLocale(lang, item.title, item.titleMr)}</h2>
+            {item.image ? (
+              <div className="news-image">
+                <Image
+                  src={item.image}
+                  alt={pickLocale(lang, item.title, item.titleMr)}
+                  width={960}
+                  height={540}
+                  sizes="(max-width: 900px) 100vw, 640px"
+                />
+              </div>
+            ) : null}
             <p>{pickLocale(lang, item.body, item.bodyMr)}</p>
           </article>
         ))}

@@ -29,6 +29,8 @@ export type UpdateItem = {
   summaryMr?: string;
   body: string;
   bodyMr?: string;
+  /** Optional public image path, e.g. /media/uploads/news/... */
+  image?: string;
 };
 
 export type GalleryPhoto = {
