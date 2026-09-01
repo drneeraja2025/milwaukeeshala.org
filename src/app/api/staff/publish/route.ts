@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import type { GalleryAlbum, UpdateItem } from "@/lib/data";
 import { getRepoFile, putRepoFile, slugify } from "@/lib/githubContent";
 import { assertStaffAuth } from "@/lib/staffAuth";
+import { redeployNote, triggerProductionRedeploy } from "@/lib/triggerRedeploy";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -15,6 +16,11 @@ function jsonError(message: string, status: number) {
 
 function todayIso(): string {
   return new Date().toISOString().slice(0, 10);
+}
+
+async function publishOk(payload: Record<string, unknown>) {
+  const redeployed = await triggerProductionRedeploy();
+  return NextResponse.json({ ok: true, ...payload, note: redeployNote(redeployed) });
 }
 
 export async function POST(req: Request) {
@@ -96,13 +102,11 @@ async function publishNews(form: FormData) {
     sha: fileRec.sha,
   });
 
-  return NextResponse.json({
-    ok: true,
+  return publishOk({
     kind: "news",
     id,
     image: imagePath || null,
     commitUrl: commitUrl || null,
-    note: "Vercel will redeploy from main in about a minute.",
   });
 }
 
@@ -149,13 +153,11 @@ async function publishPhoto(form: FormData) {
     sha: fileRec.sha,
   });
 
-  return NextResponse.json({
-    ok: true,
+  return publishOk({
     kind: "photo",
     albumId,
     src: imagePath,
     commitUrl: commitUrl || null,
-    note: "Vercel will redeploy from main in about a minute.",
   });
 }
 
@@ -231,13 +233,11 @@ async function publishTeacher(form: FormData) {
     sha: fileRec.sha,
   });
 
-  return NextResponse.json({
-    ok: true,
+  return publishOk({
     kind: "teacher",
     personId,
     photo: person.photo,
     commitUrl: commitUrl || null,
-    note: "Vercel will redeploy from main in about a minute.",
   });
 }
 
@@ -278,13 +278,11 @@ async function publishQr(form: FormData) {
     binary: true,
   });
 
-  return NextResponse.json({
-    ok: true,
+  return publishOk({
     kind: "qr",
     target,
     src: `/${meta.path.replace(/^public\//, "")}`,
     commitUrl: commitUrl || null,
-    note: "Vercel will redeploy from main in about a minute.",
   });
 }
 

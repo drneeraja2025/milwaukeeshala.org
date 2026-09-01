@@ -107,9 +107,11 @@ export default function HomePage() {
           <ul className="teaser-list">
             {updates.map((item) => (
               <li key={item.id}>
-                <p className="news-date">{formatShortDate(item.date, lang)}</p>
-                <h3>{pickLocale(lang, item.title, item.titleMr)}</h3>
-                <p>{pickLocale(lang, item.summary, item.summaryMr)}</p>
+                <Link href={`/news#${item.id}`} className="teaser-card-link">
+                  <p className="news-date">{formatShortDate(item.date, lang)}</p>
+                  <h3>{pickLocale(lang, item.title, item.titleMr)}</h3>
+                  <p>{pickLocale(lang, item.summary, item.summaryMr)}</p>
+                </Link>
               </li>
             ))}
           </ul>
