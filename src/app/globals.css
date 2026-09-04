@@ -367,6 +367,15 @@ img {
   border: 1.5px solid rgba(255, 255, 255, 0.75);
 }
 
+/* Light panels: secondary must contrast (hero secondary stays white-on-dark) */
+.content-panel .btn-secondary,
+.page-shell .btn-secondary,
+.staff-publish .btn-secondary {
+  background: #fff;
+  color: var(--navy);
+  border: 1.5px solid var(--navy);
+}
+
 .btn-navy {
   background: var(--navy);
   color: white;
@@ -1555,9 +1564,26 @@ html[lang="mr"] body,
   gap: 1.25rem;
 }
 
+.resource-list li {
+  display: grid;
+  gap: 0.55rem;
+  justify-items: start;
+  padding-bottom: 1.15rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.resource-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
 .resource-list h2 {
-  margin: 0 0 0.35rem;
+  margin: 0;
   font-size: 1.15rem;
+}
+
+.resource-list .btn {
+  margin-top: 0.15rem;
 }
 
 .testimonials-block h2 {

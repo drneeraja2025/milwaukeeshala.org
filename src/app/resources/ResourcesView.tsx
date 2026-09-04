@@ -26,7 +26,7 @@ export function ResourcesView() {
                 {pickLocale(lang, item.description, item.descriptionMr)}
               </p>
               <Link
-                className="btn btn-secondary"
+                className="btn btn-navy"
                 href={item.href}
                 target={item.href.startsWith("http") ? "_blank" : undefined}
                 rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
