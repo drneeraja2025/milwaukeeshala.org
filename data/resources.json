@@ -7,5 +7,41 @@
     "descriptionMr": "वेळापत्रक, फी आणि QR सह छापण्यायोग्य फ्लायर.",
     "href": "/media/MMS2026-27flyer.jpg",
     "type": "image"
+  },
+  {
+    "id": "mmm",
+    "title": "Milwaukee Marathi Mandal (MMM)",
+    "titleMr": "मिल्वॉकी मराठी मंडळ (एमएमएम)",
+    "description": "Local parent mandal supporting Milwaukee Marathi Shala.",
+    "descriptionMr": "मिल्वॉकी मराठी शाळेला पाठिंबा देणारे स्थानिक पालक मंडळ.",
+    "href": "https://www.mmmilwaukee.org/",
+    "type": "link"
+  },
+  {
+    "id": "bmm",
+    "title": "Bharatiya Marathi Mandal (BMM) Marathi Shala",
+    "titleMr": "भारतीय मराठी मंडळ (बीएमएम) मराठी शाळा",
+    "description": "North America Marathi Shala network, curriculum, and teacher support.",
+    "descriptionMr": "उत्तर अमेरिकेतील मराठी शाळा जाळे, अभ्यासक्रम आणि शिक्षक सहाय्य.",
+    "href": "https://bmmonline.org/marathishala/",
+    "type": "link"
+  },
+  {
+    "id": "avant-bmm",
+    "title": "Avant Assessment — BMM STAMP",
+    "titleMr": "Avant Assessment — बीएमएम STAMP",
+    "description": "Discounted STAMP testing and biliteracy pathway info for BMM Marathi Shala students.",
+    "descriptionMr": "बीएमएम मराठी शाळा विद्यार्थ्यांसाठी सवलतीचे STAMP परीक्षण आणि द्विभाषिकता मार्ग.",
+    "href": "https://www.avantassessment.com/bmm",
+    "type": "link"
+  },
+  {
+    "id": "ebalbharati",
+    "title": "e-Balbharati textbooks",
+    "titleMr": "ई-बालभारती पाठ्यपुस्तके",
+    "description": "Free PDF textbooks and learning materials from Maharashtra Balbharati.",
+    "descriptionMr": "महाराष्ट्र बालभारतीकडून मोफत PDF पाठ्यपुस्तके आणि शिक्षण साहित्य.",
+    "href": "https://ebalbharati.in/main/publichome.aspx",
+    "type": "link"
   }
 ]

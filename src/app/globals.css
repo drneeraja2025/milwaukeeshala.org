@@ -1372,23 +1372,79 @@ html[lang="mr"] body,
 .announcement-banner {
   background: var(--gold);
   color: var(--navy);
-  padding: 0.65rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  text-align: center;
+  padding: 0.55rem 0;
+  overflow: hidden;
   font-weight: 600;
 }
 
-.announcement-banner p {
+.announcement-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.announcement-track {
+  display: flex;
+  width: max-content;
+  animation: announcement-marquee 42s linear infinite;
+}
+
+.announcement-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-inline: 3rem;
+  white-space: nowrap;
+}
+
+.announcement-msg {
   margin: 0;
 }
 
 .announcement-link {
-  color: var(--navy);
-  font-weight: 700;
+  color: #7a1020;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  flex-shrink: 0;
+}
+
+.announcement-link:hover,
+.announcement-link:focus-visible {
+  color: var(--navy-deep);
+}
+
+.announcement-banner:hover .announcement-track,
+.announcement-banner:focus-within .announcement-track {
+  animation-play-state: paused;
+}
+
+@keyframes announcement-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .announcement-track {
+    animation: none;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .announcement-group[aria-hidden="true"] {
+    display: none;
+  }
+
+  .announcement-group {
+    flex-wrap: wrap;
+    white-space: normal;
+    justify-content: center;
+    text-align: center;
+    padding-inline: 1rem;
+  }
 }
 
 .faq-layout {

@@ -16,14 +16,28 @@ export function AnnouncementBanner() {
     announcement.linkLabelMr,
   );
 
-  return (
-    <div className="announcement-banner" role="status">
-      <p>{message}</p>
+  const group = (hidden: boolean) => (
+    <div
+      className="announcement-group"
+      aria-hidden={hidden ? true : undefined}
+    >
+      <span className="announcement-msg">{message}</span>
       {announcement.link ? (
-        <Link href={announcement.link} className="announcement-link">
+        <Link href={announcement.link} className="announcement-link" tabIndex={hidden ? -1 : undefined}>
           {linkLabel} →
         </Link>
       ) : null}
+    </div>
+  );
+
+  return (
+    <div className="announcement-banner" role="status">
+      <div className="announcement-viewport">
+        <div className="announcement-track">
+          {group(false)}
+          {group(true)}
+        </div>
+      </div>
     </div>
   );
 }
