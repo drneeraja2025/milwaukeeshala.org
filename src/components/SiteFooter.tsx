@@ -79,10 +79,10 @@ export function SiteFooter() {
                   </a>
                 </li>
               ))}
-              {site.facebookUrl ? (
+              {site.whatsappUrl ? (
                 <li>
-                  <a href={site.facebookUrl} target="_blank" rel="noopener noreferrer">
-                    Facebook
+                  <a href={site.whatsappUrl} target="_blank" rel="noopener noreferrer">
+                    {t("contact.whatsapp")}
                   </a>
                 </li>
               ) : null}

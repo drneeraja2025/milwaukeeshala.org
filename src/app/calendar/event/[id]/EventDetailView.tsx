@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import {
@@ -35,6 +36,20 @@ export function EventDetailView({ eventId }: { eventId: string }) {
       />
 
       <div className="content-panel event-detail">
+        {event.image ? (
+          <figure className="event-poster">
+            <Image
+              src={event.image}
+              alt={pickLocale(lang, event.title, event.titleMr)}
+              width={900}
+              height={1200}
+              className="event-poster-img"
+              sizes="(max-width: 900px) 100vw, 40rem"
+              priority
+            />
+          </figure>
+        ) : null}
+
         <p>
           <strong>{t("calendar.when")}:</strong> {formatTime(event.startTime, lang)}
           {event.endTime ? ` – ${formatTime(event.endTime, lang)}` : ""}

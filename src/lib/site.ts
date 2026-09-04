@@ -40,6 +40,9 @@ export const site = {
   newsletterUrl: siteSettings.newsletterUrl || base.email,
   facebookUrl: siteSettings.facebookUrl || "",
   whatsappUrl: siteSettings.whatsappUrl || "",
+  whatsappQrSrc:
+    ("whatsappQrSrc" in siteSettings && siteSettings.whatsappQrSrc) ||
+    "/media/whatsapp-group-qr.png",
 };
 
 export type SiteSettings = Settings;

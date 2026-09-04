@@ -26,6 +26,8 @@ export type EventItem = {
   source?: "sislms" | string;
   detailHref?: string;
   rsvpUrl?: string;
+  image?: string;
+  replacesIds?: string[];
 };
 
 export type UpdateItem = {
@@ -127,6 +129,7 @@ export type Announcement = {
   messageMr?: string;
   link?: string;
   linkLabel?: string;
+  linkLabelMr?: string;
 };
 
 export function pickLocale<T>(lang: Lang, en: T, mr?: T | null): T {
@@ -134,7 +137,10 @@ export function pickLocale<T>(lang: Lang, en: T, mr?: T | null): T {
 }
 
 export function getEvents(): EventItem[] {
-  const merged = [...(manualEvents as EventItem[]), ...(sislmsEvents as EventItem[])];
+  const manual = manualEvents as EventItem[];
+  const replaced = new Set(manual.flatMap((e) => e.replacesIds || []));
+  const sislms = (sislmsEvents as EventItem[]).filter((e) => !replaced.has(e.id));
+  const merged = [...manual, ...sislms];
   return merged.sort((a, b) => {
     const aKey = `${a.date}T${a.startTime}`;
     const bKey = `${b.date}T${b.startTime}`;

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 import { PageHero } from "@/components/PageHero";
@@ -12,6 +13,7 @@ export function ContactView() {
   const staff = getStaff();
   const notes =
     lang === "mr" && staff.notesMr?.length ? staff.notesMr : staff.notes;
+  const hasWhatsApp = Boolean(site.whatsappUrl);
 
   return (
     <div className="page-shell">
@@ -55,6 +57,37 @@ export function ContactView() {
               </li>
             ))}
           </ul>
+
+          <section className="whatsapp-block" style={{ marginTop: "1.75rem" }}>
+            <h2>{t("contact.whatsapp")}</h2>
+            <p className="muted">{t("contact.whatsappLead")}</p>
+            {hasWhatsApp ? (
+              <div className="whatsapp-join">
+                <a
+                  className="btn btn-primary"
+                  href={site.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t("contact.whatsappJoin")}
+                </a>
+                <figure className="whatsapp-qr">
+                  <Image
+                    src={site.whatsappQrSrc}
+                    alt={t("contact.whatsappQrAlt")}
+                    width={200}
+                    height={200}
+                  />
+                  <figcaption className="muted">{t("contact.whatsappScan")}</figcaption>
+                </figure>
+              </div>
+            ) : (
+              <p>
+                {t("contact.whatsappSoon")}{" "}
+                <a href={`mailto:${site.email}`}>{site.email}</a>
+              </p>
+            )}
+          </section>
         </div>
 
         <div className="contact-panel">
@@ -94,23 +127,21 @@ export function ContactView() {
               {t("contact.openPortal", { label: site.portalLabel })}
             </a>
           </p>
-          {site.facebookUrl ? (
-            <>
-              <h2 style={{ marginTop: "1.75rem" }}>{t("contact.social")}</h2>
-              <ul className="contact-list">
-                <li>
-                  <a href={site.facebookUrl} target="_blank" rel="noopener noreferrer">
-                    Facebook (MMM)
-                  </a>
-                </li>
-                {site.newsletterUrl ? (
-                  <li>
-                    <a href={site.newsletterUrl}>{t("contact.newsletter")}</a>
-                  </li>
-                ) : null}
-              </ul>
-            </>
-          ) : null}
+          <h2 style={{ marginTop: "1.75rem" }}>{t("contact.social")}</h2>
+          <ul className="contact-list">
+            {hasWhatsApp ? (
+              <li>
+                <a href={site.whatsappUrl} target="_blank" rel="noopener noreferrer">
+                  {t("contact.whatsapp")}
+                </a>
+              </li>
+            ) : null}
+            {site.newsletterUrl ? (
+              <li>
+                <a href={site.newsletterUrl}>{t("contact.newsletter")}</a>
+              </li>
+            ) : null}
+          </ul>
         </div>
       </div>
     </div>

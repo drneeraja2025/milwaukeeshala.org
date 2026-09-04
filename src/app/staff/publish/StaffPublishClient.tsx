@@ -467,8 +467,8 @@ export function StaffPublishClient({
                   ["location", "Location text"],
                   ["admissionsFormUrl", "Admissions form URL"],
                   ["newsletterUrl", "Newsletter / email signup URL"],
-                  ["facebookUrl", "Facebook URL"],
                   ["whatsappUrl", "WhatsApp group URL"],
+                  ["whatsappQrSrc", "WhatsApp QR image path (e.g. /media/whatsapp-group-qr.png)"],
                 ] as const
               ).map(([key, label]) => (
                 <label key={key} className="staff-field">

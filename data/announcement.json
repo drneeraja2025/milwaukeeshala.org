@@ -1,7 +1,8 @@
 {
-  "enabled": false,
-  "message": "",
-  "messageMr": "",
-  "link": "",
-  "linkLabel": ""
+  "enabled": true,
+  "message": "SAMARTHA movie screening — Oct 3, 2026 at Menomonee Falls Public Library. Free for MMS & MMM members (first 100). RSVP by Sept 26.",
+  "messageMr": "समर्थ चित्रपट प्रदर्शन — ३ ऑक्टोबर २०२६, मेनोमोनी फॉल्स पब्लिक लायब्ररी. एमएमएस व एमएमएम सदस्यांसाठी मोफत (पहिली १००). २६ सप्टेंबरपूर्वी RSVP करा.",
+  "link": "/calendar/event/mms-samartha-2026-10-03",
+  "linkLabel": "Event details",
+  "linkLabelMr": "कार्यक्रम तपशील"
 }

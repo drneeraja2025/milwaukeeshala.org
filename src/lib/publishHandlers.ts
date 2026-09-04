@@ -420,8 +420,8 @@ async function updateSettings(form: FormData) {
     "location",
     "admissionsFormUrl",
     "newsletterUrl",
-    "facebookUrl",
     "whatsappUrl",
+    "whatsappQrSrc",
   ]) {
     const v = String(form.get(key) || "").trim();
     if (v) settings[key] = v;

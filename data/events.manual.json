@@ -730,5 +730,20 @@
     "locationMr": "हिंदू टेम्पल ऑफ विस्कॉन्सिन (HTW)",
     "description": "Last day of Milwaukee Marathi Shala classes for 2026–27.",
     "descriptionMr": "२०२६–२७ साठी मिल्वॉकी मराठी शाळेच्या वर्गांचा शेवटचा दिवस."
+  },
+  {
+    "id": "mms-samartha-2026-10-03",
+    "title": "SAMARTHA — Movie Screening",
+    "titleMr": "समर्थ — चित्रपट प्रदर्शन",
+    "date": "2026-10-03",
+    "startTime": "13:00",
+    "endTime": "16:00",
+    "location": "Menomonee Falls Public Library",
+    "locationMr": "मेनोमोनी फॉल्स पब्लिक लायब्ररी",
+    "description": "Free movie screening of Samarth for MMS and MMM members (first 100 entries). Please RSVP before September 26, 2026. Sponsored by Milwaukee Marathi Shala.",
+    "descriptionMr": "एमएमएस आणि एमएमएम सदस्यांसाठी समर्थ चित्रपटाचे मोफत प्रदर्शन (पहिल्या १०० प्रवेशांसाठी). कृपया २६ सप्टेंबर २०२६ पूर्वी RSVP करा. मिल्वॉकी मराठी शाळेचे समर्थन.",
+    "image": "/media/samartha-2026-poster.png",
+    "rsvpUrl": "mailto:mmm.marathishala@gmail.com?subject=RSVP%20SAMARTHA%20Oct%203%202026",
+    "replacesIds": ["sislms-event-6b698623-cf2f-4ca0-af78-550a85d0b9c6"]
   }
 ]

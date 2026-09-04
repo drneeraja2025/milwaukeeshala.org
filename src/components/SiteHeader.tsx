@@ -82,8 +82,8 @@ export function SiteHeader() {
               <Image
                 src="/MMSlogo.jpg"
                 alt="Milwaukee Marathi Shala logo"
-                width={44}
-                height={44}
+                width={52}
+                height={52}
                 className="brand-logo"
                 priority
               />
@@ -150,8 +150,8 @@ export function SiteHeader() {
             <Image
               src="/MMSlogo.jpg"
               alt=""
-              width={48}
-              height={48}
+              width={52}
+              height={52}
               className="brand-logo"
             />
             <span className="brand-text">

@@ -285,8 +285,12 @@ img {
     display: none;
   }
 
-  .brand-text {
-    display: none;
+  .brand-en {
+    font-size: 0.92rem;
+  }
+
+  .brand-mr {
+    font-size: 0.78rem;
   }
 
   .topbar-actions .nav-cta {
@@ -1332,6 +1336,37 @@ html[lang="mr"] body,
 .staff-hint {
   margin: 0;
   font-size: 0.92rem;
+}
+
+.event-poster {
+  margin: 0 0 1.25rem;
+  max-width: 28rem;
+}
+
+.event-poster-img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  border: 1px solid var(--line);
+}
+
+.whatsapp-join {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-top: 0.85rem;
+}
+
+.whatsapp-qr {
+  margin: 0;
+  text-align: center;
+}
+
+.whatsapp-qr img {
+  border-radius: 0.75rem;
+  border: 1px solid var(--line);
+  background: white;
 }
 
 .announcement-banner {

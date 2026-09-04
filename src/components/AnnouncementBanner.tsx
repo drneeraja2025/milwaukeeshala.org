@@ -10,7 +10,11 @@ export function AnnouncementBanner() {
   if (!announcement.enabled || !announcement.message) return null;
 
   const message = pickLocale(lang, announcement.message, announcement.messageMr);
-  const linkLabel = announcement.linkLabel || "Learn more";
+  const linkLabel = pickLocale(
+    lang,
+    announcement.linkLabel || "Learn more",
+    announcement.linkLabelMr,
+  );
 
   return (
     <div className="announcement-banner" role="status">

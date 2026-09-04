@@ -234,6 +234,14 @@ export const en: Dict = {
   "contact.formError": "Could not send message.",
   "contact.social": "Follow & subscribe",
   "contact.newsletter": "Email school updates",
+  "contact.whatsapp": "MMS WhatsApp group",
+  "contact.whatsappLead":
+    "Join the Milwaukee Marathi Shala parent WhatsApp group for school reminders and community updates.",
+  "contact.whatsappJoin": "Join WhatsApp group",
+  "contact.whatsappScan": "Or scan the QR code with your phone",
+  "contact.whatsappQrAlt": "QR code to join the MMS WhatsApp group",
+  "contact.whatsappSoon":
+    "WhatsApp group link will appear here once published. For access, email",
   "pay.zelleEmail": "Zelle email",
   "pay.title": "Pay fees or donate",
   "pay.lead":
@@ -518,6 +526,14 @@ export const mr: Dict = {
   "contact.formError": "संदेश पाठवता आला नाही.",
   "contact.social": "अनुसरण आणि सदस्यता",
   "contact.newsletter": "शाळा अद्यतने ईमेल",
+  "contact.whatsapp": "एमएमएस WhatsApp गट",
+  "contact.whatsappLead":
+    "शाळेच्या आठवणी आणि समुदाय अद्यतनांसाठी मिल्वॉकी मराठी शाळा पालक WhatsApp गटात सामील व्हा.",
+  "contact.whatsappJoin": "WhatsApp गटात सामील व्हा",
+  "contact.whatsappScan": "किंवा फोनने QR कोड स्कॅन करा",
+  "contact.whatsappQrAlt": "एमएमएस WhatsApp गटात सामील होण्यासाठी QR कोड",
+  "contact.whatsappSoon":
+    "WhatsApp गट लिंक प्रकाशित झाल्यावर येथे दिसेल. प्रवेशासाठी ईमेल करा",
   "pay.zelleEmail": "Zelle ईमेल",
   "pay.title": "फी भरा किंवा देणगी द्या",
   "pay.lead":
