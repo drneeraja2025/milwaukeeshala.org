@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const level = getProgramLevel(levelId);
   if (!level) return { title: "Program" };
   return {
-    title: `${level.title} program`,
+    title: level.title,
     description: level.summary,
   };
 }

@@ -111,6 +111,8 @@ export type ProgramLevel = {
   summaryMr?: string;
   body: string;
   bodyMr?: string;
+  image?: string;
+  bookUrl?: string;
 };
 
 export type Spotlight = {

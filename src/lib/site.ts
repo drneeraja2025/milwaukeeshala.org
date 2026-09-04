@@ -66,10 +66,7 @@ export const navSections: NavSection[] = [
     labelKey: "nav.section.school",
     links: [
       { href: "/", labelKey: "nav.home" },
-      { href: "/about", labelKey: "nav.about" },
       { href: "/staff", labelKey: "nav.staff" },
-      { href: "/contact", labelKey: "nav.contact" },
-      { href: "/volunteer", labelKey: "nav.volunteer" },
     ],
   },
   {
@@ -80,6 +77,7 @@ export const navSections: NavSection[] = [
       { href: "/programs", labelKey: "nav.programs" },
       { href: "/biliteracy", labelKey: "nav.biliteracy" },
       { href: "/pay", labelKey: "nav.pay" },
+      { href: "/volunteer", labelKey: "nav.volunteer" },
     ],
   },
   {
@@ -91,6 +89,8 @@ export const navSections: NavSection[] = [
       { href: "/calendar", labelKey: "nav.calendar" },
       { href: "/news", labelKey: "nav.news" },
       { href: "/photos", labelKey: "nav.photos" },
+      { href: "/about", labelKey: "nav.about" },
+      { href: "/contact", labelKey: "nav.contact" },
     ],
   },
 ];

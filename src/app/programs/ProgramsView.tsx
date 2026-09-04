@@ -7,6 +7,9 @@ import { getProgramLevels, getSponsors, pickLocale } from "@/lib/data";
 import { useI18n } from "@/lib/i18n/LanguageProvider";
 import { site } from "@/lib/site";
 
+const LULU_SHALA_BOOKS =
+  "https://www.lulu.com/search?contributor=Shala+Prakashan&adult_audience_rating=00&sortBy=PRODUCT_SALES_90_DAYS";
+
 export function ProgramsView() {
   const { t, lang } = useI18n();
   const levels = getProgramLevels();
@@ -20,76 +23,88 @@ export function ProgramsView() {
         lead={t("programs.lead")}
       />
 
-      <div className="split">
-        <div className="content-panel">
+      <div className="content-panel">
+        <div className="programs-levels-head">
           <h2>{t("programs.levels")}</h2>
-          <ul className="level-links">
-            {levels.map((level) => (
-              <li key={level.id}>
-                <Link href={`/programs/${level.id}`}>
+          <a
+            className="btn btn-ghost"
+            href={LULU_SHALA_BOOKS}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t("programs.booksBrowse")}
+          </a>
+        </div>
+
+        <ul className="grade-book-grid">
+          {levels.map((level) => (
+            <li key={level.id} className="grade-book-card">
+              <Link href={`/programs/${level.id}`} className="grade-book-link">
+                {level.image ? (
+                  <span className="grade-book-cover">
+                    <Image
+                      src={level.image}
+                      alt={pickLocale(lang, level.title, level.titleMr)}
+                      width={180}
+                      height={240}
+                    />
+                  </span>
+                ) : null}
+                <span className="grade-book-copy">
                   <strong>{pickLocale(lang, level.title, level.titleMr)}</strong>
                   <span className="muted">
                     {pickLocale(lang, level.summary, level.summaryMr)}
                   </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
+                </span>
+              </Link>
+              {level.bookUrl ? (
+                <a
+                  className="grade-book-lulu"
+                  href={level.bookUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t("programs.bookOpen")}
+                </a>
+              ) : null}
+            </li>
+          ))}
+        </ul>
 
-          <h2 style={{ marginTop: "1.75rem" }}>{t("programs.classroom")}</h2>
-          <ul className="program-points">
-            <li>{t("programs.p1")}</li>
-            <li>{t("programs.p2", { location: t("site.location") })}</li>
-            <li>{t("programs.p3")}</li>
-            <li>{t("programs.p4")}</li>
-          </ul>
+        <h2 style={{ marginTop: "1.75rem" }}>{t("programs.classroom")}</h2>
+        <ul className="program-points">
+          <li>{t("programs.p1")}</li>
+          <li>{t("programs.p2", { location: t("site.location") })}</li>
+          <li>{t("programs.p3")}</li>
+          <li>{t("programs.p4")}</li>
+        </ul>
 
-          <h2 style={{ marginTop: "1.75rem" }}>{t("programs.avant")}</h2>
-          <ul className="program-points">
-            <li>{t("programs.a1")}</li>
-            <li>{t("programs.a2")}</li>
-            <li>{t("programs.a3")}</li>
-          </ul>
-          <div className="cta-row" style={{ marginTop: "1.25rem" }}>
-            <Link className="btn btn-navy" href={site.biliteracyPath}>
-              {t("cta.biliteracy")}
-            </Link>
-            <a
-              className="btn btn-secondary"
-              href={site.avantUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t("cta.avant")}
-            </a>
-            <a
-              className="btn btn-ghost"
-              href={site.kalnirnayUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t("calendar.kalnirnay")}
-            </a>
-          </div>
-        </div>
-
-        <div className="program-visuals">
-          <figure>
-            <Image
-              src="/media/IMG-20260117-WA0003.jpg"
-              alt={t("home.cap.exams")}
-              fill
-              sizes="(max-width: 900px) 100vw, 40vw"
-            />
-          </figure>
-          <figure>
-            <Image
-              src="/media/20260521_171946.jpg"
-              alt={t("home.cap.certificates")}
-              fill
-              sizes="(max-width: 900px) 100vw, 40vw"
-            />
-          </figure>
+        <h2 style={{ marginTop: "1.75rem" }}>{t("programs.avant")}</h2>
+        <ul className="program-points">
+          <li>{t("programs.a1")}</li>
+          <li>{t("programs.a2")}</li>
+          <li>{t("programs.a3")}</li>
+        </ul>
+        <div className="cta-row" style={{ marginTop: "1.25rem" }}>
+          <Link className="btn btn-navy" href={site.biliteracyPath}>
+            {t("cta.biliteracy")}
+          </Link>
+          <a
+            className="btn btn-secondary"
+            href={site.avantUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t("cta.avant")}
+          </a>
+          <a
+            className="btn btn-ghost"
+            href={site.kalnirnayUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t("calendar.kalnirnay")}
+          </a>
         </div>
       </div>
 

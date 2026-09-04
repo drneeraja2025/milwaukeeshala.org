@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { ProgramsView } from "./ProgramsView";
 
 export const metadata: Metadata = {
-  title: "Programs",
+  title: "BMM Marathi Shala Grade Levels & Books",
   description:
-    "Marathi learning at Milwaukee Marathi Shala, cultural festivals in the curriculum, and Seal of Biliteracy via Avant / BMM.",
+    "Baalvarg through Level 5 BMM curriculum books for Milwaukee Marathi Shala, plus Seal of Biliteracy via Avant / BMM.",
 };
 
 export default function ProgramsPage() {

@@ -1,29 +1,79 @@
 [
   {
-    "id": "beginner",
-    "title": "Beginner",
-    "titleMr": "प्राथमिक",
-    "summary": "Introduction to Marathi sounds, letters, and everyday phrases for new learners.",
-    "summaryMr": "नवीन विद्यार्थ्यांसाठी मराठी ध्वनी, अक्षरे आणि दैनंदिन वाक्ये.",
-    "body": "Beginner classes focus on listening, speaking, and reading readiness. Activities include songs, stories, and games in a supportive Saturday classroom at HTW.",
-    "bodyMr": "प्राथमिक स्तर ऐकणे, बोलणे आणि वाचन तयारी यावर लक्ष केंद्रित करतो. गाणी, कथा आणि खेळांसह शनिवारी HTW वर्ग."
+    "id": "baalvarg",
+    "title": "Baalvarg",
+    "titleMr": "बालवर्ग",
+    "summary": "Introductory early-childhood level for youngest learners.",
+    "summaryMr": "सर्वात लहान विद्यार्थ्यांसाठी प्राथमिक बालवर्ग स्तर.",
+    "body": "Baalvarg is the introductory early-childhood level for youngest learners. Classes use play, songs, and simple Marathi exposure with the BMM Baalvarg textbook.",
+    "bodyMr": "बालवर्ग हे सर्वात लहान विद्यार्थ्यांसाठीचे प्राथमिक स्तर आहे. खेळ, गाणी आणि साध्या मराठी ओळखीसह BMM बालवर्ग पाठ्यपुस्तक वापरले जाते.",
+    "image": "/media/books/baalvarg.jpg",
+    "bookUrl": "https://www.lulu.com/shop/shala-prakashan/baalvarg-2026/paperback/product-v827z65.html"
   },
   {
-    "id": "intermediate",
-    "title": "Intermediate",
-    "titleMr": "मध्यम",
-    "summary": "Reading, writing, and conversation building on BMM-level skills.",
-    "summaryMr": "BMM स्तरावर वाचन, लेखन आणि संवाद.",
-    "body": "Intermediate learners work on grammar, comprehension, and cultural topics. Some students also prepare for BMM assessments.",
-    "bodyMr": "मध्यम स्तरावर व्याकरण, समज आणि सांस्कृतिक विषय. काही विद्यार्थी BMM मूल्यमापनासाठी तयारी करतात."
+    "id": "pragat-baalvarg",
+    "title": "Pragat Baalvarg",
+    "titleMr": "प्रगत बालवर्ग",
+    "summary": "Advanced beginner or transitional early level.",
+    "summaryMr": "प्रगत नवशिक्या किंवा संक्रमणकालीन प्राथमिक स्तर.",
+    "body": "Pragat Baalvarg is an advanced beginner or transitional early level, bridging early childhood learning into formal literacy with the BMM Pragat Baalvarg book.",
+    "bodyMr": "प्रगत बालवर्ग हा प्रगत नवशिक्या किंवा संक्रमणकालीन प्राथमिक स्तर आहे, जो औपचारिक साक्षरतेकडे नेतो.",
+    "image": "/media/books/pragat-baalvarg.jpg",
+    "bookUrl": "https://www.lulu.com/shop/shala-prakashan/pragat-baalvarg-2026/paperback/product-57qdzgp.html"
   },
   {
-    "id": "advanced",
-    "title": "Advanced",
-    "titleMr": "प्रगत",
-    "summary": "Fluency, composition, and exam preparation including Seal of Biliteracy pathways.",
-    "summaryMr": "प्रवाह, रचना आणि द्विभाषिक शिक्षण मार्गासह परीक्षा तयारी.",
-    "body": "Advanced classes emphasize essays, presentations, and exam readiness. See the Biliteracy page for Avant Assessment details.",
-    "bodyMr": "प्रगत वर्ग निबंध, सादरीकरण आणि परीक्षा तयारीवर भर देतात. Avant तपशीलांसाठी Biliteracy पान पहा."
+    "id": "level-1",
+    "title": "Level 1 (Pahili)",
+    "titleMr": "इयत्ता १ (पहिली)",
+    "summary": "Fundamental vocabulary, alphabet, and basic conversational phrases.",
+    "summaryMr": "मूलभूत शब्दसंग्रह, वर्णमाला आणि साधे संभाषण.",
+    "body": "Level 1 (Pahili) builds fundamental vocabulary, alphabet skills, and basic conversational phrases using the BMM Level 1 textbook (पुस्तक पहिले).",
+    "bodyMr": "इयत्ता १ (पहिली) मध्ये मूलभूत शब्दसंग्रह, वर्णमाला आणि साधे संभाषण शिकवले जाते — BMM पुस्तक पहिले.",
+    "image": "/media/books/level-1.jpg",
+    "bookUrl": "https://www.lulu.com/shop/shala-prakashan/level1-2026/paperback/product-e7qn2vm.html"
+  },
+  {
+    "id": "level-2",
+    "title": "Level 2 (Dusari)",
+    "titleMr": "इयत्ता २ (दुसरी)",
+    "summary": "Building simple sentence structures and expanding vocabulary.",
+    "summaryMr": "साधी वाक्यरचना आणि शब्दसंग्रहाचा विस्तार.",
+    "body": "Level 2 (Dusari) focuses on building simple sentence structures and expanding vocabulary with the BMM Level 2 textbook (पुस्तक दुसरे).",
+    "bodyMr": "इयत्ता २ (दुसरी) साधी वाक्यरचना आणि शब्दसंग्रह विस्तार यावर भर देते — BMM पुस्तक दुसरे.",
+    "image": "/media/books/level-2.jpg",
+    "bookUrl": "https://www.lulu.com/shop/shala-prakashan/level2-2026/paperback/product-je2mkvr.html"
+  },
+  {
+    "id": "level-3",
+    "title": "Level 3 (Tisari)",
+    "titleMr": "इयत्ता ३ (तिसरी)",
+    "summary": "Intermediate grammar, reading comprehension, and writing practice.",
+    "summaryMr": "मध्यम व्याकरण, वाचन समज आणि लेखन सराव.",
+    "body": "Level 3 (Tisari) develops intermediate grammar, reading comprehension, and writing practice with the BMM Level 3 textbook (पुस्तक तिसरे).",
+    "bodyMr": "इयत्ता ३ (तिसरी) मध्ये मध्यम व्याकरण, वाचन समज आणि लेखन सराव — BMM पुस्तक तिसरे.",
+    "image": "/media/books/level-3.jpg",
+    "bookUrl": "https://www.lulu.com/shop/shala-prakashan/level3-2026/paperback/product-7kzd4k7.html"
+  },
+  {
+    "id": "level-4",
+    "title": "Level 4 (Chauthi)",
+    "titleMr": "इयत्ता ४ (चौथी)",
+    "summary": "Advanced sentence building, short stories, and cultural essays.",
+    "summaryMr": "प्रगत वाक्य रचना, लघुकथा आणि सांस्कृतिक निबंध.",
+    "body": "Level 4 (Chauthi) emphasizes advanced sentence building, short stories, and cultural essays with the BMM Level 4 textbook.",
+    "bodyMr": "इयत्ता ४ (चौथी) प्रगत वाक्य रचना, लघुकथा आणि सांस्कृतिक निबंध यावर भर देते.",
+    "image": "/media/books/level-4.jpg",
+    "bookUrl": "https://www.lulu.com/shop/shala-prakashan/level4-2026/paperback/product-454d2mr.html"
+  },
+  {
+    "id": "level-5",
+    "title": "Level 5 (Pachavi)",
+    "titleMr": "इयत्ता ५ (पाचवी)",
+    "summary": "Fluent reading, writing, and conversational mastery of simple Marathi literature.",
+    "summaryMr": "साध्या मराठी साहित्याचे प्रवाही वाचन, लेखन आणि संभाषण.",
+    "body": "Level 5 (Pachavi) aims for fluent reading, writing, and conversational mastery of simple Marathi literature with the BMM Level 5 textbook.",
+    "bodyMr": "इयत्ता ५ (पाचवी) साध्या मराठी साहित्याचे प्रवाही वाचन, लेखन आणि संभाषण यासाठी आहे.",
+    "image": "/media/books/level-5.jpg",
+    "bookUrl": "https://www.lulu.com/shop/shala-prakashan/level5-2026/paperback/product-q6q8r52.html"
   }
 ]

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { getProgramLevel, pickLocale } from "@/lib/data";
@@ -29,23 +30,45 @@ export function ProgramLevelView({ levelId }: { levelId: string }) {
         lead={pickLocale(lang, level.summary, level.summaryMr)}
       />
 
-      <div className="content-panel">
-        <p>{pickLocale(lang, level.body, level.bodyMr)}</p>
-        <div className="cta-row" style={{ marginTop: "1.5rem" }}>
-          <a
-            className="btn btn-primary"
-            href={site.admissionsFormUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {t("cta.apply")}
-          </a>
-          <Link className="btn btn-secondary" href="/programs">
-            {t("programs.back")}
-          </Link>
-          <Link className="btn btn-ghost" href={site.biliteracyPath}>
-            {t("cta.biliteracy")}
-          </Link>
+      <div className="content-panel grade-detail">
+        {level.image ? (
+          <figure className="grade-detail-cover">
+            <Image
+              src={level.image}
+              alt={pickLocale(lang, level.title, level.titleMr)}
+              width={220}
+              height={294}
+            />
+          </figure>
+        ) : null}
+        <div>
+          <p>{pickLocale(lang, level.body, level.bodyMr)}</p>
+          <div className="cta-row" style={{ marginTop: "1.5rem" }}>
+            {level.bookUrl ? (
+              <a
+                className="btn btn-primary"
+                href={level.bookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("programs.bookOpen")}
+              </a>
+            ) : null}
+            <a
+              className="btn btn-secondary"
+              href={site.admissionsFormUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t("cta.apply")}
+            </a>
+            <Link className="btn btn-ghost" href="/programs">
+              {t("programs.back")}
+            </Link>
+            <Link className="btn btn-ghost" href={site.biliteracyPath}>
+              {t("cta.biliteracy")}
+            </Link>
+          </div>
         </div>
       </div>
     </div>
