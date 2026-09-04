@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useI18n } from "@/lib/i18n/LanguageProvider";
-import { navLinks, site } from "@/lib/site";
+import { navSections, site } from "@/lib/site";
 
 export function SiteFooter() {
   const { t, lang } = useI18n();
@@ -33,16 +33,18 @@ export function SiteFooter() {
         </div>
 
         <div className="footer-cols">
-          <div>
-            <h2>{t("footer.explore")}</h2>
-            <ul>
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href}>{t(link.labelKey)}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {navSections.map((section) => (
+            <div key={section.id}>
+              <h2>{t(section.labelKey)}</h2>
+              <ul>
+                {section.links.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href}>{t(link.labelKey)}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
           <div>
             <h2>{t("footer.connect")}</h2>
             <ul>
@@ -84,9 +86,6 @@ export function SiteFooter() {
                   </a>
                 </li>
               ) : null}
-              <li>
-                <Link href="/volunteer">{t("nav.volunteer")}</Link>
-              </li>
             </ul>
           </div>
           <div>

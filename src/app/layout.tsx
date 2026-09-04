@@ -44,8 +44,10 @@ export default function RootLayout({
           <div className="site-shell">
             <AnnouncementBanner />
             <SiteHeader />
-            <main className="site-main">{children}</main>
-            <SiteFooter />
+            <div className="site-content">
+              <main className="site-main">{children}</main>
+              <SiteFooter />
+            </div>
           </div>
           {process.env.VERCEL === "1" ? (
             <Script src="/_vercel/insights/script.js" strategy="afterInteractive" />

@@ -44,18 +44,53 @@ export const site = {
 
 export type SiteSettings = Settings;
 
-export const navLinks = [
-  { href: "/", labelKey: "nav.home" as const },
-  { href: "/about", labelKey: "nav.about" as const },
-  { href: "/admissions", labelKey: "nav.admissions" as const },
-  { href: "/staff", labelKey: "nav.staff" as const },
-  { href: "/programs", labelKey: "nav.programs" as const },
-  { href: "/biliteracy", labelKey: "nav.biliteracy" as const },
-  { href: "/calendar", labelKey: "nav.calendar" as const },
-  { href: "/news", labelKey: "nav.news" as const },
-  { href: "/photos", labelKey: "nav.photos" as const },
-  { href: "/faq", labelKey: "nav.faq" as const },
-  { href: "/resources", labelKey: "nav.resources" as const },
-  { href: "/pay", labelKey: "nav.pay" as const },
-  { href: "/contact", labelKey: "nav.contact" as const },
-] as const;
+export type NavLink = {
+  href: string;
+  labelKey: string;
+  external?: boolean;
+};
+
+export type NavSection = {
+  id: string;
+  labelKey: string;
+  links: NavLink[];
+};
+
+/** Grouped primary navigation (side toolbar sections). */
+export const navSections: NavSection[] = [
+  {
+    id: "school",
+    labelKey: "nav.section.school",
+    links: [
+      { href: "/", labelKey: "nav.home" },
+      { href: "/about", labelKey: "nav.about" },
+      { href: "/staff", labelKey: "nav.staff" },
+      { href: "/contact", labelKey: "nav.contact" },
+      { href: "/volunteer", labelKey: "nav.volunteer" },
+    ],
+  },
+  {
+    id: "join",
+    labelKey: "nav.section.join",
+    links: [
+      { href: "/admissions", labelKey: "nav.admissions" },
+      { href: "/programs", labelKey: "nav.programs" },
+      { href: "/biliteracy", labelKey: "nav.biliteracy" },
+      { href: "/pay", labelKey: "nav.pay" },
+    ],
+  },
+  {
+    id: "families",
+    labelKey: "nav.section.families",
+    links: [
+      { href: "/faq", labelKey: "nav.faq" },
+      { href: "/resources", labelKey: "nav.resources" },
+      { href: "/calendar", labelKey: "nav.calendar" },
+      { href: "/news", labelKey: "nav.news" },
+      { href: "/photos", labelKey: "nav.photos" },
+    ],
+  },
+];
+
+/** Flat list for footer and legacy callers. */
+export const navLinks = navSections.flatMap((section) => section.links);
