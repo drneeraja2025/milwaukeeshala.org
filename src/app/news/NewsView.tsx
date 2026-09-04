@@ -4,6 +4,7 @@ import Image from "next/image";
 import { PageHero } from "@/components/PageHero";
 import { formatShortDate, getUpdates, pickLocale } from "@/lib/data";
 import { useI18n } from "@/lib/i18n/LanguageProvider";
+import { renderSimpleMarkup } from "@/lib/simpleMarkup";
 
 export function NewsView() {
   const { t, lang } = useI18n();
@@ -32,7 +33,9 @@ export function NewsView() {
                 />
               </div>
             ) : null}
-            <p>{pickLocale(lang, item.body, item.bodyMr)}</p>
+            <div className="markup-body">
+              {renderSimpleMarkup(pickLocale(lang, item.body, item.bodyMr))}
+            </div>
           </article>
         ))}
       </div>

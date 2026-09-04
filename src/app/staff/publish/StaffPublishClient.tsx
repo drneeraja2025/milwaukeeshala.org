@@ -4,7 +4,10 @@ import { FormEvent, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { PageHero } from "@/components/PageHero";
 import type { Announcement, GalleryAlbum, GalleryVideo, ResourceItem, UpdateItem } from "@/lib/data";
+import { resizeFormImages } from "@/lib/resizeImage";
+import { MARKUP_HINT, renderSimpleMarkup } from "@/lib/simpleMarkup";
 import type { SiteSettings } from "@/lib/site";
+import type { StaffRole } from "@/lib/staffAuth";
 
 type Tab =
   | "news"
@@ -14,7 +17,8 @@ type Tab =
   | "settings"
   | "announcement"
   | "resource"
-  | "qr";
+  | "qr"
+  | "tools";
 
 export type StaffPersonOption = {
   id: string;
@@ -22,6 +26,14 @@ export type StaffPersonOption = {
   role: string;
   bio: string;
   photo: string | null;
+};
+
+type AuditCommit = {
+  sha: string;
+  message: string;
+  date: string;
+  url: string;
+  author: string;
 };
 
 type Props = {
@@ -32,23 +44,13 @@ type Props = {
   settings: SiteSettings;
   announcement: Announcement;
   resources: ResourceItem[];
+  staffRole: StaffRole;
 };
 
 const ALBUMS = [
   { id: "community", label: "Community & Teachers" },
   { id: "annual-program", label: "Annual Program" },
   { id: "certificates-exams", label: "Certificates & Exams" },
-];
-
-const TABS: { id: Tab; label: string }[] = [
-  { id: "news", label: "News" },
-  { id: "photo", label: "Photo" },
-  { id: "video", label: "Video" },
-  { id: "teacher", label: "Teachers" },
-  { id: "settings", label: "Settings" },
-  { id: "announcement", label: "Banner" },
-  { id: "resource", label: "Resource" },
-  { id: "qr", label: "QR" },
 ];
 
 export function StaffPublishClient({
@@ -59,8 +61,10 @@ export function StaffPublishClient({
   settings,
   announcement,
   resources,
+  staffRole,
 }: Props) {
   const router = useRouter();
+  const isAdmin = staffRole === "admin";
   const [tab, setTab] = useState<Tab>("news");
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
@@ -73,9 +77,29 @@ export function StaffPublishClient({
   const [editSummary, setEditSummary] = useState("");
   const [editBody, setEditBody] = useState("");
 
+  const [draftTitle, setDraftTitle] = useState("");
+  const [draftSummary, setDraftSummary] = useState("");
+  const [draftBody, setDraftBody] = useState("");
+  const [audit, setAudit] = useState<AuditCommit[] | null>(null);
+
   const today = useMemo(() => new Date().toISOString().slice(0, 10), []);
   const selected = people.find((p) => p.id === personId) || people[0];
   const editNews = newsItems.find((n) => n.id === editNewsId);
+
+  const tabs = useMemo(() => {
+    const all: { id: Tab; label: string; adminOnly?: boolean }[] = [
+      { id: "news", label: "News" },
+      { id: "photo", label: "Photo" },
+      { id: "video", label: "Video" },
+      { id: "teacher", label: "Teachers" },
+      { id: "settings", label: "Settings", adminOnly: true },
+      { id: "announcement", label: "Banner", adminOnly: true },
+      { id: "resource", label: "Resource", adminOnly: true },
+      { id: "qr", label: "QR", adminOnly: true },
+      { id: "tools", label: "Tools", adminOnly: true },
+    ];
+    return all.filter((t) => isAdmin || !t.adminOnly);
+  }, [isAdmin]);
 
   useEffect(() => {
     if (editNews) {
@@ -84,6 +108,14 @@ export function StaffPublishClient({
       setEditBody(editNews.body);
     }
   }, [editNewsId, editNews]);
+
+  useEffect(() => {
+    if (!tabs.some((t) => t.id === tab)) setTab("news");
+  }, [tabs, tab]);
+
+  function insertMarkup(snippet: string) {
+    setDraftBody((prev) => (prev ? `${prev}${snippet}` : snippet));
+  }
 
   async function onLogout() {
     setBusy(true);
@@ -97,12 +129,18 @@ export function StaffPublishClient({
   }
 
   async function publishForm(data: FormData) {
+    const resized = await resizeFormImages(data);
     const res = await fetch("/api/staff/publish", {
       method: "POST",
-      body: data,
+      body: resized,
       credentials: "same-origin",
     });
-    const payload = (await res.json()) as { error?: string; note?: string; commitUrl?: string };
+    const payload = (await res.json()) as {
+      error?: string;
+      note?: string;
+      commitUrl?: string;
+      commits?: AuditCommit[];
+    };
     if (res.status === 401) {
       router.replace("/staff/login");
       router.refresh();
@@ -117,6 +155,7 @@ export function StaffPublishClient({
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (tab === "tools") return;
     setBusy(true);
     setMessage(null);
     setError(null);
@@ -125,6 +164,11 @@ export function StaffPublishClient({
     const data = new FormData(form);
     data.set("kind", tab === "teacher" ? "teacher" : tab);
     if (tab === "teacher") data.set("action", teacherMode);
+    if (tab === "news") {
+      data.set("title", draftTitle);
+      data.set("summary", draftSummary);
+      data.set("body", draftBody);
+    }
 
     try {
       const payload = await publishForm(data);
@@ -134,6 +178,11 @@ export function StaffPublishClient({
           .filter(Boolean)
           .join(" "),
       );
+      if (tab === "news") {
+        setDraftTitle("");
+        setDraftSummary("");
+        setDraftBody("");
+      }
       if (tab !== "teacher" && tab !== "settings" && tab !== "announcement") form.reset();
       router.refresh();
     } catch (err) {
@@ -143,7 +192,7 @@ export function StaffPublishClient({
     }
   }
 
-  async function quickAction(kind: string, action: string, fields: Record<string, string>) {
+  async function quickAction(kind: string, action: string, fields: Record<string, string> = {}) {
     setBusy(true);
     setMessage(null);
     setError(null);
@@ -154,8 +203,9 @@ export function StaffPublishClient({
     try {
       const payload = await publishForm(data);
       if (!payload) return;
-      setMessage(payload.note || "Done.");
-      router.refresh();
+      if (payload.commits) setAudit(payload.commits);
+      setMessage(payload.note || (payload.commits ? "Audit log loaded." : "Done."));
+      if (action !== "audit") router.refresh();
     } catch (err) {
       setError(err instanceof Error ? err.message : "Network error");
     } finally {
@@ -182,26 +232,31 @@ export function StaffPublishClient({
                 ? "Save banner"
                 : tab === "resource"
                   ? "Add resource"
-                  : "Replace QR";
+                  : tab === "tools"
+                    ? "—"
+                    : "Replace QR";
 
   return (
     <div className="page-shell">
       <PageHero
         eyebrow="Staff"
         title="Publish to the website"
-        lead="Hybrid workflow: calendar stays on GuruVidyaZen. Use this page for news, gallery, teachers, settings, banner, resources, and QR codes."
+        lead="Hybrid workflow: calendar stays on GuruVidyaZen. Draft preview, formatting, image resize, and tools are built in."
       />
 
       <div className="content-panel staff-publish">
         <div className="staff-toolbar">
-          <p className="muted staff-hint staff-toolbar-note">Signed in · session ~7 days</p>
+          <p className="muted staff-hint staff-toolbar-note">
+            Signed in as <strong>{staffRole}</strong> · session ~7 days
+            {!isAdmin ? " · editor (no settings / delete / undo)" : ""}
+          </p>
           <button type="button" className="btn btn-ghost" onClick={onLogout} disabled={busy}>
             Log out
           </button>
         </div>
 
         <div className="staff-tabs" role="tablist">
-          {TABS.map((item) => (
+          {tabs.map((item) => (
             <button
               key={item.id}
               type="button"
@@ -216,41 +271,92 @@ export function StaffPublishClient({
         <form className="staff-form" onSubmit={onSubmit} key={`${tab}-${teacherMode}`}>
           {tab === "news" ? (
             <>
-              <label className="staff-field">
-                <span>Date</span>
-                <input name="date" type="date" defaultValue={today} required />
-              </label>
-              <label className="staff-field">
-                <span>Schedule publish (optional — future date hides until then)</span>
-                <input name="publishAt" type="date" />
-              </label>
-              <label className="staff-field">
-                <span>Title (English)</span>
-                <input name="title" required maxLength={120} />
-              </label>
-              <label className="staff-field">
-                <span>Title (Marathi, optional)</span>
-                <input name="titleMr" maxLength={120} />
-              </label>
-              <label className="staff-field">
-                <span>Short summary</span>
-                <textarea name="summary" required rows={2} maxLength={280} />
-              </label>
-              <label className="staff-field">
-                <span>Full text</span>
-                <textarea name="body" required rows={5} maxLength={4000} />
-              </label>
-              <label className="staff-field">
-                <span>Optional image</span>
-                <input name="image" type="file" accept="image/jpeg,image/png,image/webp" />
-              </label>
+              <div className="staff-news-split">
+                <div className="staff-news-fields">
+                  <label className="staff-field">
+                    <span>Date</span>
+                    <input name="date" type="date" defaultValue={today} required />
+                  </label>
+                  <label className="staff-field">
+                    <span>Schedule publish (optional — hidden until this date)</span>
+                    <input name="publishAt" type="date" min={today} />
+                  </label>
+                  <label className="staff-field">
+                    <span>Title (English)</span>
+                    <input
+                      value={draftTitle}
+                      onChange={(e) => setDraftTitle(e.target.value)}
+                      required
+                      maxLength={120}
+                    />
+                  </label>
+                  <label className="staff-field">
+                    <span>Title (Marathi, optional)</span>
+                    <input name="titleMr" maxLength={120} />
+                  </label>
+                  <label className="staff-field">
+                    <span>Short summary</span>
+                    <textarea
+                      value={draftSummary}
+                      onChange={(e) => setDraftSummary(e.target.value)}
+                      required
+                      rows={2}
+                      maxLength={280}
+                    />
+                  </label>
+                  <div className="staff-field">
+                    <span>Full text</span>
+                    <div className="markup-toolbar">
+                      <button type="button" className="btn btn-ghost btn-sm" onClick={() => insertMarkup("**bold**")}>
+                        Bold
+                      </button>
+                      <button type="button" className="btn btn-ghost btn-sm" onClick={() => insertMarkup("*italic*")}>
+                        Italic
+                      </button>
+                      <button
+                        type="button"
+                        className="btn btn-ghost btn-sm"
+                        onClick={() => insertMarkup("[link text](https://)")}
+                      >
+                        Link
+                      </button>
+                      <button type="button" className="btn btn-ghost btn-sm" onClick={() => insertMarkup("\n- item\n")}>
+                        List
+                      </button>
+                    </div>
+                    <textarea
+                      value={draftBody}
+                      onChange={(e) => setDraftBody(e.target.value)}
+                      required
+                      rows={6}
+                      maxLength={4000}
+                    />
+                    <p className="muted staff-hint">{MARKUP_HINT}</p>
+                  </div>
+                  <label className="staff-field">
+                    <span>Optional image (auto-resized on upload)</span>
+                    <input name="image" type="file" accept="image/jpeg,image/png,image/webp" />
+                  </label>
+                </div>
+                <aside className="staff-draft-preview" aria-live="polite">
+                  <h3>Draft preview</h3>
+                  <p className="news-date">{today}</p>
+                  <h2>{draftTitle || "Title…"}</h2>
+                  <p className="muted">{draftSummary || "Summary…"}</p>
+                  <div className="markup-body">
+                    {draftBody ? renderSimpleMarkup(draftBody) : <p className="muted">Body preview…</p>}
+                  </div>
+                </aside>
+              </div>
 
               <div className="staff-manage-block">
                 <h3>Edit or delete existing news</h3>
                 <select value={editNewsId} onChange={(e) => setEditNewsId(e.target.value)}>
                   {newsItems.map((n) => (
                     <option key={n.id} value={n.id}>
+                      {n.publishAt && n.publishAt > today ? "⏳ " : ""}
                       {n.date} — {n.title}
+                      {n.publishAt ? ` (live ${n.publishAt})` : ""}
                     </option>
                   ))}
                 </select>
@@ -258,29 +364,15 @@ export function StaffPublishClient({
                   <div className="staff-form-inner">
                     <label className="staff-field">
                       <span>Title</span>
-                      <input
-                        value={editTitle}
-                        onChange={(e) => setEditTitle(e.target.value)}
-                        required
-                      />
+                      <input value={editTitle} onChange={(e) => setEditTitle(e.target.value)} required />
                     </label>
                     <label className="staff-field">
                       <span>Summary</span>
-                      <textarea
-                        value={editSummary}
-                        onChange={(e) => setEditSummary(e.target.value)}
-                        rows={2}
-                        required
-                      />
+                      <textarea value={editSummary} onChange={(e) => setEditSummary(e.target.value)} rows={2} required />
                     </label>
                     <label className="staff-field">
                       <span>Body</span>
-                      <textarea
-                        value={editBody}
-                        onChange={(e) => setEditBody(e.target.value)}
-                        rows={4}
-                        required
-                      />
+                      <textarea value={editBody} onChange={(e) => setEditBody(e.target.value)} rows={4} required />
                     </label>
                     <button
                       type="button"
@@ -299,14 +391,12 @@ export function StaffPublishClient({
                     </button>
                   </div>
                 ) : null}
-                {editNewsId ? (
+                {editNewsId && isAdmin ? (
                   <button
                     type="button"
                     className="btn btn-ghost staff-danger"
                     disabled={busy}
-                    onClick={() =>
-                      quickAction("news", "delete", { id: editNewsId })
-                    }
+                    onClick={() => quickAction("news", "delete", { id: editNewsId })}
                   >
                     Delete selected news
                   </button>
@@ -332,29 +422,31 @@ export function StaffPublishClient({
                 <input name="caption" required maxLength={120} />
               </label>
               <label className="staff-field">
-                <span>Photo file</span>
+                <span>Photo file (auto-resized)</span>
                 <input name="image" type="file" accept="image/jpeg,image/png,image/webp" required />
               </label>
-              <div className="staff-manage-block">
-                <h3>Delete a photo</h3>
-                {albums.flatMap((a) =>
-                  a.photos.map((p) => (
-                    <div key={p.src} className="staff-row">
-                      <span className="muted">{a.id}: {p.caption}</span>
-                      <button
-                        type="button"
-                        className="btn btn-ghost btn-sm"
-                        disabled={busy}
-                        onClick={() =>
-                          quickAction("photo", "delete", { albumId: a.id, src: p.src })
-                        }
-                      >
-                        Delete
-                      </button>
-                    </div>
-                  )),
-                )}
-              </div>
+              {isAdmin ? (
+                <div className="staff-manage-block">
+                  <h3>Delete a photo</h3>
+                  {albums.flatMap((a) =>
+                    a.photos.map((p) => (
+                      <div key={p.src} className="staff-row">
+                        <span className="muted">
+                          {a.id}: {p.caption}
+                        </span>
+                        <button
+                          type="button"
+                          className="btn btn-ghost btn-sm"
+                          disabled={busy}
+                          onClick={() => quickAction("photo", "delete", { albumId: a.id, src: p.src })}
+                        >
+                          Delete
+                        </button>
+                      </div>
+                    )),
+                  )}
+                </div>
+              ) : null}
             </>
           ) : null}
 
@@ -368,22 +460,24 @@ export function StaffPublishClient({
                 <span>YouTube URL or video ID</span>
                 <input name="youtubeUrl" required placeholder="https://youtube.com/watch?v=..." />
               </label>
-              <div className="staff-manage-block">
-                <h3>Existing videos</h3>
-                {videos.map((v) => (
-                  <div key={v.id} className="staff-row">
-                    <span>{v.title}</span>
-                    <button
-                      type="button"
-                      className="btn btn-ghost btn-sm"
-                      disabled={busy}
-                      onClick={() => quickAction("video", "delete", { id: v.id })}
-                    >
-                      Delete
-                    </button>
-                  </div>
-                ))}
-              </div>
+              {isAdmin ? (
+                <div className="staff-manage-block">
+                  <h3>Existing videos</h3>
+                  {videos.map((v) => (
+                    <div key={v.id} className="staff-row">
+                      <span>{v.title}</span>
+                      <button
+                        type="button"
+                        className="btn btn-ghost btn-sm"
+                        disabled={busy}
+                        onClick={() => quickAction("video", "delete", { id: v.id })}
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              ) : null}
             </>
           ) : null}
 
@@ -397,7 +491,7 @@ export function StaffPublishClient({
                 >
                   <option value="update">Update existing</option>
                   <option value="add">Add new</option>
-                  <option value="delete">Delete</option>
+                  {isAdmin ? <option value="delete">Delete</option> : null}
                 </select>
               </label>
               {teacherMode !== "add" ? (
@@ -447,7 +541,7 @@ export function StaffPublishClient({
                     />
                   </label>
                   <label className="staff-field">
-                    <span>Photo (optional)</span>
+                    <span>Photo (optional, auto-resized)</span>
                     <input name="image" type="file" accept="image/jpeg,image/png,image/webp" />
                   </label>
                 </>
@@ -457,7 +551,7 @@ export function StaffPublishClient({
             </div>
           ) : null}
 
-          {tab === "settings" ? (
+          {tab === "settings" && isAdmin ? (
             <>
               {(
                 [
@@ -479,7 +573,7 @@ export function StaffPublishClient({
             </>
           ) : null}
 
-          {tab === "announcement" ? (
+          {tab === "announcement" && isAdmin ? (
             <>
               <label className="staff-field">
                 <span>Show banner on all pages</span>
@@ -507,7 +601,7 @@ export function StaffPublishClient({
             </>
           ) : null}
 
-          {tab === "resource" ? (
+          {tab === "resource" && isAdmin ? (
             <>
               <label className="staff-field">
                 <span>Title</span>
@@ -546,7 +640,7 @@ export function StaffPublishClient({
             </>
           ) : null}
 
-          {tab === "qr" ? (
+          {tab === "qr" && isAdmin ? (
             <>
               <label className="staff-field">
                 <span>Which QR</span>
@@ -562,9 +656,58 @@ export function StaffPublishClient({
             </>
           ) : null}
 
-          <button className="btn btn-navy" type="submit" disabled={busy}>
-            {busy ? "Publishing…" : submitLabel}
-          </button>
+          {tab === "tools" && isAdmin ? (
+            <div className="staff-manage-block">
+              <h3>Content audit log</h3>
+              <p className="muted">Recent GitHub commits that start with <code>content:</code>.</p>
+              <button
+                type="button"
+                className="btn btn-secondary"
+                disabled={busy}
+                onClick={() => quickAction("tools", "audit")}
+              >
+                Refresh audit log
+              </button>
+              {audit ? (
+                <ul className="staff-audit-list">
+                  {audit.map((c) => (
+                    <li key={c.sha}>
+                      <a href={c.url} target="_blank" rel="noopener noreferrer">
+                        {c.message}
+                      </a>
+                      <span className="muted">
+                        {" "}
+                        · {c.date ? new Date(c.date).toLocaleString() : ""} · {c.author}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+              <h3 style={{ marginTop: "1.5rem" }}>Undo last publish</h3>
+              <p className="muted">
+                Restores files from the previous revision of the latest <code>content:</code> commit.
+                Use carefully — cannot undo an undo in one click.
+              </p>
+              <button
+                type="button"
+                className="btn btn-ghost staff-danger"
+                disabled={busy}
+                onClick={() => {
+                  if (window.confirm("Undo the last content publish commit?")) {
+                    void quickAction("tools", "undo");
+                  }
+                }}
+              >
+                Undo last publish
+              </button>
+            </div>
+          ) : null}
+
+          {tab !== "tools" ? (
+            <button className="btn btn-navy" type="submit" disabled={busy}>
+              {busy ? "Publishing…" : submitLabel}
+            </button>
+          ) : null}
         </form>
 
         {message ? <p className="staff-ok">{message}</p> : null}

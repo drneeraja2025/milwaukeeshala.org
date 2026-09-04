@@ -44,9 +44,18 @@ async function uploadImageFile(
   return `/${path.replace(/^public\//, "")}`;
 }
 
-export async function handlePublish(form: FormData) {
+export async function handlePublish(
+  form: FormData,
+  _auth?: { role: "admin" | "editor" },
+) {
   const kind = String(form.get("kind") || "").trim();
   const action = String(form.get("action") || "create").trim();
+
+  if (kind === "tools") {
+    if (action === "undo") return undoPublish();
+    if (action === "audit") return auditLog();
+    return jsonError("Unknown tools action", 400);
+  }
 
   if (kind === "news") {
     if (action === "delete") return deleteNews(form);
@@ -72,6 +81,22 @@ export async function handlePublish(form: FormData) {
   if (kind === "resource") return addResource(form);
 
   return jsonError("Unknown kind", 400);
+}
+
+async function auditLog() {
+  const { listRecentContentCommits } = await import("@/lib/githubContent");
+  const commits = await listRecentContentCommits(20);
+  return Response.json({ ok: true, commits });
+}
+
+async function undoPublish() {
+  const { undoLastContentCommit } = await import("@/lib/githubContent");
+  const result = await undoLastContentCommit();
+  return publishOk({
+    kind: "tools",
+    note: `Undid: ${result.undoneMessage}`,
+    commitUrl: result.commitUrl,
+  });
 }
 
 async function createNews(form: FormData) {

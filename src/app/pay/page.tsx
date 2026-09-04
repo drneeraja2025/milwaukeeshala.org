@@ -47,6 +47,9 @@ export default function PayPage() {
             <Link className="btn btn-ghost" href="/contact">
               {t("nav.contact")}
             </Link>
+            <Link className="btn btn-ghost" href="/print/pay">
+              {t("print.onePager")}
+            </Link>
           </div>
         </div>
 

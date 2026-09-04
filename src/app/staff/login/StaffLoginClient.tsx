@@ -59,7 +59,9 @@ export function StaffLoginClient() {
           </button>
         </form>
         <p className="muted staff-hint">
-          Bookmark <code>/staff/login</code>. Session lasts about 7 days.
+          Bookmark <code>/staff/login</code>. Session lasts about 7 days. Admin uses{" "}
+          <code>ADMIN_PASSWORD</code>; optional editor uses <code>EDITOR_PASSWORD</code>{" "}
+          (content only — no settings, deletes, or undo).
         </p>
       </div>
     </div>

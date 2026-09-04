@@ -7,7 +7,7 @@ import {
   getResources,
   getStaff,
 } from "@/lib/data";
-import { hasStaffSession } from "@/lib/staffAuth";
+import { getStaffSessionRole, hasStaffSession } from "@/lib/staffAuth";
 import siteSettings from "../../../../data/site-settings.json";
 import { StaffPublishClient } from "./StaffPublishClient";
 
@@ -22,6 +22,7 @@ export default async function StaffPublishPage() {
   if (!(await hasStaffSession())) {
     redirect("/staff/login");
   }
+  const staffRole = (await getStaffSessionRole()) || "admin";
 
   const staff = getStaff();
   const gallery = getGallery();
@@ -44,6 +45,7 @@ export default async function StaffPublishPage() {
       settings={siteSettings}
       announcement={getAnnouncement()}
       resources={getResources()}
+      staffRole={staffRole}
     />
   );
 }

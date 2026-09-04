@@ -84,6 +84,9 @@ export default function AdmissionsPage() {
             <Link className="btn btn-ghost" href="/faq">
               {t("nav.faq")}
             </Link>
+            <Link className="btn btn-ghost" href="/print/admissions">
+              {t("print.onePager")}
+            </Link>
           </div>
 
           <div className="admissions-qr">

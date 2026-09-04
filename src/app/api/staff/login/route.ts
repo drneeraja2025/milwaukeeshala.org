@@ -1,12 +1,10 @@
 import { NextResponse } from "next/server";
 import {
   createSessionToken,
+  resolveStaffRole,
   sessionCookieOptions,
   STAFF_SESSION_COOKIE,
-  verifyAdminPassword,
 } from "@/lib/staffAuth";
-
-export const runtime = "nodejs";
 
 export async function POST(req: Request) {
   let password = "";
@@ -20,15 +18,16 @@ export async function POST(req: Request) {
       password = String(form.get("password") || "");
     }
   } catch {
-    return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
+    return NextResponse.json({ error: "Invalid body" }, { status: 400 });
   }
 
-  if (!verifyAdminPassword(password)) {
+  const role = resolveStaffRole(password);
+  if (!role) {
     return NextResponse.json({ error: "Invalid password" }, { status: 401 });
   }
 
-  const token = createSessionToken();
-  const res = NextResponse.json({ ok: true });
+  const token = createSessionToken(role);
+  const res = NextResponse.json({ ok: true, role });
   res.cookies.set(STAFF_SESSION_COOKIE, token, sessionCookieOptions());
   return res;
 }

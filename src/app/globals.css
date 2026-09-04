@@ -1827,7 +1827,9 @@ html[lang="mr"] body,
   .site-footer,
   .announcement-banner,
   .cta-row,
-  .staff-admin-bar {
+  .staff-admin-bar,
+  .no-print,
+  .nav-backdrop {
     display: none !important;
   }
 
@@ -1839,4 +1841,149 @@ html[lang="mr"] body,
     box-shadow: none;
     border: none;
   }
+
+  .print-page {
+    background: #fff;
+    min-height: auto;
+  }
+
+  .print-sheet {
+    box-shadow: none;
+    border: none;
+    max-width: 100%;
+  }
+}
+
+.print-page {
+  padding: 1.5rem 1rem 3rem;
+}
+
+.print-sheet {
+  max-width: 44rem;
+  margin: 0 auto;
+  background: #fffef9;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+
+.print-sheet-header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--gold);
+}
+
+.print-sheet-brand {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+.print-sheet-brand-mr {
+  margin: 0.15rem 0 0;
+  font-size: 1.05rem;
+}
+
+.print-facts {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0 0 1.25rem;
+}
+
+.print-facts div {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.print-facts dt {
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.print-facts dd {
+  margin: 0;
+}
+
+.print-qr-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.print-qr-row figure {
+  margin: 0;
+  text-align: center;
+}
+
+.print-qr-row figcaption {
+  margin-top: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.print-contact {
+  margin: 0 0 1rem;
+}
+
+.print-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.staff-news-split {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 900px) {
+  .staff-news-split {
+    grid-template-columns: minmax(0, 1.1fr) minmax(14rem, 0.9fr);
+    align-items: start;
+  }
+}
+
+.staff-draft-preview {
+  border: 1px dashed var(--line);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  background: #fff;
+}
+
+.staff-draft-preview h2 {
+  margin: 0.25rem 0;
+  font-size: 1.25rem;
+}
+
+.markup-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.4rem;
+}
+
+.markup-body p {
+  margin: 0 0 0.75rem;
+}
+
+.markup-list {
+  margin: 0 0 0.75rem;
+  padding-left: 1.25rem;
+}
+
+.staff-audit-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.staff-audit-list li {
+  font-size: 0.92rem;
+  line-height: 1.35;
 }
