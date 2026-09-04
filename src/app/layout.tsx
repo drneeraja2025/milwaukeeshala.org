@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import Script from "next/script";
+import { AnnouncementBanner } from "@/components/AnnouncementBanner";
+import { JsonLd } from "@/components/JsonLd";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { LanguageProvider } from "@/lib/i18n/LanguageProvider";
@@ -37,11 +40,16 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <LanguageProvider>
+          <JsonLd />
           <div className="site-shell">
+            <AnnouncementBanner />
             <SiteHeader />
             <main className="site-main">{children}</main>
             <SiteFooter />
           </div>
+          {process.env.VERCEL === "1" ? (
+            <Script src="/_vercel/insights/script.js" strategy="afterInteractive" />
+          ) : null}
         </LanguageProvider>
       </body>
     </html>

@@ -4,10 +4,11 @@ import Image from "next/image";
 import { PageHero } from "@/components/PageHero";
 import { getGallery, pickLocale } from "@/lib/data";
 import { useI18n } from "@/lib/i18n/LanguageProvider";
+import { youtubeEmbedUrl } from "@/lib/videoEmbed";
 
 export function PhotosView() {
   const { t, lang } = useI18n();
-  const { albums } = getGallery();
+  const { albums, videos } = getGallery();
 
   return (
     <div className="page-shell">
@@ -41,9 +42,28 @@ export function PhotosView() {
         </section>
       ))}
 
-      <section className="videos-placeholder" style={{ marginTop: "1.5rem" }}>
+      <section className="video-gallery" style={{ marginTop: "1.5rem" }}>
         <h2 style={{ color: "var(--navy)", marginTop: 0 }}>{t("photos.videos")}</h2>
-        <p>{t("photos.videosSoon")}</p>
+        {videos.length === 0 ? (
+          <p>{t("photos.videosSoon")}</p>
+        ) : (
+          <div className="video-grid">
+            {videos.map((video) => (
+              <figure key={video.id} className="video-embed">
+                <iframe
+                  src={youtubeEmbedUrl(video.youtubeId)}
+                  title={pickLocale(lang, video.title, video.titleMr)}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+                <figcaption>
+                  {pickLocale(lang, video.title, video.titleMr)}
+                  {video.caption ? ` — ${video.caption}` : ""}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        )}
       </section>
     </div>
   );

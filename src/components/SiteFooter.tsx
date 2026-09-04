@@ -77,6 +77,16 @@ export function SiteFooter() {
                   </a>
                 </li>
               ))}
+              {site.facebookUrl ? (
+                <li>
+                  <a href={site.facebookUrl} target="_blank" rel="noopener noreferrer">
+                    Facebook
+                  </a>
+                </li>
+              ) : null}
+              <li>
+                <Link href="/volunteer">{t("nav.volunteer")}</Link>
+              </li>
             </ul>
           </div>
           <div>

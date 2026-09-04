@@ -1,0 +1,79 @@
+[
+  {
+    "id": "when-classes",
+    "question": "When are classes?",
+    "questionMr": "वर्ग कधी आहेत?",
+    "answer": "Regular Saturday classes meet 1:00–3:00 PM at the Hindu Temple of Wisconsin (HTW). Online level classes may also appear on the school calendar on weekday evenings.",
+    "answerMr": "नियमित शनिवार वर्ग दुपारी १:००–३:०० वाजता हिंदू टेम्पल ऑफ विस्कॉन्सिन (HTW) येथे भरतो. ऑनलाइन स्तर वर्ग दिनदर्शिकेवर आठवड्याच्या इतर दिवशीही दिसू शकतात."
+  },
+  {
+    "id": "ages",
+    "question": "What ages do you serve?",
+    "questionMr": "कोणत्या वयोगटासाठी?",
+    "answer": "Milwaukee Marathi Shala serves learners roughly ages 5–14, placed by Marathi level. Contact us if you are unsure which level fits your child.",
+    "answerMr": "मिल्वॉकी मराठी शाळा साधारणपणे ५–१४ वर्षांच्या विद्यार्थ्यांसाठी मराठी स्तरांनुसार वर्ग चालवते. पात्र स्तराबद्दल आमच्याशी संपर्क साधा."
+  },
+  {
+    "id": "admissions",
+    "question": "How do I apply?",
+    "questionMr": "अर्ज कसा करावा?",
+    "answer": "Open the admissions Google Form on the Admissions page, pay the annual fee via Zelle (see the Pay page), and email payment confirmation to mmm.marathishala@gmail.com.",
+    "answerMr": "प्रवेश पानावरील Google Form उघडा, वार्षिक फी Zelle द्वारे भरा (Pay पान पहा), आणि पेमेंट पुष्टी mmm.marathishala@gmail.com वर ईमेल करा."
+  },
+  {
+    "id": "new-student-placement",
+    "question": "Where do new students start?",
+    "questionMr": "नवीन विद्यार्थी कुठून सुरू करतात?",
+    "answer": "All new admissions — regardless of age or U.S. school grade — begin in Balvarg or Pragat Balvarg. Midterm assessments help us place students for faster progress when they are ready.",
+    "answerMr": "वय किंवा अमेरिकन शाळेच्या इयत्तेची पर्वा न करता, सर्व नवीन प्रवेश बालवर्ग किंवा प्रगत बालवर्गातून सुरू होतात. मध्यवर्ष मूल्यमापनामुळे विद्यार्थी तयार असल्यास जलद प्रगतीसाठी योग्य स्तरावर ठेवता येतात."
+  },
+  {
+    "id": "registration-required",
+    "question": "Is registration and fee payment required to attend?",
+    "questionMr": "उपस्थित राहण्यासाठी नोंदणी आणि फी भरणे आवश्यक आहे का?",
+    "answer": "Yes. Registration and fee payment are required to attend. If your family has a special situation, please talk with the school in-charge before classes begin.",
+    "answerMr": "होय. उपस्थित राहण्यासाठी नोंदणी आणि फी भरणे आवश्यक आहे. विशेष परिस्थिती असल्यास वर्ग सुरू होण्यापूर्वी शाळा प्रभारींशी बोलून घ्या."
+  },
+  {
+    "id": "bmm-program-length",
+    "question": "How long is the BMM education program?",
+    "questionMr": "BMM शिक्षण कार्यक्रम किती वर्षांचा आहे?",
+    "answer": "The BMM Marathi Shala path is a six-year program from Balvarg through 5th grade. These Marathi levels are not the same as your child’s U.S. school grades.",
+    "answerMr": "BMM मराठी शाळा मार्ग बालवर्गापासून ५वी इयत्तेपर्यंत सहा वर्षांचा आहे. हे मराठी स्तर तुमच्या मुलाच्या अमेरिकन शाळेच्या इयत्तांशी जुळत नाहीत."
+  },
+  {
+    "id": "fees-included",
+    "question": "What is included in the school fee?",
+    "questionMr": "शाळेच्या फीमध्ये काय समाविष्ट आहे?",
+    "answer": "Your annual Milwaukee Marathi Shala fee helps cover: (1) rent for school space; (2) BMM books for your student’s Marathi grade; (3) stationery; (4) BMM learning offerings such as movies, online sessions, and topic training; (5) BMM competitions such as Killa Spardha and Samoohgaan Spardha; (6) school software — GuruVidyaZen SISLMS; and (7) midterm exams.",
+    "answerMr": "वार्षिक मिल्वॉकी मराठी शाळा फीमध्ये साधारणतः हे समाविष्ट आहे: (१) शाळेच्या जागेचे भाडे; (२) विद्यार्थ्याच्या मराठी स्तरासाठी BMM पुस्तके; (३) स्टेशनरी; (४) BMM शिक्षण कार्यक्रम — चित्रपट, ऑनलाइन सत्रे आणि विविध विषयांवरील प्रशिक्षण; (५) BMM स्पर्धा जसे किल्ला स्पर्धा आणि समूहगान स्पर्धा; (६) शाळा सॉफ्टवेअर — GuruVidyaZen SISLMS; आणि (७) मध्यवर्ष परीक्षा."
+  },
+  {
+    "id": "fees-not-included",
+    "question": "What is not included in the school fee?",
+    "questionMr": "शाळेच्या फीमध्ये काय समाविष्ट नाही?",
+    "answer": "Not included: (1) final exam fees payable to BMM; (2) Balbharati exam fees and books; (3) Milwaukee Marathi Mandal (MMM) events and MMM membership; and (4) Avant Seal of Biliteracy training and related fees.",
+    "answerMr": "समाविष्ट नाही: (१) BMM कडे भरावयाची अंतिम परीक्षा फी; (२) बालभारती परीक्षा फी आणि पुस्तके; (३) महाराष्ट्र मंडळ मिल्वॉकी (MMM) कार्यक्रम आणि MMM सदस्यत्व; आणि (४) Avant Seal of Biliteracy प्रशिक्षण आणि संबंधित फी."
+  },
+  {
+    "id": "volunteer-teachers",
+    "question": "Who teaches at Milwaukee Marathi Shala?",
+    "questionMr": "मिल्वॉकी मराठी शाळेत कोण शिकवते?",
+    "answer": "All teachers are volunteers. Please respect their time and the commitment they give to this community program.",
+    "answerMr": "सर्व शिक्षक स्वयंसेवक आहेत. त्यांनी या सामुदायिक कार्यक्रमासाठी दिलेल्या वेळेचा आणि समर्पणाचा आदर करा."
+  },
+  {
+    "id": "sislms",
+    "question": "What is SISLMS?",
+    "questionMr": "SISLMS म्हणजे काय?",
+    "answer": "SISLMS is our school operations portal on GuruVidyaZen. Families and staff sign in there for class access — not on this public website. Access is included with school registration.",
+    "answerMr": "SISLMS हे GuruVidyaZen वरील शाळा पोर्टल आहे. कुटुंबे आणि कर्मचारी वर्ग प्रवेशासाठी तिथे साइन इन करतात — या सार्वजनिक संकेतस्थळावर नाही. शाळा नोंदणीसह प्रवेश समाविष्ट आहे."
+  },
+  {
+    "id": "books",
+    "question": "What books does the school use?",
+    "questionMr": "कोणती पुस्तके वापरली जातात?",
+    "answer": "We follow the Bharatiya Marathi Mandal (BMM) Marathi Shala curriculum. BMM books for your student’s Marathi grade are included in the annual fee; Balbharati books and exams are separate.",
+    "answerMr": "आम्ही भारतीय मराठी मंडळ (BMM) मराठी शाळा अभ्यासक्रम अनुसरतो. विद्यार्थ्याच्या मराठी स्तरासाठी BMM पुस्तके वार्षिक फीमध्ये समाविष्ट आहेत; बालभारती पुस्तके आणि परीक्षा वेगळ्या आहेत."
+  }
+]

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { ContactForm } from "@/components/ContactForm";
 import { PageHero } from "@/components/PageHero";
 import { getStaff } from "@/lib/data";
 import { useI18n } from "@/lib/i18n/LanguageProvider";
@@ -20,7 +21,9 @@ export function ContactView() {
         lead={t("contact.lead")}
       />
 
-      <div className="split">
+      <ContactForm />
+
+      <div className="split" style={{ marginTop: "2rem" }}>
         <div className="contact-panel">
           <h2>{t("contact.email")}</h2>
           <p>
@@ -64,6 +67,9 @@ export function ContactView() {
           <p style={{ marginTop: "1rem" }}>
             <Link className="btn btn-secondary" href={site.payPath}>
               {t("cta.pay")}
+            </Link>{" "}
+            <Link className="btn btn-ghost" href="/faq">
+              {t("nav.faq")}
             </Link>
           </p>
           <ul className="program-points">
@@ -88,6 +94,23 @@ export function ContactView() {
               {t("contact.openPortal", { label: site.portalLabel })}
             </a>
           </p>
+          {site.facebookUrl ? (
+            <>
+              <h2 style={{ marginTop: "1.75rem" }}>{t("contact.social")}</h2>
+              <ul className="contact-list">
+                <li>
+                  <a href={site.facebookUrl} target="_blank" rel="noopener noreferrer">
+                    Facebook (MMM)
+                  </a>
+                </li>
+                {site.newsletterUrl ? (
+                  <li>
+                    <a href={site.newsletterUrl}>{t("contact.newsletter")}</a>
+                  </li>
+                ) : null}
+              </ul>
+            </>
+          ) : null}
         </div>
       </div>
     </div>

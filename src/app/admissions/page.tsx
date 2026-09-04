@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { TestimonialsBlock } from "@/components/TestimonialsBlock";
 import { PageHero } from "@/components/PageHero";
 import {
   formatShortDate,
@@ -80,6 +81,9 @@ export default function AdmissionsPage() {
             <a className="btn btn-ghost" href="/media/MMS2026-27flyer.jpg" download>
               {t("cta.downloadFlyer")}
             </a>
+            <Link className="btn btn-ghost" href="/faq">
+              {t("nav.faq")}
+            </Link>
           </div>
 
           <div className="admissions-qr">
@@ -160,6 +164,10 @@ export default function AdmissionsPage() {
             </li>
           ))}
         </ul>
+      </section>
+
+      <section className="content-panel" style={{ marginTop: "2rem" }}>
+        <TestimonialsBlock />
       </section>
     </div>
   );

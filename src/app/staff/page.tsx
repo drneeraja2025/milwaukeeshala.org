@@ -32,6 +32,9 @@ export default function StaffPage() {
       <p className="staff-admin-bar">
         <Link className="btn btn-ghost" href="/staff/login">
           {t("staff.adminLogin")}
+        </Link>{" "}
+        <Link className="btn btn-secondary" href="/volunteer">
+          {t("nav.volunteer")}
         </Link>
       </p>
 

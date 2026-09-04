@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
-import { getStaff } from "@/lib/data";
+import {
+  getAllUpdates,
+  getAnnouncement,
+  getGallery,
+  getResources,
+  getStaff,
+} from "@/lib/data";
 import { hasStaffSession } from "@/lib/staffAuth";
+import siteSettings from "../../../../data/site-settings.json";
 import { StaffPublishClient } from "./StaffPublishClient";
 
 export const dynamic = "force-dynamic";
@@ -17,6 +24,7 @@ export default async function StaffPublishPage() {
   }
 
   const staff = getStaff();
+  const gallery = getGallery();
   const people = [...staff.people]
     .sort((a, b) => a.order - b.order)
     .map((p) => ({
@@ -27,5 +35,15 @@ export default async function StaffPublishPage() {
       photo: p.photo,
     }));
 
-  return <StaffPublishClient people={people} />;
+  return (
+    <StaffPublishClient
+      people={people}
+      newsItems={getAllUpdates()}
+      albums={gallery.albums}
+      videos={gallery.videos || []}
+      settings={siteSettings}
+      announcement={getAnnouncement()}
+      resources={getResources()}
+    />
+  );
 }

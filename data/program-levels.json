@@ -1,0 +1,29 @@
+[
+  {
+    "id": "beginner",
+    "title": "Beginner",
+    "titleMr": "प्राथमिक",
+    "summary": "Introduction to Marathi sounds, letters, and everyday phrases for new learners.",
+    "summaryMr": "नवीन विद्यार्थ्यांसाठी मराठी ध्वनी, अक्षरे आणि दैनंदिन वाक्ये.",
+    "body": "Beginner classes focus on listening, speaking, and reading readiness. Activities include songs, stories, and games in a supportive Saturday classroom at HTW.",
+    "bodyMr": "प्राथमिक स्तर ऐकणे, बोलणे आणि वाचन तयारी यावर लक्ष केंद्रित करतो. गाणी, कथा आणि खेळांसह शनिवारी HTW वर्ग."
+  },
+  {
+    "id": "intermediate",
+    "title": "Intermediate",
+    "titleMr": "मध्यम",
+    "summary": "Reading, writing, and conversation building on BMM-level skills.",
+    "summaryMr": "BMM स्तरावर वाचन, लेखन आणि संवाद.",
+    "body": "Intermediate learners work on grammar, comprehension, and cultural topics. Some students also prepare for BMM assessments.",
+    "bodyMr": "मध्यम स्तरावर व्याकरण, समज आणि सांस्कृतिक विषय. काही विद्यार्थी BMM मूल्यमापनासाठी तयारी करतात."
+  },
+  {
+    "id": "advanced",
+    "title": "Advanced",
+    "titleMr": "प्रगत",
+    "summary": "Fluency, composition, and exam preparation including Seal of Biliteracy pathways.",
+    "summaryMr": "प्रवाह, रचना आणि द्विभाषिक शिक्षण मार्गासह परीक्षा तयारी.",
+    "body": "Advanced classes emphasize essays, presentations, and exam readiness. See the Biliteracy page for Avant Assessment details.",
+    "bodyMr": "प्रगत वर्ग निबंध, सादरीकरण आणि परीक्षा तयारीवर भर देतात. Avant तपशीलांसाठी Biliteracy पान पहा."
+  }
+]

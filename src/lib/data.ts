@@ -3,6 +3,13 @@ import sislmsEvents from "../../data/events.sislms.json";
 import updates from "../../data/updates.json";
 import gallery from "../../data/gallery.json";
 import staff from "../../data/staff.json";
+import faq from "../../data/faq.json";
+import resources from "../../data/resources.json";
+import testimonials from "../../data/testimonials.json";
+import sponsors from "../../data/sponsors.json";
+import programLevels from "../../data/program-levels.json";
+import spotlights from "../../data/spotlights.json";
+import announcement from "../../data/announcement.json";
 import type { Lang } from "@/lib/i18n/dictionaries";
 
 export type EventItem = {
@@ -16,8 +23,9 @@ export type EventItem = {
   locationMr?: string;
   description: string;
   descriptionMr?: string;
-  /** Present on SISLMS-synced rows only; hardcoded Kalnirnay/MMM rows omit this. */
   source?: "sislms" | string;
+  detailHref?: string;
+  rsvpUrl?: string;
 };
 
 export type UpdateItem = {
@@ -29,8 +37,8 @@ export type UpdateItem = {
   summaryMr?: string;
   body: string;
   bodyMr?: string;
-  /** Optional public image path, e.g. /media/uploads/news/... */
   image?: string;
+  publishAt?: string;
 };
 
 export type GalleryPhoto = {
@@ -51,16 +59,82 @@ export type GalleryAlbum = {
   photos: GalleryPhoto[];
 };
 
+export type GalleryVideo = {
+  id: string;
+  title: string;
+  titleMr?: string;
+  youtubeId: string;
+  caption?: string;
+  captionMr?: string;
+};
+
+export type FaqItem = {
+  id: string;
+  question: string;
+  questionMr?: string;
+  answer: string;
+  answerMr?: string;
+};
+
+export type ResourceItem = {
+  id: string;
+  title: string;
+  titleMr?: string;
+  description: string;
+  descriptionMr?: string;
+  href: string;
+  type: "pdf" | "image" | "link";
+};
+
+export type Testimonial = {
+  id: string;
+  quote: string;
+  quoteMr?: string;
+  author: string;
+  authorMr?: string;
+};
+
+export type Sponsor = {
+  id: string;
+  name: string;
+  href: string;
+  logo: string | null;
+};
+
+export type ProgramLevel = {
+  id: string;
+  title: string;
+  titleMr?: string;
+  summary: string;
+  summaryMr?: string;
+  body: string;
+  bodyMr?: string;
+};
+
+export type Spotlight = {
+  id: string;
+  title: string;
+  titleMr?: string;
+  summary: string;
+  summaryMr?: string;
+  body: string;
+  bodyMr?: string;
+};
+
+export type Announcement = {
+  enabled: boolean;
+  message: string;
+  messageMr?: string;
+  link?: string;
+  linkLabel?: string;
+};
+
 export function pickLocale<T>(lang: Lang, en: T, mr?: T | null): T {
   return lang === "mr" && mr != null && mr !== "" ? mr : en;
 }
 
 export function getEvents(): EventItem[] {
-  // Hardcoded Kalnirnay/MMM/etc. stay forever; SISLMS layer adds/updates separately.
-  const merged = [
-    ...(manualEvents as EventItem[]),
-    ...(sislmsEvents as EventItem[]),
-  ];
+  const merged = [...(manualEvents as EventItem[]), ...(sislmsEvents as EventItem[])];
   return merged.sort((a, b) => {
     const aKey = `${a.date}T${a.startTime}`;
     const bKey = `${b.date}T${b.startTime}`;
@@ -68,17 +142,34 @@ export function getEvents(): EventItem[] {
   });
 }
 
+export function getEventById(id: string): EventItem | undefined {
+  return getEvents().find((e) => e.id === id);
+}
+
 export function getUpcomingEvents(limit = 3): EventItem[] {
   const today = new Date().toISOString().slice(0, 10);
   return getEvents().filter((event) => event.date >= today).slice(0, limit);
 }
 
+function isPublished(item: { date: string; publishAt?: string }): boolean {
+  const now = new Date().toISOString().slice(0, 10);
+  if (item.publishAt && item.publishAt > now) return false;
+  return true;
+}
+
 export function getUpdates(): UpdateItem[] {
+  return [...(updates as UpdateItem[])]
+    .filter(isPublished)
+    .sort((a, b) => b.date.localeCompare(a.date));
+}
+
+/** All news items including scheduled (for staff admin). */
+export function getAllUpdates(): UpdateItem[] {
   return [...(updates as UpdateItem[])].sort((a, b) => b.date.localeCompare(a.date));
 }
 
 export function getGallery() {
-  return gallery as { albums: GalleryAlbum[]; videos: unknown[] };
+  return gallery as { albums: GalleryAlbum[]; videos: GalleryVideo[] };
 }
 
 export function getStaff() {
@@ -104,6 +195,38 @@ export function getStaff() {
     notes: string[];
     notesMr?: string[];
   };
+}
+
+export function getFaq(): FaqItem[] {
+  return faq as FaqItem[];
+}
+
+export function getResources(): ResourceItem[] {
+  return resources as ResourceItem[];
+}
+
+export function getTestimonials(): Testimonial[] {
+  return testimonials as Testimonial[];
+}
+
+export function getSponsors(): Sponsor[] {
+  return sponsors as Sponsor[];
+}
+
+export function getProgramLevels(): ProgramLevel[] {
+  return programLevels as ProgramLevel[];
+}
+
+export function getProgramLevel(id: string): ProgramLevel | undefined {
+  return getProgramLevels().find((p) => p.id === id);
+}
+
+export function getSpotlights(): Spotlight[] {
+  return spotlights as Spotlight[];
+}
+
+export function getAnnouncement(): Announcement {
+  return announcement as Announcement;
 }
 
 function localeTag(lang: Lang = "en"): string {
@@ -137,4 +260,17 @@ export function formatTime(time: string, lang: Lang = "en"): string {
   }
   const period = hours >= 12 ? "PM" : "AM";
   return `${hour12}:${mm} ${period}`;
+}
+
+export function googleCalendarUrl(event: EventItem): string {
+  const start = `${event.date.replace(/-/g, "")}T${event.startTime.replace(":", "")}00`;
+  const end = `${event.date.replace(/-/g, "")}T${(event.endTime || event.startTime).replace(":", "")}00`;
+  const params = new URLSearchParams({
+    action: "TEMPLATE",
+    text: event.title,
+    dates: `${start}/${end}`,
+    details: event.description,
+    location: event.location,
+  });
+  return `https://calendar.google.com/calendar/render?${params.toString()}`;
 }

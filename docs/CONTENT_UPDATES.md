@@ -13,6 +13,14 @@ Edit JSON under `data/` and push to `main` (or ask Cursor in chat with the new f
 | `data/updates.json` | News & Updates |
 | `data/gallery.json` | Photo albums |
 | `data/staff.json` | Staff cards (`people`) + phone `contacts` |
+| `data/site-settings.json` | Fee, year label, schedule, location, form/social URLs |
+| `data/announcement.json` | Site-wide alert banner (on/off) |
+| `data/faq.json` | FAQ page |
+| `data/resources.json` | Downloads / resources page |
+| `data/testimonials.json` | Home & admissions quotes |
+| `data/sponsors.json` | Program page partner links |
+| `data/program-levels.json` | `/programs/beginner` etc. |
+| `data/spotlights.json` | About page spotlight stories |
 
 The site calendar **merges** manual + SISLMS (add/update SISLMS rows; manual rows stay).
 
@@ -60,6 +68,12 @@ No. Anyone with repo access can edit the JSON files and push. Cursor chat is opt
 | News (text + optional image) | [milwaukeeshala.org/staff/login](https://milwaukeeshala.org/staff/login) → Publish | Commits `data/updates.json` (+ image under `public/media/uploads/news/`) |
 | Gallery photos | Same → **Photo** | Commits photo + `data/gallery.json` |
 | Teacher bio / photo / phone | Same → **Teachers** | Commits `data/staff.json` (+ `public/media/uploads/staff/`) |
+| Add / delete teacher | Same → **Teachers** (mode) | Updates `data/staff.json` |
+| Edit / delete news | Same → **News** (manage block) | Updates `data/updates.json` |
+| YouTube videos | Same → **Video** | Updates `data/gallery.json` `videos` |
+| Site settings (fee, URLs) | Same → **Settings** | Commits `data/site-settings.json` |
+| Alert banner | Same → **Banner** | Commits `data/announcement.json` |
+| PDF / resource links | Same → **Resource** | Commits `data/resources.json` + uploads |
 | Pay / admissions QR | Same → **QR** | Replaces `/media/zelle-pay-qr.png` or `/media/admissions-qr.png` |
 
 **Entry point:** bookmark [**/staff/login**](https://milwaukeeshala.org/staff/login) (not in public nav). After login you land on `/staff/publish`. Session cookie lasts ~7 days.

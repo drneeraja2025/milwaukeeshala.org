@@ -1,11 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { getSpotlights, pickLocale } from "@/lib/data";
 import { useI18n } from "@/lib/i18n/LanguageProvider";
 import { site } from "@/lib/site";
 
 export function AboutView() {
   const { t, lang } = useI18n();
+  const spotlights = getSpotlights();
 
   return (
     <>
@@ -136,6 +139,24 @@ export function AboutView() {
             />
           </div>
         </div>
+
+        {spotlights.length > 0 ? (
+          <section className="content-panel" style={{ marginTop: "2rem" }}>
+            <h2>{t("spotlights.title")}</h2>
+            <ul className="teaser-list">
+              {spotlights.map((item) => (
+                <li key={item.id}>
+                  <h3>{pickLocale(lang, item.title, item.titleMr)}</h3>
+                  <p>{pickLocale(lang, item.summary, item.summaryMr)}</p>
+                  <p className="muted">{pickLocale(lang, item.body, item.bodyMr)}</p>
+                </li>
+              ))}
+            </ul>
+            <p style={{ marginTop: "1rem" }}>
+              <Link href={site.biliteracyPath}>{t("cta.biliteracy")}</Link>
+            </p>
+          </section>
+        ) : null}
       </div>
     </>
   );

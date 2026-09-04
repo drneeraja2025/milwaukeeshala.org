@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { TestimonialsBlock } from "@/components/TestimonialsBlock";
 import {
   formatShortDate,
   formatTime,
@@ -116,6 +117,12 @@ export default function HomePage() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      <section className="section section-tight">
+        <div className="section-inner">
+          <TestimonialsBlock />
         </div>
       </section>
 
