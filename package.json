@@ -10,7 +10,7 @@
     "sync:sislms-calendar": "node scripts/sync-sislms-calendar.mjs"
   },
   "dependencies": {
-    "next": "^15.5.10",
+    "next": "^15.5.13",
     "react": "19.1.0",
     "react-dom": "19.1.0"
   },
