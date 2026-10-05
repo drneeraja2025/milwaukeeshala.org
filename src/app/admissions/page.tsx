@@ -67,12 +67,7 @@ export default function AdmissionsPage() {
           </p>
 
           <div className="cta-row" style={{ marginTop: "1.25rem" }}>
-            <a
-              className="btn btn-primary"
-              href={site.admissionsFormUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a className="btn btn-primary" href={`mailto:${site.email}`}>
               {t("cta.openForm")}
             </a>
             <Link className="btn btn-secondary" href={site.payPath}>

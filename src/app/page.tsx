@@ -48,14 +48,9 @@ export default function HomePage() {
             {t("home.lead", { year: site.yearLabel, location })}
           </p>
           <div className="cta-row">
-            <a
-              className="btn btn-primary"
-              href={site.admissionsFormUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t("cta.apply")}
-            </a>
+            <Link className="btn btn-primary" href="/calendar/event/mmm-diwali-killa-rangoli-2026-11-14">
+              {t("home.mmmEventCta")}
+            </Link>
             <Link className="btn btn-secondary" href={site.payPath}>
               {t("cta.pay")}
             </Link>
