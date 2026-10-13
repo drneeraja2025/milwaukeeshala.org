@@ -10,7 +10,8 @@ type Consent = "essential" | "all";
 
 function gpcOn(): boolean {
   try {
-    return navigator.globalPrivacyControl === true;
+    const nav = navigator as Navigator & { globalPrivacyControl?: boolean };
+    return nav.globalPrivacyControl === true;
   } catch {
     return false;
   }
