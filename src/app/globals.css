@@ -2013,3 +2013,62 @@ html[lang="mr"] body,
   font-size: 0.92rem;
   line-height: 1.35;
 }
+
+/* Saaniya Phase 1 cookie consent banner */
+.saaniya-cookie-banner {
+  position: fixed;
+  z-index: 99999;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 14px 18px;
+  font: 14px/1.45 var(--font-body), system-ui, sans-serif;
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.saaniya-cookie-banner p {
+  margin: 0;
+  max-width: 48rem;
+  flex: 1 1 16rem;
+}
+
+.saaniya-cookie-banner a {
+  color: #93c5fd;
+}
+
+.saaniya-cookie-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.saaniya-cookie-banner button {
+  cursor: pointer;
+  border: 0;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-weight: 600;
+}
+
+.saaniya-cookie-essential {
+  background: #334155;
+  color: #fff;
+}
+
+.saaniya-cookie-all {
+  background: #6366f1;
+  color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .saaniya-cookie-banner {
+    transition: none;
+  }
+}

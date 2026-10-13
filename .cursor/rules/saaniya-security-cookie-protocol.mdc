@@ -1,0 +1,18 @@
+---
+description: Phase 1 security headers, cookie consent, GPC — required on all Saaniya / client sites
+alwaysApply: true
+---
+
+# Saaniya security + cookie protocol (Phase 1)
+
+Full doc: `docs/ops/saaniya-security-cookie-protocol.md`
+
+When editing any public site or Vercel deploy in this org:
+
+1. Ensure security headers: HSTS, nosniff, X-Frame-Options DENY, Referrer-Policy, Permissions-Policy, X-XSS-Protection
+2. Never ship placeholder Google Analytics (`G-XXXXXXXXXX`); gate real analytics behind consent + GPC
+3. Keep / add cookie banner with essential vs analytics; honor `navigator.globalPrivacyControl`
+4. Prefer Vercel Web Analytics over unconsented third-party trackers
+5. Preview deployments should use Vercel Standard Deployment Protection
+
+Do not weaken headers for convenience without documenting an exception (e.g. mic for Riyaz).

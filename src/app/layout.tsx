@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { AnnouncementBanner } from "@/components/AnnouncementBanner";
+import { CookieConsent } from "@/components/CookieConsent";
 import { JsonLd } from "@/components/JsonLd";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -49,9 +49,7 @@ export default function RootLayout({
               <SiteFooter />
             </div>
           </div>
-          {process.env.VERCEL === "1" ? (
-            <Script src="/_vercel/insights/script.js" strategy="afterInteractive" />
-          ) : null}
+          <CookieConsent loadVercelInsights={process.env.VERCEL === "1"} />
         </LanguageProvider>
       </body>
     </html>

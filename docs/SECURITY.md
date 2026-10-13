@@ -4,7 +4,9 @@ Scope: **static public marketing site** (Next.js on Vercel). No student database
 
 ## Applied controls
 
-- Security headers in `next.config.ts`: HSTS, `X-Content-Type-Options`, `X-Frame-Options: DENY`, Referrer-Policy, Permissions-Policy, Content-Security-Policy
+- Saaniya Phase 1 protocol: `docs/ops/saaniya-security-cookie-protocol.md`
+- Security headers in `next.config.ts`: HSTS, `X-Content-Type-Options`, `X-Frame-Options: DENY`, Referrer-Policy, Permissions-Policy, `X-XSS-Protection`, Content-Security-Policy
+- Cookie + GPC consent banner (`saaniya-cookie-consent`); Vercel Insights only after analytics consent
 - `poweredByHeader: false`
 - External links use `rel="noopener noreferrer"` where applicable
 - `public/robots.txt` present
